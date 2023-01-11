@@ -1,0 +1,7 @@
+{
+  "name": "cladbox",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
