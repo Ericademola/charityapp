@@ -25,9 +25,8 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-//@import '~swiper/scss';
-//@import '~@ionic/angular/css/ionic-swiper';
+/* my font for the project */
 
-.background-color {
-  background-color: #A61453;
+ion-content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
