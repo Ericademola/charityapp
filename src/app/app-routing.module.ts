@@ -17,11 +17,11 @@ const routes: Routes = [
   },
   {
     path: 'get-started',
-    loadChildren: () => import('./get-started/get-started.module').then( m => m.GetStartedPageModule)
+    loadChildren: () => import('./pages/get-started/get-started.module').then( m => m.GetStartedPageModule)
   },
   {
     path: 'sign-up',
-    loadChildren: () => import('./sign-up/sign-up.module').then( m => m.SignUpPageModule)
+    loadChildren: () => import('./pages/sign-up/sign-up.module').then( m => m.SignUpPageModule)
   },
 ];
 
