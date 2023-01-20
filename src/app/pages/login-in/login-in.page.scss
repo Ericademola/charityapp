@@ -1,5 +1,5 @@
 div {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 ion-button {
@@ -10,7 +10,11 @@ h1 {
   text-align: center;
   font-size: 25px;
   font-weight: bolder;
-  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+ion-input {
+  --padding-top: 50px;
 }
 
 span {
