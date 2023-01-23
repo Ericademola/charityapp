@@ -1,0 +1,23 @@
+div {
+  position: relative;
+
+}
+
+ion-img {
+  width: 100%;
+}
+
+ion-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  padding: .3em;
+  background-color: #ed1e78;
+  color: #ffffff;
+  opacity: .7;
+}
+
+ion-button {
+  --background: #ED1E78;
+  margin: .5em 0em 1.5em 0em;
+}
