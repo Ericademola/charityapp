@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'login-in',
     loadChildren: () => import('./pages/login-in/login-in.module').then( m => m.LoginInPageModule)
+  },  {
+    path: 'donation',
+    loadChildren: () => import('./donation/donation.module').then( m => m.DonationPageModule)
   },
+
 
 ];
 
