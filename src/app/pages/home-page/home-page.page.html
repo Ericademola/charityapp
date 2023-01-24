@@ -1,13 +1,18 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Hello Fiona</ion-title>
+    <ion-buttons slot="end">
+      <ion-thumbnail>
+        <img alt="member" src="assets/member-1.png">
+      </ion-thumbnail>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content class="ion-padding">
-  <ion-grid>
-    <ion-row>
-      <ion-col size="1" offset="10">
-        <ion-thumbnail>
-          <img alt="member" src="assets/member-1.png">
-        </ion-thumbnail>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
   <ion-img src="assets/big-heart.png" alt="The big heart"></ion-img>
   <ion-text color="dark">
     <h1>
@@ -42,19 +47,22 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-  <div class="bottom">
-    <ion-grid class="ion-no-padding">
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-grid >
       <ion-row>
         <ion-col size="1" offset="1.5">
-          <ion-icon name="home-outline" size="small"></ion-icon>
+          <ion-icon name="home-outline" size="large"></ion-icon>
         </ion-col>
         <ion-col size="1" offset="3">
-          <ion-icon name="location-outline" size="small"></ion-icon>
+          <ion-icon name="people-outline" size="large"></ion-icon>
         </ion-col>
         <ion-col size="1" offset="3">
-          <ion-icon name="notifications-outline" size="small"></ion-icon>
+          <ion-icon name="notifications-outline" size="large"></ion-icon>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </div>
-</ion-content>
+  </ion-toolbar>
+</ion-footer>
