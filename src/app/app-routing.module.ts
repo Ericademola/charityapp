@@ -42,6 +42,10 @@ const routes: Routes = [
     path: 'about-us',
     loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule)
   },
+  {
+    path: 'set-reminder',
+    loadChildren: () => import('./set-reminder/set-reminder.module').then( m => m.SetReminderPageModule)
+  },
 
 
 ];
