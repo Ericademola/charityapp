@@ -8,6 +8,7 @@ ion-toolbar {
 ion-img {
   width: 100%;
   margin: auto;
+  padding: 1em 3em;
 }
 
 h1 {
@@ -26,5 +27,9 @@ ion-button {
 
 ion-col {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 1em;
+}
+
+ion-badge {
+  --background: #FF328B;
 }

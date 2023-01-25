@@ -29,28 +29,40 @@ const routes: Routes = [
   },
   {
     path: 'donation',
-    loadChildren: () => import('./donation/donation.module').then( m => m.DonationPageModule)
+    loadChildren: () => import('./pages/donation/donation.module').then( m => m.DonationPageModule)
   },
   {
   path: 'home-page',
-    loadChildren: () => import('./home-page/home-page.module').then( m => m.HomePagePageModule)
+    loadChildren: () => import('./pages/home-page/home-page.module').then( m => m.HomePagePageModule)
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
   {
     path: 'about-us',
-    loadChildren: () => import('./about-us/about-us.module').then( m => m.AboutUsPageModule)
-  },
-  {
-    path: 'donate',
-    loadChildren: () => import('./donate/donate.module').then( m => m.DonatePageModule)
+    loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
   },
   {
     path: 'set-reminder',
     loadChildren: () => import('./set-reminder/set-reminder.module').then( m => m.SetReminderPageModule)
+  },  {
+    path: 'user-profile',
+    loadChildren: () => import('./user-profile/user-profile.module').then( m => m.UserProfilePageModule)
   },
+  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
+  },
+  {
+    path: 'donation-history',
+    loadChildren: () => import('./donation-history/donation-history.module').then( m => m.DonationHistoryPageModule)
+  },
+  {
+    path: 'chat-log',
+    loadChildren: () => import('./chat-log/chat-log.module').then( m => m.ChatLogPageModule)
+  },
+
 
 
 ];

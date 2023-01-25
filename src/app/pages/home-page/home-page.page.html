@@ -1,10 +1,12 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button default-href="#"></ion-back-button>
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
     </ion-buttons>
+
     <ion-title>Hello Fiona</ion-title>
-    <ion-buttons slot="end">
+
+    <ion-buttons slot="end" [routerLink]="['/user-profile']">
       <ion-thumbnail>
         <img alt="member" src="assets/member-1.png">
       </ion-thumbnail>
@@ -12,35 +14,41 @@
   </ion-toolbar>
 </ion-header>
 
+<!-- BODY CONTENT -->
 <ion-content class="ion-padding">
   <ion-img src="assets/big-heart.png" alt="The big heart"></ion-img>
+
   <ion-text color="dark">
     <h1>
       Hello Fiona!
     </h1>
   </ion-text>
+
   <ion-grid [fixed]="true" >
     <ion-row>
       <ion-col size="4" offset="1">
-        <ion-button size="large">
+        <ion-button size="large" [routerLink]="['/donation']">
           <ion-icon name="gift-outline" size="large"></ion-icon>
         </ion-button>
         <p><small><ion-text>Make Donations</ion-text></small></p>
       </ion-col>
+
       <ion-col size="3" offset="3">
         <ion-button size="large">
           <ion-icon name="chatbubble-ellipses-outline" size="large"></ion-icon>
         </ion-button>
         <p><small><ion-text>Chats</ion-text></small></p>
       </ion-col>
+
       <ion-col size="4" offset="1">
         <ion-button size="large">
           <ion-icon name="wallet-outline" size="large"></ion-icon>
         </ion-button>
         <p><small><ion-text>Donation History</ion-text></small></p>
       </ion-col>
+
       <ion-col size="4" offset="2.5">
-        <ion-button size="large">
+        <ion-button size="large" [routerLink]="['/set-reminder']">
           <ion-icon name="alarm-outline" size="large"></ion-icon>
         </ion-button>
         <p><small><ion-text>Set Remainder</ion-text></small></p>
@@ -49,20 +57,23 @@
   </ion-grid>
 </ion-content>
 
-<ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <ion-grid >
-      <ion-row>
-        <ion-col size="1" offset="1.5">
-          <ion-icon name="home-outline" size="large"></ion-icon>
-        </ion-col>
-        <ion-col size="1" offset="3">
-          <ion-icon name="people-outline" size="large"></ion-icon>
-        </ion-col>
-        <ion-col size="1" offset="3">
-          <ion-icon name="notifications-outline" size="large"></ion-icon>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-</ion-footer>
+<!-- BOTTOM TAB -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home-page">
+      <ion-icon name="home-outline"  aria-hidden="true"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about-us">
+      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notification">
+      <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
+      <ion-label>Notifications</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
