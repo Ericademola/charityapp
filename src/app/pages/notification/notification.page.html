@@ -1,9 +1,57 @@
-<ion-header>
+<!-- HEADER -->
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>notification</ion-title>
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Notifications</ion-title>
+
+    <ion-buttons slot="end" [routerLink]="['/user-profile']">
+      <ion-thumbnail>
+        <img alt="member" src="assets/member-1.png">
+      </ion-thumbnail>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item button lines="inset">
+      <ion-icon name="person-sharp" color="secondary"></ion-icon>
+      <ion-label><h2>Your Actions</h2><p>Helo, this is Fiona</p></ion-label>
+      <small>09:00AM</small>
+    </ion-item>
+    <ion-item button lines="inset">
+      <ion-icon name="people-sharp" color="success"></ion-icon>
+      <ion-label><h2>Community</h2><p>Helo, this is Fiona</p></ion-label>
+      <small>09:00AM</small>
+    </ion-item>
+    <ion-item button lines="inset">
+      <ion-icon name="megaphone-sharp" color="danger"></ion-icon>
+      <ion-label><h2>Admin</h2><p>Helo, this is Fiona</p></ion-label>
+      <small>09:00AM</small>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<!-- BOTTOM TAB -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home-page">
+      <ion-icon name="home-outline"  aria-hidden="true"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about-us">
+      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notification">
+      <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
+      <ion-label>Notifications</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
