@@ -5,14 +5,36 @@ ion-toolbar {
   --padding-bottom: .8em;
 }
 
-div {
-  width: 20
-  em;
-  height: 10em;
-  background-color: rgb(13, 115, 39);
+ion-datetime {
   border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div {
+  height: 7em;
+  background-color: #E5E5E5;
+  border-radius: 15px;
+}
+
+h5 {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: .2em;
+  font-weight: bold;
+}
+
+p {
+  color: #999999;
+  text-align: right;
+  line-height: .5em;
+  padding-right: 1em;
 }
 
 ion-button {
   --background: #ED1E78;
+  margin-top: .8em;
+}
+
+ion-badge {
+  --background: #FF328B;
 }
