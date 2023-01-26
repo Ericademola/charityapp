@@ -45,22 +45,11 @@ const routes: Routes = [
   },
   {
     path: 'set-reminder',
-    loadChildren: () => import('./set-reminder/set-reminder.module').then( m => m.SetReminderPageModule)
-  },  {
+    loadChildren: () => import('./pages/set-reminder/set-reminder.module').then( m => m.SetReminderPageModule)
+  },
+  {
     path: 'user-profile',
-    loadChildren: () => import('./user-profile/user-profile.module').then( m => m.UserProfilePageModule)
-  },
-  {
-    path: 'chat',
-    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
-  },
-  {
-    path: 'donation-history',
-    loadChildren: () => import('./donation-history/donation-history.module').then( m => m.DonationHistoryPageModule)
-  },
-  {
-    path: 'chat-log',
-    loadChildren: () => import('./chat-log/chat-log.module').then( m => m.ChatLogPageModule)
+    loadChildren: () => import('./pages/user-profile/user-profile.module').then( m => m.UserProfilePageModule)
   },
 
 

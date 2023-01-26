@@ -1,11 +1,13 @@
 <!-- HEADER SECTION -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button default-href="#"></ion-back-button>
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
     </ion-buttons>
+
     <ion-title>Set Reminder</ion-title>
-    <ion-buttons slot="end">
+
+    <ion-buttons slot="end" [routerLink]="['/user-profile']">
       <ion-thumbnail>
         <img alt="member" src="assets/member-1.png">
       </ion-thumbnail>
@@ -15,28 +17,39 @@
 
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <ion-datetime locale="en-GB-u-hc-h12"></ion-datetime>
+  <ion-datetime
+    locale="en-US"
+    [showDefaultButtons]="true"
+    size="cover">
+    <span slot="title">Select a Reservation Date & Time</span>
+  </ion-datetime>
+
   <div>
     <h5>Make Donation to Hope Orphanage</h5>
+    <p>THU 12 SEPT 2022</p>
+    <p>03:00 PM</p>
   </div>
+
   <ion-button expand="block" size="large">Save</ion-button>
 </ion-content>
 
-<!-- FOOTER SECTION -->
-<ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <ion-grid >
-      <ion-row>
-        <ion-col size="1" offset="1.5">
-          <ion-icon name="home-outline" size="large"></ion-icon>
-        </ion-col>
-        <ion-col size="1" offset="3">
-          <ion-icon name="people-outline" size="large"></ion-icon>
-        </ion-col>
-        <ion-col size="1" offset="3">
-          <ion-icon name="notifications-outline" size="large"></ion-icon>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
-</ion-footer>
+<!-- BOTTOM TAB -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home-page">
+      <ion-icon name="home-outline"  aria-hidden="true"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about-us">
+      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notification">
+      <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
+      <ion-label>Notifications</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
