@@ -1,8 +1,7 @@
-<!-- HEADER -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start" >
-      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="dark"></ion-icon>
     </ion-buttons>
 
     <ion-title>Profile</ion-title>
@@ -11,26 +10,36 @@
 
 <ion-content class="ion-padding">
   <ion-list>
-    <ion-item button lines="inset">
+    <ion-item lines="full">
       <ion-thumbnail slot="start">
         <img alt="member" src="assets/member-1.png">
       </ion-thumbnail>
-      <ion-label><h2>Pokémon Yellow</h2><p>Helo, this is Fiona</p></ion-label>
-      <small>09:00AM</small>
+      <ion-label><h1>Fiona Pokémon Yellow</h1><p>Life is made beautiful by charity</p></ion-label>
+      <ion-icon name="happy-sharp"></ion-icon>
     </ion-item>
-    <ion-item button lines="inset">
-      <ion-thumbnail slot="start">
-        <img alt="member" src="assets/member-1.png">
-      </ion-thumbnail>
-      <ion-label><h2>Pokémon Yellow</h2><p>Helo, this is Fiona</p></ion-label>
-      <small>09:00AM</small>
+    <ion-item button lines="inset" slot="start">
+      <ion-icon name="star-sharp" color="warning" size="large"></ion-icon>
+      <ion-label><h4>Starred Notification</h4></ion-label>
     </ion-item>
-    <ion-item button lines="inset">
-      <ion-thumbnail slot="start">
-        <img alt="member" src="assets/member-1.png">
-      </ion-thumbnail>
-      <ion-label><h2>Pokémon Yellow</h2><p>Helo, this is Fiona</p></ion-label>
-      <small>09:00AM</small>
+    <ion-item button lines="inset" slot="start">
+      <ion-icon name="heart-sharp" color="danger"></ion-icon>
+      <ion-label><h4>Suggest An Orphanage</h4></ion-label>
+    </ion-item>
+    <ion-item button lines="inset" slot="start">
+      <ion-icon name="key-sharp" color="tertiary"></ion-icon>
+      <ion-label><h4>Account</h4></ion-label>
+    </ion-item>
+    <ion-item button lines="inset" slot="start">
+      <ion-icon name="lock-closed-sharp" color="medium"></ion-icon>
+      <ion-label><h4>Privacy</h4></ion-label>
+    </ion-item>
+    <ion-item button lines="inset" slot="start">
+      <ion-icon name="share-social-sharp" color="success"></ion-icon>
+      <ion-label><h4>Social Media Share</h4></ion-label>
+    </ion-item>
+    <ion-item button lines="inset" slot="start">
+      <ion-icon name="chatbubbles-sharp" color="secondary"></ion-icon>
+      <ion-label><h4>chat with Admin</h4></ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
