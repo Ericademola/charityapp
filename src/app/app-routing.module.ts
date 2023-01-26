@@ -51,6 +51,26 @@ const routes: Routes = [
     path: 'user-profile',
     loadChildren: () => import('./pages/user-profile/user-profile.module').then( m => m.UserProfilePageModule)
   },
+  {
+    path: 'notification',
+    loadChildren: () => import('./pages/notification/notification.module').then( m => m.NotificationPageModule)
+  },
+  {
+    path: 'donation-history',
+    loadChildren: () => import('./pages/donation-history/donation-history.module').then( m => m.DonationHistoryPageModule)
+  },
+  {
+    path: 'donate',
+    loadChildren: () => import('./pages/donate/donate.module').then( m => m.DonatePageModule)
+  },
+  {
+    path: 'chat-log',
+    loadChildren: () => import('./pages/chat-log/chat-log.module').then( m => m.ChatLogPageModule)
+  },
+  {
+    path: 'chat',
+    loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },
 
 
 
