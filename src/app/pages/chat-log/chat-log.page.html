@@ -4,6 +4,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+  <div>
+    <h5>Hope Orphanage</h5>
+    <p>THU 12 SEPT 2022</p>
+    <p>03:00 PM</p>
+  </div>
 </ion-content>
+
+<!-- BOTTOM TAB -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home-page">
+      <ion-icon name="home-outline"  aria-hidden="true"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about-us">
+      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notification">
+      <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
+      <ion-label>Notifications</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
