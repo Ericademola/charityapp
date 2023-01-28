@@ -1,18 +1,45 @@
-div {
-  padding-top: 20px;
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-start: .5em;
+  --padding-end: 1em;
+  --padding-bottom: .8em;
+  color: #FFFFFF;
+}
+
+.profile {
+  padding-left: 8em;
+}
+
+.profile ion-thumbnail {
+  background: #f9f6f8;
+  border-radius: 10em;
+  width: 8em;
+  height: 8em;
+  position: relative;
+  border: solid .2em #05eb37;
+}
+
+.profile ion-icon {
+  position: absolute;
+  top: 16.5%;
+}
+
+ion-icon {
+  color: #ED1E78;
 }
 
 ion-button {
   --background: #ED1E78;
+  margin-top: .5em;
 }
 
-h1 {
+h2 {
   text-align: center;
-  font-size: 25px;
+  font-size: 1.5em;
   font-weight: bolder;
-  padding-top: 0px;
 }
 
-span {
+a {
   color: #ED1E78;
+  text-decoration: none;
 }
