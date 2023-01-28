@@ -1,12 +1,25 @@
-ion-toolbar {
+ion-header ion-toolbar {
   --padding-top: .8em;
   --padding-start: .5em;
   --padding-end: 1em;
   --padding-bottom: .8em;
-  --background: red;
 }
 
-.content ion-toolbar {
-  --background: yellow;
+ion-content ion-toolbar {
+  --background: #ffffff;
+  --padding-top: .8em;
+  --padding-start: 1.5em;
+  --padding-end: 1.5em;
+  --padding-bottom: .8em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 2em;
+  margin-bottom: 2.5em;
 }
 
+ion-content ion-title {
+  font-weight: lighter;
+}
+
+ion-icon {
+  color: #fd85b9;
+}

@@ -1,9 +1,8 @@
 <!-- HEADER -->
 <ion-header class="ion-no-border">
-  <div class="header">
     <ion-toolbar>
       <ion-buttons slot="start" >
-        <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+        <ion-icon name="chevron-back-outline" slot="icon-only" color="dark"></ion-icon>
       </ion-buttons>
 
       <ion-title>Choose Service</ion-title>
@@ -14,14 +13,31 @@
         </ion-thumbnail>
       </ion-buttons>
     </ion-toolbar>
-  </div>
 </ion-header>
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
-  <div>
-    <ion-toolbar>
-      <ion-icon name="chevron-back-outline"></ion-icon>
-    </ion-toolbar>
-  </div>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="business-outline" size="large"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Drop off</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-icon name="arrow-forward-outline" size="large" color="dark"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="car-outline" size="large"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Book Pick up</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-icon name="arrow-forward-outline" size="large" color="dark"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-content>
