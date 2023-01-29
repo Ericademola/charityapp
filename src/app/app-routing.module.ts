@@ -70,7 +70,11 @@ const routes: Routes = [
   {
     path: 'chat',
     loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },  {
+    path: 'schedule-dropoff',
+    loadChildren: () => import('./schedule-dropoff/schedule-dropoff.module').then( m => m.ScheduleDropoffPageModule)
   },
+
 
 
 
