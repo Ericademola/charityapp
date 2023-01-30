@@ -72,6 +72,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
   },
   {
+    path: 'overview-cash',
+    loadChildren: () => import('./overview-cash/overview-cash.module').then( m => m.OverviewCashPageModule)
+  },
+  {
     path: 'schedule-dropoff',
     loadChildren: () => import('./schedule-dropoff/schedule-dropoff.module').then( m => m.ScheduleDropoffPageModule)
   },
