@@ -70,7 +70,11 @@ const routes: Routes = [
   {
     path: 'chat',
     loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
+  },  {
+    path: 'overview-cash',
+    loadChildren: () => import('./overview-cash/overview-cash.module').then( m => m.OverviewCashPageModule)
   },
+
 
 
 

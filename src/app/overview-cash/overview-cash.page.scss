@@ -1,0 +1,35 @@
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-start: .5em;
+  --padding-end: 1em;
+  --padding-bottom: .8em;
+  --background: #fcf0f7;
+}
+
+ion-content {
+  --background: #fcf0f7;
+}
+
+.main {
+  padding: 0em 1em 13em 1em;
+  margin: auto;
+  background-color: #ffffff;
+  border: solid 2px #c4c4c4;
+  border-radius: 2em 2em 0em 0em;
+}
+
+p {
+  font-weight: lighter;
+}
+
+ion-grid {
+  --ion-grid-columns: 3;
+}
+
+ion-button {
+  --background: #ED1E78;
+  margin-top: 2em;
+  --padding-end: 2em;
+  --padding-start: 2em;
+  margin: auto;
+}
