@@ -72,6 +72,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
   },
   {
+    path: 'schedule-pickup',
+    loadChildren: () => import('./schedule-pickup/schedule-pickup.module').then( m => m.SchedulePickupPageModule)
+  },
+  {
     path: 'donate-cash',
     loadChildren: () => import('./donate-cash/donate-cash.module').then( m => m.DonateCashPageModule)
   },
