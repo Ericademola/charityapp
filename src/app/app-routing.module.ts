@@ -71,6 +71,10 @@ const routes: Routes = [
     path: 'chat',
     loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
   },
+  {
+    path: 'choose-service',
+    loadChildren: () => import('./choose-service/choose-service.module').then( m => m.ChooseServicePageModule)
+  },
 ];
 
 @NgModule({
