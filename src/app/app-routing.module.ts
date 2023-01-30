@@ -70,14 +70,23 @@ const routes: Routes = [
   {
     path: 'chat',
     loadChildren: () => import('./pages/chat/chat.module').then( m => m.ChatPageModule)
-  },  {
+  },
+  {
     path: 'schedule-dropoff',
     loadChildren: () => import('./schedule-dropoff/schedule-dropoff.module').then( m => m.ScheduleDropoffPageModule)
   },
-
-
-
-
+  {
+    path: 'schedule-pickup',
+    loadChildren: () => import('./schedule-pickup/schedule-pickup.module').then( m => m.SchedulePickupPageModule)
+  },
+  {
+    path: 'donate-cash',
+    loadChildren: () => import('./donate-cash/donate-cash.module').then( m => m.DonateCashPageModule)
+  },
+  {
+    path: 'choose-service',
+    loadChildren: () => import('./choose-service/choose-service.module').then( m => m.ChooseServicePageModule)
+  },
 ];
 
 @NgModule({
