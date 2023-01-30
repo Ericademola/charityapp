@@ -1,9 +1,31 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+    </ion-buttons>
+
+    <ion-buttons slot="end" [routerLink]="['/user-profile']">
+      <ion-thumbnail>
+        <ion-img src="assets/header-logo.png" alt="logo"></ion-img>
+      </ion-thumbnail>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <ion-img src="assets/Rectangle 88.png" alt="logo"></ion-img>
+  <div class="profile">
+    <ion-thumbnail>
+
+    </ion-thumbnail>
+    <ion-icon name="camera-sharp" size="large"></ion-icon>
+  </div>
   <ion-text color="dark">
-    <h1>
+    <h2>
       Create an account
-    </h1>
+    </h2>
   </ion-text>
   <ion-list>
     <ion-item>
@@ -15,6 +37,10 @@
       <ion-input type="email" placeholder="Email address"></ion-input>
     </ion-item>
     <ion-item>
+      <ion-label position="floating">Phone number</ion-label>
+      <ion-input type="number" placeholder="Phone number"></ion-input>
+    </ion-item>
+    <ion-item>
       <ion-label position="floating">username</ion-label>
       <ion-input type="text" placeholder="Enter username"></ion-input>
     </ion-item>
@@ -23,8 +49,7 @@
       <ion-input type="password" placeholder="Enter password"></ion-input>
     </ion-item>
   </ion-list>
-  <div>
-    <ion-button expand="block" size="large">Sign up</ion-button>
-  </div>
-  <P [routerLink]="['/login-in']"><i>Have an account? <span>Log In here</span></i></P>
+
+  <ion-button expand="block" size="large">Sign up</ion-button>
+  <p><i>Have an account? <a [routerLink]="['/login-in']">Log In here</a></i></p>
 </ion-content>

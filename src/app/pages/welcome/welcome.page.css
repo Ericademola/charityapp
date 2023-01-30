@@ -1,4 +1,19 @@
 ion-content {
   --background: #A61453;
-  --color: #fff;
+  --color: #f1e8eb;
+}
+
+ion-img {
+  padding-top: 10em;
+}
+
+ion-item {
+  margin-top: 5em;
+  --color: #f1e8eb;
+  --background: #A61453;
+  text-decoration: none;
+}
+
+ion-icon {
+  color: #f7036d;
 }

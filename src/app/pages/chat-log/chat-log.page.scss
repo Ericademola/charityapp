@@ -1,5 +1,42 @@
-div {
-  height: 7em;
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-start: .5em;
+  --padding-end: .5em;
+  --padding-bottom: .8em;
+}
+
+ion-thumbnail {
+  margin-right: 1em;
+}
+
+.me {
+  width: 70%;
   background-color: #E5E5E5;
-  border-radius: 15px;
+  border-radius: 5px;
+  padding: .2em .5em;
+  margin-left: 30%;
+  margin-bottom: 1em;
+}
+
+.theirs {
+  width: 70%;
+  background-color: #c4c4c4;
+  border-radius: 5px;
+  padding: .2em .5em;
+  margin-right: 30%;
+  margin-bottom: 1em;
+}
+
+ion-item {
+  top: 82%;
+}
+
+ion-textarea {
+  background-color: #E5E5E5;
+  border-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ion-badge {
+  --background: #FF328B;
 }
