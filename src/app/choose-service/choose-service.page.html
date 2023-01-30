@@ -1,0 +1,43 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-buttons slot="start" >
+        <ion-icon name="chevron-back-outline" slot="icon-only" color="dark"></ion-icon>
+      </ion-buttons>
+
+      <ion-title>Choose Service</ion-title>
+
+      <ion-buttons slot="end" [routerLink]="['/user-profile']">
+        <ion-thumbnail>
+          <img alt="member" src="assets/member-1.png">
+        </ion-thumbnail>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<!-- BODY CONTENT -->
+<ion-content class="ion-padding">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="business-outline" size="large"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Drop off</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-icon name="arrow-forward-outline" size="large" color="dark"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon name="car-outline" size="large"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Book Pick up</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-icon name="arrow-forward-outline" size="large" color="dark"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-content>
