@@ -1,19 +1,4 @@
-<!-- HEADER -->
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start" >
-      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
-    </ion-buttons>
-
-    <ion-buttons slot="end" [routerLink]="['/user-profile']">
-      <ion-thumbnail>
-        <ion-img src="assets/header-logo.png" alt="logo"></ion-img>
-      </ion-thumbnail>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-
+<app-header></app-header>
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
   <div class="profile">
@@ -27,29 +12,32 @@
       Create an account
     </h2>
   </ion-text>
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Full name</ion-label>
-      <ion-input type="text" placeholder="Full name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Email address</ion-label>
-      <ion-input type="email" placeholder="Email address"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Phone number</ion-label>
-      <ion-input type="number" placeholder="Phone number"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">username</ion-label>
-      <ion-input type="text" placeholder="Enter username"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">password</ion-label>
-      <ion-input type="password" placeholder="Enter password"></ion-input>
-    </ion-item>
-  </ion-list>
+  <form (ngSubmit)="handleSignUp()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Full name</ion-label>
+        <ion-input type="text" placeholder="Full name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email address</ion-label>
+        <ion-input type="email" placeholder="Email address" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Phone number</ion-label>
+        <ion-input type="number" placeholder="Phone number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">username</ion-label>
+        <ion-input type="text" placeholder="Enter username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">password</ion-label>
+        <ion-input type="password" placeholder="Enter password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" size="large" type="submit" disabled="!validated">Sign up</ion-button>
 
-  <ion-button expand="block" size="large">Sign up</ion-button>
-  <p><i>Have an account? <a [routerLink]="['/login-in']">Log In here</a></i></p>
+  </form>
+
+  <p><i>Have an account? <a [routerLink]="['/login-in']" >Log In here</a></i></p>
 </ion-content>

@@ -77,39 +77,39 @@ const routes: Routes = [
   },
   {
     path: 'card-details',
-    loadChildren: () => import('./card-details/card-details.module').then( m => m.CardDetailsPageModule)
+    loadChildren: () => import('./pages/card-details/card-details.module').then( m => m.CardDetailsPageModule)
   },
   {
     path: 'book-pickup',
-    loadChildren: () => import('./book-pickup/book-pickup.module').then( m => m.BookPickupPageModule)
+    loadChildren: () => import('./pages/book-pickup/book-pickup.module').then( m => m.BookPickupPageModule)
   },
   {
     path: 'overview-dropoff',
-    loadChildren: () => import('./overview-dropoff/overview-dropoff.module').then( m => m.OverviewDropoffPageModule)
+    loadChildren: () => import('./pages/overview-dropoff/overview-dropoff.module').then( m => m.OverviewDropoffPageModule)
   },
   {
     path: 'overview-pickup',
-    loadChildren: () => import('./overview-pickup/overview-pickup.module').then( m => m.OverviewPickupPageModule)
+    loadChildren: () => import('./pages/overview-pickup/overview-pickup.module').then( m => m.OverviewPickupPageModule)
   },
   {
     path: 'select-dropoff',
-    loadChildren: () => import('./select-dropoff/select-dropoff.module').then( m => m.SelectDropoffPageModule)
+    loadChildren: () => import('./pages/select-dropoff/select-dropoff.module').then(m => m.SelectDropoffPageModule)
   },
   {
    path: 'overview-cash',
-    loadChildren: () => import('./overview-cash/overview-cash.module').then( m => m.OverviewCashPageModule)
+    loadChildren: () => import('./pages/overview-cash/overview-cash.module').then(m => m.OverviewCashPageModule)
   },
   {
     path: 'schedule-dropoff',
-    loadChildren: () => import('./schedule-dropoff/schedule-dropoff.module').then( m => m.ScheduleDropoffPageModule)
+    loadChildren: () => import('./pages/schedule-dropoff/schedule-dropoff.module').then(m => m.ScheduleDropoffPageModule)
   },
   {
     path: 'schedule-pickup',
-    loadChildren: () => import('./schedule-pickup/schedule-pickup.module').then( m => m.SchedulePickupPageModule)
+    loadChildren: () => import('./pages/schedule-pickup/schedule-pickup.module').then(m => m.SchedulePickupPageModule)
   },
   {
     path: 'donate-cash',
-    loadChildren: () => import('./donate-cash/donate-cash.module').then( m => m.DonateCashPageModule)
+    loadChildren: () => import('./pages/donate-cash/donate-cash.module').then(m => m.DonateCashPageModule)
   }
 ];
 
