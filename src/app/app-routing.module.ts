@@ -74,7 +74,8 @@ const routes: Routes = [
   {
     path: 'choose-service',
     loadChildren: () => import('./pages/choose-service/choose-service.module').then( m => m.ChooseServicePageModule)
-  },  {
+  },
+  {
     path: 'card-details',
     loadChildren: () => import('./card-details/card-details.module').then( m => m.CardDetailsPageModule)
   },
@@ -94,7 +95,22 @@ const routes: Routes = [
     path: 'select-dropoff',
     loadChildren: () => import('./select-dropoff/select-dropoff.module').then( m => m.SelectDropoffPageModule)
   },
-
+  {
+   path: 'overview-cash',
+    loadChildren: () => import('./overview-cash/overview-cash.module').then( m => m.OverviewCashPageModule)
+  },
+  {
+    path: 'schedule-dropoff',
+    loadChildren: () => import('./schedule-dropoff/schedule-dropoff.module').then( m => m.ScheduleDropoffPageModule)
+  },
+  {
+    path: 'schedule-pickup',
+    loadChildren: () => import('./schedule-pickup/schedule-pickup.module').then( m => m.SchedulePickupPageModule)
+  },
+  {
+    path: 'donate-cash',
+    loadChildren: () => import('./donate-cash/donate-cash.module').then( m => m.DonateCashPageModule)
+  }
 ];
 
 @NgModule({
