@@ -14,7 +14,7 @@ ion-button {
   height: 90px;
   --border-radius: 170px;
   --background: #ffffff;
-  color:  #ED1E78;
+  color:  #FF328B;
   box-shadow: 10px -10px  rgba(129, 127, 127, 0.6);
   -moz-box-shadow: 10px -10px  rgba(129, 127, 127, 0.6);
   -webkit-box-shadow: 2px 5px  rgba(129, 127, 127, 0.3);
@@ -28,4 +28,8 @@ ion-button {
 
 h4 {
   text-align: center;
+}
+
+ion-badge {
+  --background: #FF328B;
 }

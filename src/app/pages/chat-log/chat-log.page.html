@@ -1,15 +1,53 @@
-<ion-header>
+<!-- HEADER -->
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>chat-log</ion-title>
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Hope Orphanage</ion-title>
+
+    <ion-buttons slot="end" [routerLink]="['/user-profile']">
+        <ion-thumbnail>
+          <img alt="member" src="assets/member-2.png">
+        </ion-thumbnail>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-icon name="call-outline" size="large"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div>
-    <h5>Hope Orphanage</h5>
-    <p>THU 12 SEPT 2022</p>
-    <p>03:00 PM</p>
+  <div class="me">
+    <p>Hi, <br>We received your donation.</p>
   </div>
+  <div class="theirs">
+    <p>Hi, <br>We received your donation.</p>
+  </div>
+  <div  class="theirs">
+    <p>Hi, <br>We received your donation.</p>
+  </div>
+  <div  class="theirs">
+    <p>Hi, <br>We received your donation.</p>
+  </div>
+
+    <!-- <div class="y"> -->
+    <ion-item slot="fixed" lines="none">
+      <ion-buttons slot="start" >
+        <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
+      </ion-buttons>
+      <ion-textarea
+      placeholder="Type Your Message"
+      [autoGrow]="true"
+      spellcheck="true"
+      required="true"
+      enterkeyhint="enter"></ion-textarea>
+      <ion-buttons slot="end" >
+        <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
+      </ion-buttons>
+    </ion-item>
+  <!-- </div> -->
 </ion-content>
 
 <!-- BOTTOM TAB -->
