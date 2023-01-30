@@ -9,11 +9,27 @@ div {
   text-align: center;
 }
 
-ion-text {
-  font-weight: bolder;
+h2 {
+  font-weight: 500;
+}
+
+p {
+  font-weight: lighter;
+}
+
+h5 {
+  font-weight: lighter;
+}
+
+small {
+  font-weight: lighter;
 }
 
 ion-button {
   --background: #ED1E78;
-  margin-top: 1.5em;
+  margin-top: 2em;
+}
+
+ion-badge {
+  --background: #FF328B;
 }
