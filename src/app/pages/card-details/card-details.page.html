@@ -5,7 +5,7 @@
       <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
     </ion-buttons>
 
-    <ion-title>Hello Fiona</ion-title>
+    <ion-title>Card Details</ion-title>
 
     <ion-buttons slot="end" [routerLink]="['/user-profile']">
       <ion-thumbnail>
@@ -17,5 +17,33 @@
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
+  <h5>Card Holder Name</h5>
+  <div><ion-input type="text"></ion-input></div>
 
+  <ion-toolbar>
+    <h5>Card Number</h5>
+
+    <img alt="visa" src="assets/Payment-visa.png" slot="end">
+    <img alt="masterCard" src="assets/Payment-master.png" slot="end">
+  </ion-toolbar>
+
+  <div><ion-input type="number"></ion-input></div>
+  <ion-grid>
+    <ion-row class="ion-justify-content-between">
+      <ion-col size="4">
+        <h5>Expiration Date</h5>
+      </ion-col>
+      <ion-col size="2"><h5>CVV</h5></ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-between">
+      <ion-col size="4">
+        <div><ion-input type="text" placeholder="MM/YY"></ion-input></div>
+      </ion-col>
+      <ion-col size="2">
+        <div><ion-input type="number"></ion-input></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button expand="block" size="large" [routerLink]="['/sign-up']" >Next</ion-button>
 </ion-content>
