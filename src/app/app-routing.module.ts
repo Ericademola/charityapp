@@ -110,10 +110,12 @@ const routes: Routes = [
   {
     path: 'donate-cash',
     loadChildren: () => import('./pages/donate-cash/donate-cash.module').then(m => m.DonateCashPageModule)
-  },  {
+  },
+  {
     path: 'donation-status',
     loadChildren: () => import('./pages/donation-status/donation-status.module').then( m => m.DonationStatusPageModule)
-  }
+  },
+
 
 ];
 
