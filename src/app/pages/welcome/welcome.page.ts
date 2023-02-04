@@ -14,7 +14,7 @@ export class WelcomePage implements OnInit {
   }
 
   public handleSwipe() {
-    console.log('Clicked swipe bitton');
+    console.log('Clicked swipe button');
     this.navigatorService.handleNavigation('/get-started')
   }
 
