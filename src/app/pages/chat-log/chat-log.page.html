@@ -19,54 +19,56 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="me">
-    <p>Hi, <br>We received your donation.</p>
-  </div>
-  <div class="theirs">
-    <p>Hi, <br>We received your donation.</p>
-  </div>
-  <div  class="theirs">
-    <p>Hi, <br>We received your donation.</p>
-  </div>
-  <div  class="theirs">
-    <p>Hi, <br>We received your donation.</p>
-  </div>
+  <div class="ion-content-scroll-host ion-padding">
+    <div class="me">
+      <p>Hi, <br>We received your donation.</p>
+    </div>
+    <div class="theirs">
+      <p>Hi, <br>We received your donation.</p>
+    </div>
+    <div  class="theirs">
+      <p>Hi, <br>We received your donation.</p>
+    </div>
+    <div  class="theirs">
+      <p>Hi, <br>We received your donation.</p>
+    </div>
 
-    <!-- <div class="y"> -->
-    <ion-item slot="fixed" lines="none">
-      <ion-buttons slot="start" >
-        <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
-      </ion-buttons>
-      <ion-textarea
-      placeholder="Type Your Message"
-      [autoGrow]="true"
-      spellcheck="true"
-      required="true"
-      enterkeyhint="enter"></ion-textarea>
-      <ion-buttons slot="end" >
-        <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
-      </ion-buttons>
-    </ion-item>
-  <!-- </div> -->
+      <!-- <ion-item slot="fixed" lines="none">
+        <ion-buttons slot="start" >
+          <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
+        </ion-buttons>
+        <ion-textarea
+        placeholder="Type Your Message"
+        [autoGrow]="true"
+        spellcheck="true"
+        required="true"
+        enterkeyhint="enter"></ion-textarea>
+        <ion-buttons slot="end" >
+          <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
+        </ion-buttons>
+      </ion-item> -->
+  </div>
 </ion-content>
 
 <!-- BOTTOM TAB -->
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home-page">
-      <ion-icon name="home-outline"  aria-hidden="true"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
+    </ion-buttons>
 
-    <ion-tab-button tab="about-us">
-      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
-      <ion-label>About</ion-label>
-    </ion-tab-button>
+    <div class="message">
+      <ion-textarea
+        placeholder="Type Your Message"
+        [autoGrow]="true"
+        spellcheck="true"
+        required="true"
+        enterkeyhint="enter">
+      </ion-textarea>
+    </div>
 
-    <ion-tab-button tab="notification">
-      <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
-      <ion-label>Notifications</ion-label>
-      <ion-badge>6</ion-badge>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
+    <ion-buttons slot="end" >
+      <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

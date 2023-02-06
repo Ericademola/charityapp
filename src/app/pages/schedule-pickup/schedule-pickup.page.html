@@ -17,12 +17,14 @@
 
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <ion-datetime
-    locale="en-US"
-    [showDefaultButtons]="true"
-    size="cover">
-    <span slot="title">Select a Reservation Date & Time</span>
-  </ion-datetime>
+  <div class="ion-content-scroll-host ion-padding">
+    <ion-datetime
+      locale="en-US"
+      [showDefaultButtons]="true"
+      size="cover">
+      <span slot="title">Select a Reservation Date & Time</span>
+    </ion-datetime>
 
-  <ion-button expand="block" size="large">Next</ion-button>
+    <ion-button expand="block" size="large">Next</ion-button>
+  </div>
 </ion-content>

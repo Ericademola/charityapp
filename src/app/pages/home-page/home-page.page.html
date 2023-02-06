@@ -1,5 +1,5 @@
 <!-- HEADER -->
-<ion-header class="ion-no-border">
+<!-- <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start" >
       <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
@@ -13,10 +13,12 @@
       </ion-thumbnail>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
+
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
+  <div class="ion-content-scroll-host ion-padding">
   <ion-img src="assets/big-heart.png" alt="The big heart"></ion-img>
 
   <ion-text color="dark">
@@ -35,14 +37,14 @@
       </ion-col>
 
       <ion-col size="3" offset="3">
-        <ion-button size="large">
+        <ion-button size="large" [routerLink]="['/chat']">
           <ion-icon name="chatbubble-ellipses-outline" size="large"></ion-icon>
         </ion-button>
         <p><small><ion-text>Chats</ion-text></small></p>
       </ion-col>
 
       <ion-col size="4" offset="1">
-        <ion-button size="large">
+        <ion-button size="large" [routerLink]="['/donation-history']">
           <ion-icon name="wallet-outline" size="large"></ion-icon>
         </ion-button>
         <p><small><ion-text>Donation History</ion-text></small></p>
@@ -56,25 +58,8 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+</div>
 </ion-content>
 
 <!-- BOTTOM TAB -->
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home-page">
-      <ion-icon name="home-outline"  aria-hidden="true"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
 
-    <ion-tab-button tab="about-us">
-      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
-      <ion-label>About</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="notification">
-      <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
-      <ion-label>Notifications</ion-label>
-      <ion-badge>6</ion-badge>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>

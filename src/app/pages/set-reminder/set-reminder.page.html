@@ -17,20 +17,22 @@
 
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <ion-datetime
-    locale="en-US"
-    [showDefaultButtons]="true"
-    size="cover">
-    <span slot="title">Select a Reservation Date & Time</span>
-  </ion-datetime>
+  <div class="ion-content-scroll-host ion-padding">
+    <ion-datetime
+      locale="en-US"
+      [showDefaultButtons]="true"
+      size="cover">
+      <span slot="title">Select a Reservation Date & Time</span>
+    </ion-datetime>
 
-  <div>
-    <h5>Make Donation to Hope Orphanage</h5>
-    <p>THU 12 SEPT 2022</p>
-    <p>03:00 PM</p>
+    <div>
+      <h5>Make Donation to Hope Orphanage</h5>
+      <p>THU 12 SEPT 2022</p>
+      <p>03:00 PM</p>
+    </div>
+
+    <ion-button expand="block" size="large">Save</ion-button>
   </div>
-
-  <ion-button expand="block" size="large">Save</ion-button>
 </ion-content>
 
 <!-- BOTTOM TAB
