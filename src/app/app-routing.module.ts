@@ -7,10 +7,6 @@ const routes: Routes = [
   //   redirectTo: 'welcome',
   //   pathMatch: 'full'
   // },
-  // {
-  //   path: 'tablinks',
-  //   loadChildren: () => import('./pages/tablinks/tablinks.module').then( m => m.TablinksPageModule)
-  // },
   {
     path: '',
     loadChildren: () => import('./pages/tablinks/tablinks.module').then( m => m.TablinksPageModule)
@@ -133,3 +129,14 @@ export class AppRoutingModule { }
 //   loadChildren: () => import('./pages/about-us/about-us.module').then( m => m.AboutUsPageModule)
 // },
 
+//FOR TAB AND WELCOME BEFORE ADDING TABS
+// {
+  //   path: 'tablinks',
+  //   loadChildren: () => import('./pages/tablinks/tablinks.module').then( m => m.TablinksPageModule)
+  // },
+
+  // {
+  //   path: '',
+  //   redirectTo: 'welcome',
+  //   pathMatch: 'full'
+  // },

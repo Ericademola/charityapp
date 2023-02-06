@@ -1,19 +1,5 @@
 <!-- HEADER -->
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start" >
-      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
-    </ion-buttons>
-
-    <ion-title>Hello Fiona</ion-title>
-
-    <ion-buttons slot="end" [routerLink]="['/user-profile']">
-      <ion-thumbnail>
-        <img alt="member" src="assets/member-1.png">
-      </ion-thumbnail>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
@@ -42,7 +28,7 @@
       </ion-col>
 
       <ion-col size="4" offset="1">
-        <ion-button size="large">
+        <ion-button size="large" [routerLink]="['/donation-history']">
           <ion-icon name="wallet-outline" size="large"></ion-icon>
         </ion-button>
         <p><small><ion-text>Donation History</ion-text></small></p>
