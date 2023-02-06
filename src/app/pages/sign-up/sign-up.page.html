@@ -1,12 +1,11 @@
-<app-header></app-header>
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <div class="profile">
-    <ion-thumbnail>
 
+    <ion-thumbnail>
+      <ion-avatar></ion-avatar>
     </ion-thumbnail>
     <ion-icon name="camera-sharp" size="large"></ion-icon>
-  </div>
+
   <ion-text color="dark">
     <h2>
       Create an account
@@ -15,8 +14,12 @@
   <form (ngSubmit)="handleSignUp()">
     <ion-list>
       <ion-item>
-        <ion-label position="floating">Full name</ion-label>
-        <ion-input type="text" placeholder="Full name"></ion-input>
+        <ion-label position="floating">First name</ion-label>
+        <ion-input type="text" placeholder="First name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Last name</ion-label>
+        <ion-input type="text" placeholder="Last name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Email address</ion-label>
