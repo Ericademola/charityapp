@@ -6,22 +6,20 @@ ion-toolbar {
   color: #FFFFFF;
 }
 
-.profile {
-  padding-left: 8em;
-}
-
-.profile ion-thumbnail {
+ion-thumbnail {
   background: #f9f6f8;
   border-radius: 10em;
   width: 8em;
   height: 8em;
   position: relative;
-  border: solid .2em #05eb37;
+  border: solid .2em #c4c4c4;
+  margin: auto;
 }
 
-.profile ion-icon {
+ion-icon {
   position: absolute;
-  top: 16.5%;
+  bottom: .5%;
+  left: .5%;
 }
 
 ion-icon {

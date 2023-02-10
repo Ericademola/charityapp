@@ -7,11 +7,10 @@ ion-img {
   padding-top: 10em;
 }
 
-ion-item {
-  margin-top: 5em;
+ion-toolbar {
+  padding: 0em 1em;
   --color: #f1e8eb;
   --background: #A61453;
-  text-decoration: none;
 }
 
 ion-icon {

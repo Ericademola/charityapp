@@ -1,22 +1,5 @@
 <!-- HEADER -->
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start" >
-      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
-    </ion-buttons>
-
-    <ion-title>Hope Orphanage</ion-title>
-
-    <ion-buttons slot="end" [routerLink]="['/user-profile']">
-        <ion-thumbnail>
-          <img alt="member" src="assets/member-2.png">
-        </ion-thumbnail>
-    </ion-buttons>
-    <ion-buttons slot="end">
-        <ion-icon name="call-outline" size="large"></ion-icon>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content class="ion-padding">
   <div class="me">
@@ -32,41 +15,20 @@
     <p>Hi, <br>We received your donation.</p>
   </div>
 
-    <!-- <div class="y"> -->
-    <ion-item slot="fixed" lines="none">
-      <ion-buttons slot="start" >
-        <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
-      </ion-buttons>
-      <ion-textarea
-      placeholder="Type Your Message"
-      [autoGrow]="true"
-      spellcheck="true"
-      required="true"
-      enterkeyhint="enter"></ion-textarea>
-      <ion-buttons slot="end" >
-        <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
-      </ion-buttons>
-    </ion-item>
-  <!-- </div> -->
+  <ion-item slot="fixed" lines="none">
+    <ion-buttons slot="start" >
+      <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
+    </ion-buttons>
+    <ion-textarea
+    placeholder="Type Your Message"
+    [autoGrow]="true"
+    spellcheck="true"
+    required="true"
+    enterkeyhint="enter"></ion-textarea>
+    <ion-buttons slot="end" >
+      <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
+    </ion-buttons>
+  </ion-item>
+
 </ion-content>
 
-<!-- BOTTOM TAB -->
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home-page">
-      <ion-icon name="home-outline"  aria-hidden="true"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="about-us">
-      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
-      <ion-label>About</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="notification">
-      <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
-      <ion-label>Notifications</ion-label>
-      <ion-badge>6</ion-badge>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>
