@@ -3,16 +3,18 @@
 
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <div class="bttn">
-    <ion-button>
-      <ion-icon name="shirt-outline" ></ion-icon>
-    </ion-button>
+  <div class="ion-content-scroll-host ion-padding">
+    <div class="bttn">
+      <ion-button>
+        <ion-icon name="shirt-outline" ></ion-icon>
+      </ion-button>
+    </div>
+    <h4><ion-text>Donate Clothes</ion-text></h4>
+    <div class="bttn">
+      <ion-button [routerLink]="['/donate-cash']">
+        <ion-icon name="cash-outline" ></ion-icon>
+      </ion-button>
+    </div>
+    <h4><ion-text>Donate Cash</ion-text></h4>
   </div>
-  <h4><ion-text>Donate Clothes</ion-text></h4>
-  <div class="bttn">
-    <ion-button>
-      <ion-icon name="cash-outline" ></ion-icon>
-    </ion-button>
-  </div>
-  <h4><ion-text>Donate Cash</ion-text></h4>
 </ion-content>
