@@ -3,24 +3,26 @@
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
-  <ion-img src="assets/sharelove.png" alt="The big heart"></ion-img>
+  <div class="ion-content-scroll-host ion-padding">
+    <ion-img src="assets/sharelove.png" alt="The big heart"></ion-img>
 
-  <h5>Amount</h5>
-  <ion-input placeholder="Please enter amount"></ion-input>
+    <h5>Amount</h5>
+    <ion-input placeholder="Please enter amount"></ion-input>
 
-  <h5>Payment Option</h5>
-  <ion-list>
-    <ion-radio-group [allowEmptySelection]="true" value=" ">
-      <ion-item>
-        <ion-label>Creditcard</ion-label>
-        <ion-radio value="Creditcard"></ion-radio>
-      </ion-item>
-      <ion-item>
-        <ion-label>Paypal</ion-label>
-        <ion-radio value="Paypal"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
-  </ion-list>
+    <h5>Payment Option</h5>
+    <ion-list>
+      <ion-radio-group [allowEmptySelection]="true" value=" ">
+        <ion-item>
+          <ion-label>Creditcard</ion-label>
+          <ion-radio value="Creditcard"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Paypal</ion-label>
+          <ion-radio value="Paypal"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
 
-  <ion-button expand="block" size="large" [routerLink]="['/sign-up']" >Next</ion-button>
+    <ion-button expand="block" size="large" [routerLink]="['/sign-up']" >Next</ion-button>
+  </div>
 </ion-content>

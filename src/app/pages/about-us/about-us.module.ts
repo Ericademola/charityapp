@@ -7,6 +7,7 @@ import { HeaderModule } from 'src/app/shared/header/header.module';
 import { AboutUsPageRoutingModule } from './about-us-routing.module';
 
 import { AboutUsPage } from './about-us.page';
+//import { FooterComponent } from 'src/app/components/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { AboutUsPage } from './about-us.page';
     HeaderModule,
     AboutUsPageRoutingModule
   ],
-  declarations: [AboutUsPage]
+  declarations: [AboutUsPage,]
 })
 export class AboutUsPageModule {}
+//FooterComponent
