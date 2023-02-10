@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import { HeaderModule } from 'src/app/shared/header/header.module';
 import { AboutUsPageRoutingModule } from './about-us-routing.module';
 
 import { AboutUsPage } from './about-us.page';
@@ -14,6 +14,7 @@ import { AboutUsPage } from './about-us.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    HeaderModule,
     AboutUsPageRoutingModule
   ],
   declarations: [AboutUsPage,]

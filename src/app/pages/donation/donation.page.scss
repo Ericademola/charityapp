@@ -1,3 +1,4 @@
+
 ion-toolbar {
   --padding-top: .8em;
   --padding-start: .5em;
@@ -14,6 +15,7 @@ ion-toolbar {
   width: 100%;
   overflow-y: auto;
 }
+
 
 div {
   position: relative;
@@ -37,8 +39,4 @@ ion-text {
 ion-button {
   --background: #ED1E78;
   margin: .5em 0em 1.5em 0em;
-}
-
-ion-badge {
-  --background: #FF328B;
 }

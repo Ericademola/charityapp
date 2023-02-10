@@ -1,55 +1,29 @@
 <!-- HEADER -->
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start" >
-      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
-    </ion-buttons>
+<app-header></app-header>
 
-    <ion-title>Donation History</ion-title>
-
-    <ion-buttons slot="end" [routerLink]="['/user-profile']">
-      <ion-thumbnail>
-        <img alt="member" src="assets/member-1.png">
-      </ion-thumbnail>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-
-<!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <div class="ion-content-scroll-host ion-padding">
-    <div class="first">
-      <div class="a">
-        <h5>Hope Home</h5>
-        <small>Cash donation.</small>
-      </div>
-      <div class="b">
-        <h5>4 June, 2022</h5>
-        <small>successful</small>
-      </div>
+  <div class="first">
+    <div class="a">
+      <h5>Hope Home</h5>
+      <small>Cash donation.</small>
     </div>
-
-    <ion-button size="large">View All</ion-button>
+    <div class="b">
+      <h5>4 June, 2022</h5>
+      <small>successful</small>
+    </div>
   </div>
+
+  <div class="second">
+    <div class="a">
+      <h5>Hope Home</h5>
+      <small>Cash donation.</small>
+    </div>
+    <div class="b">
+      <h5>4 June, 2022</h5>
+      <small>successful</small>
+    </div>
+  </div>
+
+  <ion-button size="large">View All</ion-button>
+
 </ion-content>
-
-<!-- BOTTOM TAB -->
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home-page">
-      <ion-icon name="home-outline"  aria-hidden="true"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="about-us">
-      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
-      <ion-label>About</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="notification">
-      <ion-icon name="notifications-outline" aria-hidden="true"></ion-icon>
-      <ion-label>Notifications</ion-label>
-      <ion-badge>6</ion-badge>
-    </ion-tab-button>
-  </ion-tab-bar>
-</ion-tabs>

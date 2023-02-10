@@ -1,22 +1,20 @@
 <ion-content class="ion-padding">
-  <div class="ion-content-scroll-host ion-padding">
-    <ion-img src="assets/Rectangle 88.png" alt="logo"></ion-img>
-    <ion-text color="dark">
-      <h1>
-        Login
-      </h1>
-    </ion-text>
-    <ion-list>
-      <ion-item>
-        <ion-input type="text" placeholder="username or email"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-input type="password" placeholder="Enter password"></ion-input><ion-icon name="eye-off-outline" slot="end" size="small"></ion-icon>
-      </ion-item>
-    </ion-list>
-    <div>
-      <ion-button expand="block" size="large" [routerLink]="['/home-page']">Login</ion-button>
-    </div>
-    <P><i>Forgot password? <span>Reset here</span></i></P>
+  <ion-img src="assets/Rectangle 88.png" alt="logo"></ion-img>
+  <ion-text color="dark">
+    <h1>
+      Login
+    </h1>
+  </ion-text>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="username or email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Enter password"></ion-input><ion-icon name="eye-off-outline" slot="end" size="small"></ion-icon>
+    </ion-item>
+  </ion-list>
+  <div>
+    <ion-button expand="block" size="large" [routerLink]="['/home-page']">Login</ion-button>
   </div>
+  <p><i>Forgot password? <a [routerLink]="['/forgot-password']" >Log In here</a></i></p>
 </ion-content>

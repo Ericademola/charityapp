@@ -1,23 +1,19 @@
-<ion-content class="ion-padding">
-  <div class="ion-content-scroll-host ion-padding">
-    <ion-img src="assets/Rectangle 89.png" alt="logo"></ion-img>
-    <ion-item (click)="handleSwipe()">
-      <p>Swipe</p>
-      <ion-icon name="arrow-forward-outline" slot="end" routerLink="/get-started"></ion-icon>
-    </ion-item>
+<!-- CONTENT -->
+<ion-content class="ion-padding"  (click)="handleSwipe()">
 
-    <!-- <ion-toolbar>
-      <ion-buttons slot="start" >
-        <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
-      </ion-buttons>
+  <ion-img src="assets/Rectangle 89.png" alt="logo"></ion-img>
 
-      <ion-title>Set Reminder</ion-title>
-
-      <ion-buttons slot="end" [routerLink]="['/user-profile']">
-        <ion-thumbnail>
-          <img alt="member" src="assets/member-1.png">
-        </ion-thumbnail>
-      </ion-buttons>
-    </ion-toolbar> -->
-  </div>
 </ion-content>
+
+<!--FOOTER -->
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <p>
+      <ion-text slot="start">Swipe</ion-text>
+    </p>
+
+    <ion-buttons slot="end">
+      <ion-icon name="arrow-forward-outline" slot="end" routerLink="/get-started"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

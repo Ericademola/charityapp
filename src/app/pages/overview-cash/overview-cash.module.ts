@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
+import { HeaderModule } from 'src/app/shared/header/header.module';
 import { OverviewCashPageRoutingModule } from './overview-cash-routing.module';
 
 import { OverviewCashPage } from './overview-cash.page';
@@ -13,6 +13,7 @@ import { OverviewCashPage } from './overview-cash.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    HeaderModule,
     OverviewCashPageRoutingModule
   ],
   declarations: [OverviewCashPage]

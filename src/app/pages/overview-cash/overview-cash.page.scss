@@ -1,21 +1,3 @@
-ion-toolbar {
-  --padding-top: .8em;
-  --padding-start: .5em;
-  --padding-end: 1em;
-  --padding-bottom: .8em;
-  --background: #fcf0f7;
-}
-
-.ion-content-scroll-host {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-}
-
 ion-content {
   --background: #fcf0f7;
 }
