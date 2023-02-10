@@ -1,9 +1,41 @@
-<ion-header>
+<!-- HEADER -->
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>book-pickup</ion-title>
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Book Pickup Service</ion-title>
+
+    <ion-buttons slot="end" [routerLink]="['/user-profile']">
+      <ion-thumbnail>
+        <img alt="member" src="assets/member-1.png">
+      </ion-thumbnail>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- BODY CONTENT -->
+<ion-content class="ion-padding">
+  <h5>Pickup Address</h5>
+  <div>
+    <ion-input type="text"></ion-input>
+  </div>
 
+  <h5>Delivery Address <i>(Charity Home/NGO)</i></h5>
+  <div>
+    <ion-input type="text"></ion-input>
+  </div>
+
+  <h5>Sender's Phone Number</h5>
+  <div>
+    <ion-input type="text"></ion-input>
+  </div>
+
+  <h5>Receiver's Phone Number</h5>
+  <div>
+    <ion-input type="text"></ion-input>
+  </div>
+
+  <ion-button expand="block" size="large" [routerLink]="['/sign-up']" >Next</ion-button>
 </ion-content>

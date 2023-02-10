@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'welcome',
-  //   pathMatch: 'full'
-  // },
   {
     path: '',
     loadChildren: () => import('./pages/tablinks/tablinks.module').then( m => m.TablinksPageModule)
@@ -103,7 +98,6 @@ const routes: Routes = [
     path: 'set-reminder',
     loadChildren: () => import('./pages/set-reminder/set-reminder.module').then( m => m.SetReminderPageModule)
   },
-
 ];
 
 @NgModule({

@@ -1,0 +1,30 @@
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-start: .5em;
+  --padding-end: 1em;
+  --padding-bottom: .8em;
+}
+
+ion-content {
+  --padding-top: 3em;
+}
+
+div {
+  border: solid 1px #999999;
+  border-radius: .3em;
+  padding: .5em 1em;
+}
+
+ion-content ion-toolbar {
+  --background: #ffffff;
+  margin-bottom: .5em;
+}
+
+ion-grid {
+  --ion-grid-columns: 7;
+}
+
+ion-button {
+  --background: #ED1E78;
+  margin-top: 2.5em;
+}

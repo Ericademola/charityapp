@@ -6,16 +6,6 @@ ion-toolbar {
   color: #FFFFFF;
 }
 
-.ion-content-scroll-host {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  height: 100%;
-  width: 100%;
-  overflow-y: auto;
-}
-
 ion-thumbnail {
   background: #f9f6f8;
   border-radius: 10em;
@@ -23,13 +13,13 @@ ion-thumbnail {
   height: 8em;
   position: relative;
   border: solid .2em #c4c4c4;
-  margin-left: 8em;
+  margin: auto;
 }
 
 ion-icon {
   position: absolute;
-  top: 15%;
-  left: 35%;
+  bottom: .5%;
+  left: .5%;
 }
 
 ion-icon {
