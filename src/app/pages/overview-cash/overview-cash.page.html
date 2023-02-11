@@ -7,25 +7,35 @@
     <div class="main">
       <ion-grid>
         <ion-row>
-          <ion-col><p style="font-weight: bold;">Name of Charity:</p></ion-col>
-          <ion-col><p>Destiny Trust Home</p></ion-col>
+          <ion-col><small style="font-weight: bold;">Name of Charity:</small></ion-col>
+          <ion-col size="auto"></ion-col>
+          <ion-col><small>Destiny Trust Home</small></ion-col>
         </ion-row>
-        <div style="width:100%; border-top: 1px solid rgb(18, 18, 18); margin: 8px 0;"></div>
+        <div class="line"></div>
         <ion-row>
-          <ion-col><p style="font-weight: bold;">Amount Donated:</p></ion-col>
-          <ion-col><p>#50,000.00</p></ion-col>
+          <ion-col><small style="font-weight: bold;">Amount Donated:</small></ion-col>
+          <ion-col size="auto"></ion-col>
+          <ion-col><small>#50,000.00</small></ion-col>
         </ion-row>
-        <div style="width:100%; border-top: 1px solid rgb(18, 18, 18); margin: 8px 0;"></div>
+        <div class="line"></div>
         <ion-row>
-          <ion-col><p style="font-weight: bold;">Payment Option:</p></ion-col>
-          <ion-col><p>Creditcard</p></ion-col>
-        </ion-row>
-        <ion-row class="ion-justify-content-center">
-          <ion-col size="1">
-            <ion-button>Proceed</ion-button>
-          </ion-col>
+          <ion-col><small style="font-weight: bold;">Payment Option:</small></ion-col>
+          <ion-col size="auto"></ion-col>
+          <ion-col><small>Creditcard</small></ion-col>
         </ion-row>
       </ion-grid>
+
+      <div class="bttn">
+        <ion-grid>
+          <ion-row class="ion-justify-content-center">
+            <ion-col class="ion-text-center" size="3">
+              <ion-button size="default" [routerLink]="['/card-details']">Proceed</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
     </div>
   </div>
 </ion-content>
+

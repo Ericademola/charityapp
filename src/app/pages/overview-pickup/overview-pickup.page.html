@@ -1,60 +1,46 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>overview-pickup</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding">
-  <div class="ion-content-scroll-host ion-padding">
-
-  </div>
-</ion-content>
 <!-- HEADER -->
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start" >
-      <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
-    </ion-buttons>
-
-    <ion-title>Donation Overview</ion-title>
-
-    <ion-buttons slot="end" [routerLink]="['/user-profile']">
-      <ion-thumbnail>
-        <img alt="member" src="../../../assets/member-1.png">
-      </ion-thumbnail>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
-  <div class="main">
-    <ion-grid>
-      <ion-row>
-        <ion-col><p style="font-weight: bold;">Name of Charity:</p></ion-col>
-        <ion-col><p>Destiny Trust Home</p></ion-col>
-      </ion-row>
-      <div style="width:100%; border-top: 1px solid rgb(18, 18, 18); margin: 8px 0;"></div>
-      <ion-row>
-        <ion-col><p style="font-weight: bold;">Donation Date:</p></ion-col>
-        <ion-col><p>04 May,2021</p></ion-col>
-      </ion-row>
-      <div style="width:100%; border-top: 1px solid rgb(18, 18, 18); margin: 8px 0;"></div>
-      <ion-row>
-        <ion-col><p style="font-weight: bold;">Delivery Option:</p></ion-col>
-        <ion-col><p>Pickup Delivery</p></ion-col>
-      </ion-row>
-      <div style="width:100%; border-top: 1px solid rgb(18, 18, 18); margin: 8px 0;"></div>
-      <ion-row>
-        <ion-col><p style="font-weight: bold;">Category of cloth(es):</p></ion-col>
-        <ion-col><p>Gowns</p></ion-col>
-      </ion-row>
-      <ion-row class="ion-justify-content-center">
-        <ion-col size="3">
-          <ion-button size="large">Proceed</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+  <div class="ion-content-scroll-host ion-padding">
+    <div class="main">
+      <ion-grid>
+        <ion-row>
+          <ion-col><small style="font-weight: bold;">Name of Charity:</small></ion-col>
+          <ion-col size="auto"></ion-col>
+          <ion-col><small>Destiny Trust Home</small></ion-col>
+        </ion-row>
+        <div class="line"></div>
+        <ion-row>
+          <ion-col><small style="font-weight: bold;">Donation Date:</small></ion-col>
+          <ion-col size="auto"></ion-col>
+          <ion-col><small>04 May,2021</small></ion-col>
+        </ion-row>
+        <div class="line"></div>
+        <ion-row>
+          <ion-col><small style="font-weight: bold;">Delivery Option:</small></ion-col>
+          <ion-col size="auto"></ion-col>
+          <ion-col><small>Pickup Delivery</small></ion-col>
+        </ion-row>
+        <div class="line"></div>
+        <ion-row>
+          <ion-col><small style="font-weight: bold;">Category of cloth(es):</small></ion-col>
+          <ion-col size="auto"></ion-col>
+          <ion-col><small>Gowns</small></ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <div class="bttn">
+        <ion-grid>
+          <ion-row class="ion-justify-content-center">
+            <ion-col class="ion-text-center" size="3">
+              <ion-button size="default" [routerLink]="['/donation-status']">Proceed</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </div>
   </div>
-  <hr/>
 </ion-content>

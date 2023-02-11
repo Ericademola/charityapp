@@ -4,17 +4,30 @@
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
   <div class="ion-content-scroll-host ion-padding">
-    <div class="bttn">
-      <ion-button>
-        <ion-icon name="shirt-outline" ></ion-icon>
-      </ion-button>
-    </div>
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-around">
+        <ion-col class="ion-text-center" size="1">
+          <ion-button [routerLink]="['/choose-service']">
+            <ion-icon name="shirt-outline" ></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
     <h4><ion-text>Donate Clothes</ion-text></h4>
-    <div class="bttn">
-      <ion-button [routerLink]="['/donate-cash']">
-        <ion-icon name="cash-outline" ></ion-icon>
-      </ion-button>
-    </div>
+
+    <ion-grid>
+      <ion-row  class="ion-justify-content-around">
+        <ion-col class="ion-text-center" size="1">
+          <ion-button [routerLink]="['/donate-cash']">
+            <ion-icon name="cash-outline" ></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
     <h4><ion-text>Donate Cash</ion-text></h4>
+
   </div>
 </ion-content>

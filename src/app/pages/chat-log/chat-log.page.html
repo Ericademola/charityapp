@@ -1,6 +1,7 @@
 <!-- HEADER -->
 <app-header></app-header>
 
+<!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
   <div class="ion-content-scroll-host ion-padding">
     <div class="me">
@@ -15,21 +16,25 @@
     <div  class="theirs">
       <p>Hi, <br>We received your donation.</p>
     </div>
-
-    <ion-item slot="fixed" lines="none">
-      <ion-buttons slot="start" >
-        <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
-      </ion-buttons>
-      <ion-textarea
-      placeholder="Type Your Message"
-      [autoGrow]="true"
-      spellcheck="true"
-      required="true"
-      enterkeyhint="enter"></ion-textarea>
-      <ion-buttons slot="end" >
-        <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
-      </ion-buttons>
-    </ion-item>
   </div>
 </ion-content>
 
+<!-- FOOTER FOR MESSAGE -->
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+      <ion-buttons slot="start" >
+        <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
+      </ion-buttons>
+
+      <div class="message">
+        <ion-textarea
+        placeholder="Type Your Message"
+        required="true"
+        enterkeyhint="enter"></ion-textarea>
+      </div>
+
+      <ion-buttons slot="end" >
+        <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
