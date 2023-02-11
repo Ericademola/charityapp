@@ -1,35 +1,42 @@
-ion-toolbar {
-  --padding-top: .8em;
-  --padding-start: .5em;
-  --padding-end: 1em;
-  --padding-bottom: .8em;
-  --background: #fcf0f7;
-}
-
 ion-content {
   --background: #fcf0f7;
+  font-size: 1.2rem;
 }
 
 .main {
-  padding: 0em 1em 13em 1em;
+  padding: 3em .5em 3em .5em;
   margin: auto;
   background-color: #ffffff;
   border: solid 2px #c4c4c4;
   border-radius: 2em 2em 0em 0em;
 }
 
-p {
+ion-row {
+  margin-bottom: 1em;
+}
+
+.line {
+  padding-bottom: .5em;
+  width: 100%;
+  border-top: 1px solid rgb(18, 18, 18);
+  margin: 8px 0;
+}
+
+small {
   font-weight: lighter;
 }
 
 ion-grid {
+  --ion-grid-columns: 3;
+}
+
+.bttn ion-grid {
   --ion-grid-columns: 5;
 }
 
 ion-button {
   --background: #ED1E78;
-  margin-top: 10em;
+  margin-top: 3em;
   --padding-end: 4em;
   --padding-start: 4em;
-  margin: auto;
 }

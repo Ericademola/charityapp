@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { HeaderModule } from 'src/app/shared/header/header.module';
-import { BookPickupPageRoutingModule } from './book-pickup-routing.module';
+import { PickupSelectPageRoutingModule } from './pickup-select-routing.module';
 
-import { BookPickupPage } from './book-pickup.page';
+import { PickupSelectPage } from './pickup-select.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { BookPickupPage } from './book-pickup.page';
     FormsModule,
     IonicModule,
     HeaderModule,
-    BookPickupPageRoutingModule
+    PickupSelectPageRoutingModule
   ],
-  declarations: [BookPickupPage]
+  declarations: [PickupSelectPage]
 })
-export class BookPickupPageModule {}
+export class PickupSelectPageModule {}

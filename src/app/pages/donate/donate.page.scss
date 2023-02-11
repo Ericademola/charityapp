@@ -1,5 +1,5 @@
-.bttn {
-  padding: 5em 0em 0em 9em;
+ion-grid {
+  --ion-grid-columns: 3;
 }
 
 ion-button {
@@ -15,7 +15,7 @@ ion-button {
   border-radius: 100px;
 }
 
-.bttn ion-icon {
+ion-icon {
   font-size: 64px;
 }
 

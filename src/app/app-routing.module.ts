@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  // {
+  //   path: '',
+  //   redirectTo: 'welcome',
+  //   pathMatch: 'full'
+  // },
   {
     path: '',
     loadChildren: () => import('./pages/tablinks/tablinks.module').then( m => m.TablinksPageModule)
@@ -9,6 +14,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'donation-status',
+    loadChildren: () => import('./pages/donation-status/donation-status.module').then(m => m.DonationStatusPageModule)
   },
   {
     path: 'welcome',
@@ -98,6 +107,15 @@ const routes: Routes = [
     path: 'set-reminder',
     loadChildren: () => import('./pages/set-reminder/set-reminder.module').then( m => m.SetReminderPageModule)
   },
+  {
+    path: 'dropoff-select',
+    loadChildren: () => import('./pages/dropoff-select/dropoff-select.module').then( m => m.DropoffSelectPageModule)
+  },
+  {
+    path: 'pickup-select',
+    loadChildren: () => import('./pages/pickup-select/pickup-select.module').then( m => m.PickupSelectPageModule)
+  },
+
 ];
 
 @NgModule({
@@ -127,10 +145,4 @@ export class AppRoutingModule { }
 // {
   //   path: 'tablinks',
   //   loadChildren: () => import('./pages/tablinks/tablinks.module').then( m => m.TablinksPageModule)
-  // },
-
-  // {
-  //   path: '',
-  //   redirectTo: 'welcome',
-  //   pathMatch: 'full'
   // },
