@@ -2,27 +2,34 @@
 <app-header></app-header>
 
 <ion-content class="ion-padding">
-  <div class="first">
-    <div class="a">
-      <h5>Hope Home</h5>
-      <small>Cash donation.</small>
-    </div>
-    <div class="b">
-      <h5>4 June, 2022</h5>
-      <small>successful</small>
-    </div>
-  </div>
 
-  <div class="second">
-    <div class="a">
-      <h5>Hope Home</h5>
-      <small>Cash donation.</small>
+  <ng-container *ngFor="let history of histories">
+
+    <div class="first">
+      <div class="a">
+        <h5>{{ history.name }}</h5>
+        <small>{{ history.donation }}</small>
+      </div>
+      <div class="b">
+        <h5>{{ history.date }}</h5>
+        <small>{{ history.status }}</small>
+      </div>
     </div>
-    <div class="b">
-      <h5>4 June, 2022</h5>
-      <small>successful</small>
+
+
+
+    <div class="second">
+      <div class="a">
+        <h5>Hope Home</h5>
+        <small>Cash donation.</small>
+      </div>
+      <div class="b">
+        <h5>4 June, 2022</h5>
+        <small>successful</small>
+      </div>
     </div>
-  </div>
+
+  </ng-container>
 
   <ion-button size="large">View All</ion-button>
 

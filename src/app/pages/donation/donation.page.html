@@ -4,20 +4,14 @@
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
   <div class="ion-content-scroll-host ion-padding">
-    <div>
-      <ion-img src="assets/orphanage1.png"></ion-img>
-      <ion-text>orphanage1</ion-text>
-    </div>
-    <ion-button expand="block" size="large" [routerLink]="['/donate']">Donate</ion-button>
-    <div>
-      <ion-img src="assets/orphanage2.png"></ion-img>
-      <ion-text>orphanage2</ion-text>
-    </div>
-    <ion-button expand="block" size="large" >Donate</ion-button>
-    <div>
-      <ion-img src="assets/orphanage3.png"></ion-img>
-      <ion-text>orphanage3</ion-text>
-    </div>
-    <ion-button expand="block" size="large" >Donate</ion-button>
+
+    <ng-container *ngFor="let donation of donations">
+      <div>
+        <ion-img [src]="donation.image"></ion-img>
+        <ion-text>{{ donation.name }}</ion-text>
+      </div>
+      <ion-button expand="block" size="large" [routerLink]="['/donate']">Donate</ion-button>
+    </ng-container>
+
   </div>
 </ion-content>

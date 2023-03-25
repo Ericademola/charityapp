@@ -8,12 +8,13 @@ import {ValidatorService} from "../../services/validator-service/validator.servi
 })
 export class SignUpPage implements OnInit {
   signupForm = {
+    ImageDP: null,
     firstName: null,
     lastName: null,
-    password: null,
     email: null,
     phoneNumber: null,
     username: null,
+    password: null
   };
 
   constructor(private validatorService: ValidatorService) { }

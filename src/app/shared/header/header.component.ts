@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {NavigatorService} from "../../services/navigator-service/navigator.service";
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private navigatorService: NavigatorService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  public handleSwipe() {
+    console.log('Clicked swipe button');
+    this.navigatorService.handleNavigation('/user-profile')
+  }
 
 }

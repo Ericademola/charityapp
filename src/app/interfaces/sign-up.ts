@@ -1,8 +1,9 @@
 export interface ISignupObject {
+  ImageDP: string | null;
   firstName: string | null;
   lastName: string | null;
-  password: string | null;
-  username: string | null;
-  phoneNumber: string | null;
   email: string | null;
+  phoneNumber: string | null;
+  username: string | null;
+  password: string | null;
 }
