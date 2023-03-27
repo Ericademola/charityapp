@@ -20,6 +20,10 @@ ion-content ion-toolbar {
   margin-bottom: .5em;
 }
 
+ion-content ion-toolbar img {
+  padding-left: .5em;
+}
+
 ion-grid {
   --ion-grid-columns: 7;
 }

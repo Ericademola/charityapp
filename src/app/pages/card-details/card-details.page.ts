@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardDetailsPage implements OnInit {
 
+
+  // cardHolderName: string;
+
+  // cardNumber: number;
+
+  // expirationDate: any;
+
+  // cvv: number;
+
   constructor() { }
 
   ngOnInit() {
