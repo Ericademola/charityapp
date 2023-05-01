@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { TablinksPageRoutingModule } from './tablinks-routing.module';
 
 import { TablinksPage } from './tablinks.page';
+//import { HeaderModule } from 'src/app/shared/header/header.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    //HeaderModule,
     TablinksPageRoutingModule
   ],
   declarations: [TablinksPage]

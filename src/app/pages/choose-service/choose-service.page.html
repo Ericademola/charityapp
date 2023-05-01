@@ -4,7 +4,7 @@
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
   <div class="ion-content-scroll-host ion-padding">
-    <ion-toolbar [routerLink]="['/schedule-dropoff']">
+    <ion-toolbar [routerLink]="['/schedule-dropoff']" (click)="chooseDropoff()">
       <ion-buttons slot="start">
         <ion-icon name="business-outline" size="large"></ion-icon>
       </ion-buttons>
@@ -16,7 +16,7 @@
       </ion-buttons>
     </ion-toolbar>
 
-    <ion-toolbar [routerLink]="['/schedule-pickup']">
+    <ion-toolbar [routerLink]="['/schedule-pickup']" (click)="choosePickoff()">
       <ion-buttons slot="start">
         <ion-icon name="car-outline" size="large"></ion-icon>
       </ion-buttons>

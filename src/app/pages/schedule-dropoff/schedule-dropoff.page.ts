@@ -12,4 +12,11 @@ export class ScheduleDropoffPage implements OnInit {
   ngOnInit() {
   }
 
+  handleDropoff(date:any) {
+    
+    console.log(date.value);
+    return date.value
+
+  }
+
 }

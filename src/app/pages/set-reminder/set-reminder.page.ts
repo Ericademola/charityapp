@@ -12,4 +12,9 @@ export class SetReminderPage implements OnInit {
   ngOnInit() {
   }
 
+  setReminder(reminder:any) {
+    console.log(reminder);
+    
+  }
+
 }

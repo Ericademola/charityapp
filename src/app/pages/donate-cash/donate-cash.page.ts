@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonateCashPage implements OnInit {
 
+  //cashDonation.valid
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public donateCash(cashDonation:any) {
+    console.log(cashDonation);
+    return cashDonation;
   }
 
 }

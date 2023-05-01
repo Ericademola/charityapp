@@ -4,25 +4,55 @@
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
   <div class="ion-content-scroll-host ion-padding">
+
     <ion-img src="assets/sharelove.png" alt="The big heart"></ion-img>
 
-    <h5>Amount</h5>
-    <div class="input"><ion-input placeholder="Please enter amount"></ion-input></div>
+    <form #cashDonation="ngForm" (ngSubmit)="donateCash(cashDonation)">
 
-    <h5>Payment Option</h5>
-    <ion-list>
-      <ion-radio-group [allowEmptySelection]="true" value=" ">
-        <ion-item>
-          <ion-label>Creditcard</ion-label>
-          <ion-radio value="Creditcard"></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>Paypal</ion-label>
-          <ion-radio value="Paypal"></ion-radio>
-        </ion-item>
-      </ion-radio-group>
-    </ion-list>
+      <h5>Amount</h5>
+      <div class="input">
+        <ion-input 
+          required
+          type="number"
+          name="amount"
+          placeholder="Please enter amount"
+          class="form-control"  
+          #amount="ngModel" 
+          ngModel>
+        </ion-input>
+      </div>
 
-    <ion-button expand="block" size="large" [routerLink]="['/overview-cash']" >Next</ion-button>
+      <h5>Payment Option</h5>
+      <ion-list>
+        <ion-radio-group
+        [allowEmptySelection]="true"
+        required
+        name="Payment Option"
+        class="form-control"  
+        #paymentOption="ngModel" 
+        ngModel>
+
+          <ion-item>
+            <ion-label>Creditcard</ion-label>
+            <ion-radio
+              value="Creditcard">
+            </ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Paypal</ion-label>
+            <ion-radio 
+              value="Paypal">
+            </ion-radio>
+          </ion-item>
+
+        </ion-radio-group>
+
+      </ion-list>
+
+      <ion-button expand="block" size="large" type="submit" *ngIf="cashDonation.valid" [routerLink]="['/overview-cash']" >Next</ion-button>
+
+    </form>
+
   </div>
 </ion-content>

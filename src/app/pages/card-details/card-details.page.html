@@ -3,33 +3,83 @@
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
-  <h5>Card Holder Name</h5>
-  <div><ion-input type="text"></ion-input></div>
 
-  <ion-toolbar>
-    <h5>Card Number</h5>
+  <form #card="ngForm" (ngSubmit)="cardDetails(card)">
+    <h5>Card Holder Name</h5>
+    <div>
+      <ion-input 
+      required
+      type="text" 
+      name="cardHolder" 
+      class="form-control"  
+      #cardHolder="ngModel" 
+      ngModel>
+      </ion-input>
+    </div>
 
-    <img alt="visa" src="assets/Payment-visa.png" slot="end">
-    <img alt="masterCard" src="assets/Payment-master.png" slot="end">
-  </ion-toolbar>
+    <ion-toolbar>
+      <h5>Card Number</h5>
 
-  <div><ion-input type="number"></ion-input></div>
-  <ion-grid>
-    <ion-row class="ion-justify-content-between">
-      <ion-col size="4">
-        <h5>Expiration Date</h5>
-      </ion-col>
-      <ion-col size="2"><h5>CVV</h5></ion-col>
-    </ion-row>
-    <ion-row class="ion-justify-content-between">
-      <ion-col size="4">
-        <div><ion-input type="text" placeholder="MM/YY"></ion-input></div>
-      </ion-col>
-      <ion-col size="2">
-        <div><ion-input type="number"></ion-input></div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <img alt="visa" src="assets/Payment-visa.png" slot="end">
+      <img alt="masterCard" src="assets/Payment-master.png" slot="end">
+    </ion-toolbar>
 
-  <ion-button expand="block" size="large" [routerLink]="['/donation-status']" >Next</ion-button>
+    <div>
+      <ion-input 
+      required
+      name="cardNumber" 
+      class="form-control"  
+      #cardNumber="ngModel" 
+      ngModel
+      type="number">
+      </ion-input>
+    </div>
+
+    <ion-grid>
+
+      <ion-row class="ion-justify-content-between">
+        <ion-col size="4">
+          <h5>Expiration Date</h5>
+        </ion-col>
+        <ion-col size="2"><h5>CVV</h5></ion-col>
+      </ion-row>
+
+      <ion-row class="ion-justify-content-between">
+        <ion-col size="4">
+          <div>
+            <ion-input
+            required
+            minlength="4" 
+            name="expiration" 
+            class="form-control"  
+            #expiration="ngModel" 
+            ngModel
+            type="text" 
+            placeholder="MM/YY">
+            </ion-input>
+          </div>
+        </ion-col>
+        
+        <ion-col size="2">
+          <div>
+            <ion-input 
+            required
+            type="number"
+            maxlength="3"
+            name="CVV" 
+            class="form-control"  
+            #CVV="ngModel" 
+            ngModel>
+            </ion-input>
+          </div>
+        </ion-col>
+
+      </ion-row>
+
+    </ion-grid>
+
+    <ion-button expand="block" size="large" type="submit" *ngIf="card.valid" [routerLink]="['/donation-status']">Next</ion-button>
+  
+  </form>
 </ion-content>
+

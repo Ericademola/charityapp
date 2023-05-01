@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+//import { Donation } from './../../interfaces/donation';
 
 @Injectable({
   providedIn: 'root'
@@ -6,9 +7,9 @@ import { Injectable } from '@angular/core';
 export class DonationService {
 
   constructor() { }
-
-  getOrphanage() {
-    return [
+/*
+  getHome() {
+    return Donation[
       {
         name: "Rising Star",
         picture: "assets/orphanage1.png",
@@ -24,5 +25,5 @@ export class DonationService {
 
     ]
   }
-
+*/
 }

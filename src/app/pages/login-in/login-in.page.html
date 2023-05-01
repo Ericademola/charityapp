@@ -7,18 +7,60 @@
     </h1>
   </ion-text>
 
-  <form>
+  <form #login="ngForm" (ngSubmit)="handleLogin(login)">
     <ion-list>
       <ion-item>
-        <ion-input type="text" placeholder="Username"></ion-input>
+        <ion-input 
+          required
+          minlength="4" 
+          type="text" 
+          name="username" 
+          placeholder="username" 
+          class="form-control"  
+          #username="ngModel" 
+          ngModel>
+        </ion-input>
+
+        <div 
+          *ngIf="username.touched && 
+          username.invalid" class="error-massage">
+          Please input Username
+        </div>
+        <div *ngIf="!memberUsername" class="error-massage">
+          Wrong Username.
+        </div>
+
       </ion-item>
+
       <ion-item>
-        <ion-input type="password" placeholder="Enter password"></ion-input><ion-icon name="eye-off-outline" slot="end" size="small"></ion-icon>
+        <ion-input         
+          required
+          minlength="4" 
+          maxlength="10"
+          type="password" 
+          name="password" 
+          placeholder="Password" 
+          class="form-control"  
+          #password="ngModel" 
+          ngModel>
+        </ion-input>
+        <ion-icon name="eye-off-outline" slot="end" size="small"></ion-icon>
+      
+        <div 
+          *ngIf="password.touched && 
+          password.invalid" class="error-massage">
+          Please input password.
+        </div>
+        <div *ngIf="!memberPassword" class="error-massage">
+          Wrong Password.
+        </div>
+
       </ion-item>
+
     </ion-list>
 
-    <ion-button expand="block" size="large" type="submit" [routerLink]="['/tablinks']">Login</ion-button>
+    <ion-button expand="block" size="large" type="submit">Login</ion-button>
   </form>
 
-  <p><i>Forgot password? <a [routerLink]="['/forgot-password']" >Reset password</a></i></p>
+  <p><i>Forgot password? <a [routerLink]="['/forgot-password']">Reset password</a></i></p>
 </ion-content>

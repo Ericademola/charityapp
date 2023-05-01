@@ -6,67 +6,123 @@
   <div class="ion-content-scroll-host ion-padding">
     <ion-img src="assets/sharelove.png" alt="The big heart"></ion-img>
 
-    <h5>Category of Cloth</h5>
-    <div class="input">
-      <h6>Select</h6>
-      <div class="line"></div>
-      <ion-list>
-        <ion-radio-group [allowEmptySelection]="true" value=" ">
-          <ion-item>
-            <ion-checkbox slot="start"></ion-checkbox>
-            <ion-label>Children's Wears</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-checkbox slot="start"></ion-checkbox>
-            <ion-label>Shirits</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-checkbox slot="start"></ion-checkbox>
-            <ion-label>Gowns</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-checkbox slot="start"></ion-checkbox>
-            <ion-label>Trousers</ion-label>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list>
-    </div>
+    <form #selected="ngForm" (ngSubmit)="handleSelected(selected)">
 
-    <h5>Upload Photo</h5>
-    <div class="input">
-      <h6>Select</h6>
-      <div class="line"></div>
-      <ion-list>
-        <ion-radio-group [allowEmptySelection]="true" value=" ">
-          <ion-item>
-            <ion-label>Take a Photo</ion-label>
-            <ion-radio value="photo"></ion-radio>
-          </ion-item>
-          <ion-item>
-            <ion-label>Choose From Gallery</ion-label>
-            <ion-radio value="gallery"></ion-radio>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list>
-    </div>
+      <h5>Category of Cloth</h5>
+      <div class="input">
+        <h6>Select</h6>
+        <div class="line"></div>
 
-    <h5>Delivery Option</h5>
-    <div class="input">
-      <h6>Select</h6>
-      <div class="line"></div>
-      <ion-list>
-        <ion-radio-group [allowEmptySelection]="true" value=" ">
-          <ion-item>
-            <ion-label>Drop off</ion-label>
-            <ion-radio value="Dropoff"></ion-radio>
-          </ion-item>
-          <ion-item>
-            <ion-label>Pickup</ion-label>
-            <ion-radio value="Pickup"></ion-radio>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list>
-    </div>
-    <ion-button expand="block" size="large" [routerLink]="['/overview-cash']" >Donate</ion-button>
+        <ion-list>
+          <ion-radio-group 
+          [allowEmptySelection]="true"
+          required
+          name="Category"
+          class="form-control"  
+          #Category="ngModel" 
+          ngModel
+          value="">
+            
+            <ion-item>
+              <ion-checkbox slot="start"
+                value="Children Wears"
+                class="form-control">
+              </ion-checkbox>
+              <ion-label>Children's Wears</ion-label>
+            </ion-item>
+            
+            <ion-item>
+              <ion-checkbox slot="start"
+                value="Shirits"
+                class="form-control">
+              </ion-checkbox>
+              <ion-label>Shirits</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-checkbox slot="start"
+                value="Gowns"
+                class="form-control">
+              </ion-checkbox>
+              <ion-label>Gowns</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-checkbox slot="start"
+                value="Trousers"
+                class="form-control">
+              </ion-checkbox>
+              <ion-label>Trousers</ion-label>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+
+      </div>
+
+      <h5>Upload Photo</h5>
+
+      <div class="input">
+        <h6>Select</h6>
+        <div class="line"></div>
+
+        <ion-list>
+          <ion-radio-group 
+          [allowEmptySelection]="true" 
+          name="upload photo"
+          class="form-control"  
+          #uploadPhoto="ngModel" 
+          ngModel>
+            
+            <ion-item>
+              <ion-label>Take a Photo</ion-label>
+              <ion-radio value="photo"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Choose From Gallery</ion-label>
+              <ion-radio value="gallery"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+
+      </div>
+
+      <h5>Use Type</h5>
+
+      <div class="input">
+        <h6>Select</h6>
+        <div class="line"></div>
+
+        <ion-list>
+
+          <ion-radio-group
+          [allowEmptySelection]="true"
+          required 
+          name="delivery option"
+          class="form-control"  
+          #deliveryOption="ngModel" 
+          ngModel>
+
+            <ion-item>
+              <ion-label>Unused</ion-label>
+              <ion-radio value="Unused"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Fairly Used</ion-label>
+              <ion-radio value="Fairly Used"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+
+        </ion-list>
+      </div>
+
+      <ion-button expand="block" size="large" type="submit" [routerLink]="['/overview-cash']" >Donate</ion-button>
+
+    </form>
+
   </div>
 </ion-content>

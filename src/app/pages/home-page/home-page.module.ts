@@ -7,7 +7,7 @@ import { HeaderModule } from 'src/app/shared/header/header.module';
 import { HomePagePageRoutingModule } from './home-page-routing.module';
 
 import { HomePagePage } from './home-page.page';
-//import { FooterComponent } from 'src/app/components/footer/footer.component'
+
 
 @NgModule({
   imports: [

@@ -4,37 +4,50 @@
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
   <div class="ion-content-scroll-host ion-padding">
-    <div class="me">
-      <p>Hi, <br>We received your donation.</p>
+
+    <div id="chat-container">
+      <ng-container *ngFor="let chat of chats" >
+        <p [ngClass]="{sender: chat.sent}">{{chat.sent}}</p>
+        <p [ngClass]="{receiver: chat.received}">{{chat.received}}</p> 
+      </ng-container>
+      <!-- chat messages -->
     </div>
-    <div class="theirs">
-      <p>Hi, <br>We received your donation.</p>
-    </div>
-    <div  class="theirs">
-      <p>Hi, <br>We received your donation.</p>
-    </div>
-    <div  class="theirs">
-      <p>Hi, <br>We received your donation.</p>
-    </div>
+
   </div>
+
 </ion-content>
 
 <!-- FOOTER FOR MESSAGE -->
 <ion-footer class="ion-no-border">
-  <ion-toolbar>
+
+  <form #chat="ngForm" (ngSubmit)="chatLog(chat)">
+
+    <ion-toolbar>
       <ion-buttons slot="start" >
-        <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
+        <ion-button>
+          <ion-icon name="happy-outline" size="large" color="warning"></ion-icon>
+        </ion-button>
       </ion-buttons>
 
-      <div class="message">
+      <div id="message">
         <ion-textarea
-        placeholder="Type Your Message"
+        type="text" 
+        name="sent" 
+        [(ngModel)]="sent"
+        class="form-control" 
+        ngModel
+        placeholder="Please Your Message"
         required="true"
         enterkeyhint="enter"></ion-textarea>
       </div>
 
       <ion-buttons slot="end" >
-        <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
+        <ion-button type="submit">
+          <ion-icon name="send-sharp" size="large" color="tertiary"></ion-icon>
+        </ion-button>    
       </ion-buttons>
-  </ion-toolbar>
+    </ion-toolbar>
+
+  </form>
 </ion-footer>
+<!-- <i>[(ngModel)]="sent"</i> -->

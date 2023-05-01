@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePagePage implements OnInit {
 
+  name:string = ''
+
   constructor() { }
 
   ngOnInit() {
+    let json:any = localStorage.getItem('members');
+    let members = JSON.parse(json);
+    console.log(members);
+
+    let firstName = members.map((member:any) => member.firstName).pop()
+    this.name = firstName.at(0).toUpperCase() + firstName.slice(1);
   }
 
 }

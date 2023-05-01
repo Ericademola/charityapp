@@ -5,13 +5,20 @@
 <ion-content class="ion-padding">
   <div class="ion-content-scroll-host ion-padding">
 
-    <ng-container *ngFor="let donation of donations">
+    <ng-container *ngFor="let community of communities">
       <div>
-        <ion-img [src]="donation.image"></ion-img>
-        <ion-text>{{ donation.name }}</ion-text>
+        <ion-img [src]="community.image"></ion-img>
+        <ion-text>{{ community.home }}</ion-text>
       </div>
-      <ion-button expand="block" size="large" [routerLink]="['/donate']">Donate</ion-button>
+      <ion-button 
+        expand="block" 
+        size="large" 
+        [routerLink]="['/donate']" 
+        (click)="handleDonation(community)">
+        Donate
+      </ion-button>
     </ng-container>
 
   </div>
 </ion-content>
+
