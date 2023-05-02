@@ -12,4 +12,9 @@ export class BookPickupPage implements OnInit {
   ngOnInit() {
   }
 
+  handleBooking(booking:any) {
+    console.log(booking);
+    
+  }
+
 }

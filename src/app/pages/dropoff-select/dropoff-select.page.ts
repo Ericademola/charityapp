@@ -12,4 +12,9 @@ export class DropoffSelectPage implements OnInit {
   ngOnInit() {
   }
 
+  handleSelected(selected:any) {
+    console.log(selected);
+    
+  }
+
 }

@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ScheduleDropoffPage implements OnInit {
 
+  pickedDate:string = '';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleDropoff(date:any) {
+    this.pickedDate = date.value
+    console.log(this.pickedDate);
+    return date.value
+
   }
 
 }

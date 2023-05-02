@@ -8,7 +8,7 @@
     <ion-grid>
       <ion-row class="ion-justify-content-around">
         <ion-col class="ion-text-center" size="1">
-          <ion-button [routerLink]="['/choose-service']">
+          <ion-button [routerLink]="['/choose-service']" (click)="chooseClothes()">
             <ion-icon name="shirt-outline" ></ion-icon>
           </ion-button>
         </ion-col>
@@ -20,7 +20,7 @@
     <ion-grid>
       <ion-row  class="ion-justify-content-around">
         <ion-col class="ion-text-center" size="1">
-          <ion-button [routerLink]="['/donate-cash']">
+          <ion-button [routerLink]="['/donate-cash']" (click)="chooseCash()">
             <ion-icon name="cash-outline" ></ion-icon>
           </ion-button>
         </ion-col>

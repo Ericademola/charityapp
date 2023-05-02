@@ -1,27 +1,69 @@
 <!-- HEADER -->
-<app-header></app-header>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-title>Book Pickup</ion-title> 
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <img alt="member" src="../../../assets/member-1.png">
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> 
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
-  <h5>Pickup Address</h5>
-  <div>
-    <ion-input type="text"></ion-input>
-  </div>
+  <form #booking="ngForm" (ngSubmit)="handleBooking(booking)">
 
-  <h5>Delivery Address <i>(Charity Home/NGO)</i></h5>
-  <div>
-    <ion-input type="text"></ion-input>
-  </div>
+    <h5>Pickup Address</h5>
+    <div>
+      <ion-input 
+      required
+      type="text" 
+      name="pickupAddress" 
+      class="form-control"  
+      #pickupAddress="ngModel" 
+      ngModel>
+      </ion-input>
+    </div>
 
-  <h5>Sender's Phone Number</h5>
-  <div>
-    <ion-input type="text"></ion-input>
-  </div>
+    <h5>Delivery Address <i>(Charity Home/NGO)</i></h5>
+    <div>
+      <ion-input 
+      required
+      type="text" 
+      name="deliveryAddress" 
+      class="form-control"  
+      #deliveryAddress="ngModel" 
+      ngModel>
+      </ion-input>
+    </div>
 
-  <h5>Receiver's Phone Number</h5>
-  <div>
-    <ion-input type="text"></ion-input>
-  </div>
+    <h5>Sender's Phone Number</h5>
+    <div>
+      <ion-input 
+      required
+      type="tel" 
+      name="senderPhoneNumber" 
+      class="form-control"  
+      #senderPhoneNumber="ngModel" 
+      ngModel>
+      </ion-input>
+    </div>
 
-  <ion-button expand="block" size="large" [routerLink]="['/pickup-select']" >Next</ion-button>
+    <h5>Receiver's Phone Number</h5>
+    <div>
+      <ion-input 
+      required
+      type="tel" 
+      name="receiverPhoneNumber" 
+      class="form-control"  
+      #receiverPhoneNumber="ngModel" 
+      ngModel>
+      </ion-input>
+    </div>
+
+    <ion-button expand="block" size="large" type="submit" [disabled]="!booking.valid" [routerLink]="['/pickup-select']">Next</ion-button>
+  </form>
 </ion-content>

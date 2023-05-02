@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ValidatorService} from "../../services/validator-service/validator.service";
+//import { NavigatorService } from "../../services/navigator-service/navigator.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -7,29 +8,46 @@ import {ValidatorService} from "../../services/validator-service/validator.servi
   styleUrls: ['./sign-up.page.scss'],
 })
 export class SignUpPage implements OnInit {
+  
+  members = new Array()
+
   signupForm = {
-    ImageDP: null,
-    firstName: null,
-    lastName: null,
-    email: null,
-    phoneNumber: null,
-    username: null,
-    password: null
+    //ImageDP: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    username: '',
+    password: '',  
   };
 
   constructor(private validatorService: ValidatorService) { }
 
   ngOnInit() {
+
   }
+  
   public validated () {
+    console.log(this.validatorService.validateSignup(this.signupForm));
+    
     return this.validatorService.validateSignup(this.signupForm);
   }
 
-  public handleSignUp() {
-    console.log('Hello');
-    if(this.validatorService.validateSignup(this.signupForm)) {
+  public handleSignUp(signUp:any) {
+   //if(this.validatorService.validateSignup(this.signupForm)) {
       // proceed
-    }
+      //this.navigatorService.handleNavigation('/login-in');
+      
+      
+      let memberInfo = signUp.value
+      console.log(memberInfo);
+      this.members.push(memberInfo)
+      console.log(this.members);
+      let json = JSON.stringify(this.members);
+      localStorage.setItem('members', json);
+      console.log('signed up');  
+      
+    //}
   }
-
+ 
 }

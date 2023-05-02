@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Donation } from '../../interfaces/donation';
+import { Community } from '../../interfaces/communities';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+
 
 @Component({
   selector: 'app-donation',
@@ -8,27 +10,42 @@ import { Donation } from '../../interfaces/donation';
 })
 
 export class DonationPage implements OnInit {
+  
+  communities: Community[] = [
 
-  donations: Donation[] = [
     {
-      name: "Rising Star",
+      home: "Rising Star",
       image: "assets/orphanage1.png",
     },
     {
-      name: "Grace Home",
+      home: "Grace Home",
       image: "assets/orphanage2.png",
     },
     {
-      name: "Amazing Grace",
+      home: "Amazing Grace",
       image: "assets/orphanage3.png",
     },
-
+    {
+      home: "Grace Home",
+      image: "assets/orphanage2.png",
+    }
   ]
 
-  constructor() { }
+  getHome:any = {}
 
+  constructor(private donationsService: DonationsService) { };
 
+  ngOnInit(): void {};
 
-  ngOnInit() {}
+  handleDonation(community: Community) {
+
+    this.getHome.home = community.home;
+
+    //this.donationsService.setDonations(this.getHome);
+    console.log(this.getHome);
+    
+    console.log(this.donationsService);
+    
+  }
 
 }

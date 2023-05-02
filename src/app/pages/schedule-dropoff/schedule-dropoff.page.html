@@ -4,13 +4,21 @@
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
   <div class="ion-content-scroll-host ion-padding">
-    <ion-datetime
-      locale="en-US"
-      [showDefaultButtons]="true"
-      size="cover">
-      <span slot="title">Select a Reservation Date & Time</span>
-    </ion-datetime>
 
-    <ion-button expand="block" size="large" [routerLink]="['/dropoff-select']">Next</ion-button>
+    <form #date="ngForm" (ngSubmit)="handleDropoff(date)">
+      
+      <ion-datetime
+        name="date"
+        class="form-control"
+        ngModel
+        #dropoff="ngModel"
+
+        locale="en-US"
+        size="cover">
+        <span slot="title">Select a Reservation Date & Time</span>
+      </ion-datetime>
+  
+      <ion-button expand="block" size="large" type="submit" [routerLink]="['/dropoff-select']">Next</ion-button>
+    </form>
   </div>
 </ion-content>

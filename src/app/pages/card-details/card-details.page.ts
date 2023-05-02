@@ -21,4 +21,9 @@ export class CardDetailsPage implements OnInit {
   ngOnInit() {
   }
 
+  cardDetails(card:any) {
+    console.log(card.value);
+    
+  }
+
 }

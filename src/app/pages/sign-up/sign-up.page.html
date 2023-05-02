@@ -1,7 +1,6 @@
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <form (ngSubmit)="handleSignUp()">
-
+  <form #signUp="ngForm" (ngSubmit)="handleSignUp(signUp)">
 
     <ion-avatar>
       <ion-icon name="camera-sharp" size="large"></ion-icon>
@@ -13,35 +12,139 @@
         Create an account
       </h2>
     </ion-text>
+    <!-- {{ signupForm | json }} -->
 
     <ion-list>
+
       <ion-item>
         <ion-label position="floating">First name</ion-label>
-        <ion-input type="text" placeholder="First name"></ion-input>
+        <ion-input 
+          required
+          minlength="2" 
+          type="text" 
+          name="firstName" 
+          placeholder="First name" 
+          class="form-control"  
+          #firstName="ngModel" 
+          ngModel>
+        </ion-input>
+
+        <div 
+          *ngIf="firstName.touched && 
+          firstName.invalid" class="error-massage">
+            <div 
+              *ngIf="firstName.errors && 
+              firstName.errors['minlength']">
+              Sorry, name is too short
+            </div>
+        </div>
+
+        <ion-icon name="ellipse"></ion-icon>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Last name</ion-label>
-        <ion-input type="text" placeholder="Last name"></ion-input>
+        <ion-input 
+          minlength="2"
+          type="text" 
+          name="lastName" 
+          placeholder="Last name" 
+          class="form-control"  
+          #lastName="ngModel"  
+          ngModel>
+        </ion-input>
+
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Email address</ion-label>
-        <ion-input type="email" placeholder="Email address" ></ion-input>
+        <ion-input 
+          type="text" 
+          name="email" 
+          placeholder="email" 
+          class="form-control"  
+          #email="ngModel" 
+          ngModel>
+        </ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">Phone number</ion-label>
-        <ion-input type="tel" placeholder="Phone number"></ion-input>
+        <ion-input 
+          type="text" 
+          name="email" 
+          placeholder="email" 
+          class="form-control"  
+          #phoneNumber="ngModel"
+          ngModel>
+        </ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">username</ion-label>
-        <ion-input type="text" placeholder="Enter username"></ion-input>
+        <ion-input 
+          required
+          minlength="4" 
+          type="text" 
+          name="username" 
+          placeholder="First name" 
+          class="form-control"  
+          #username="ngModel" 
+          ngModel>
+        </ion-input>
+
+        <div 
+          *ngIf="username.touched && 
+          username.invalid" class="error-massage">
+          <div 
+            *ngIf="username.errors && 
+            username.errors['minlength']">
+            Sorry, name is too short
+          </div>
+        </div>
+
+        <ion-icon name="ellipse"></ion-icon>
       </ion-item>
+
       <ion-item>
         <ion-label position="floating">password</ion-label>
-        <ion-input type="password" placeholder="Enter password"></ion-input>
+        <ion-input 
+          required
+          minlength="4" 
+          maxlength="10"
+          type="text" 
+          name="password" 
+          placeholder="Password" 
+          class="form-control"  
+          #password="ngModel" 
+          ngModel>
+        </ion-input>
+
+        <div 
+          *ngIf="password.touched && 
+          password.invalid" class="error-massage">
+            <div 
+              *ngIf="password.errors && 
+              password.errors['minlength']">
+              Sorry, name is too short
+            </div>
+            <div 
+              *ngIf="password.errors && 
+              password.errors['maxlength']">
+              Sorry, name is too long
+            </div>
+        </div>
+
+        <ion-icon name="ellipse"></ion-icon>
       </ion-item>
+
     </ion-list>
-    <ion-button expand="block" size="large" type="submit" disabled="!validated">Sign up</ion-button>
+
+    <ion-button expand="block" size="large" type="submit" [disabled]="!signUp.valid" [routerLink]="['/login-in']">Sign up</ion-button>
+
   </form>
 
   <p><i>Have an account? <a [routerLink]="['/login-in']" >Log In here</a></i></p>
 </ion-content>
+
+<!-- [(ngModel)]="signupForm.password" [ngModelOptions]="{standalone: true}" -->

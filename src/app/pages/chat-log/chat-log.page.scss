@@ -12,22 +12,24 @@ ion-thumbnail {
   margin-right: 1em;
 }
 
-.me {
-  width: 70%;
+.sender {
+  width: 75%;
   background-color: #E5E5E5;
   border-radius: 5px;
-  padding: .2em .5em;
-  margin-left: 30%;
+  padding: .5em .5em;
+  margin-left: 25%;
   margin-bottom: 1em;
+  text-align: left;
 }
 
-.theirs {
-  width: 70%;
+.receiver {
+  width: 75%;
   background-color: #c4c4c4;
   border-radius: 5px;
-  padding: .2em .5em;
-  margin-right: 30%;
+  padding: .5em .5em;
+  margin-right: 25%;
   margin-bottom: 1em;
+  text-align: left;
 }
 
 ion-toolbar {
@@ -35,11 +37,9 @@ ion-toolbar {
   --padding-bottom: .5em;
 }
 
-.message {
+#message {
   border-radius: 1em;
   padding: .5em;
   border: solid 1px rgb(78, 75, 75);
   margin: 0em .5em;
 }
-
-

@@ -12,4 +12,12 @@ export class SchedulePickupPage implements OnInit {
   ngOnInit() {
   }
 
+  handlePickup(pickup:any) {
+    let y = pickup.value;
+    console.log(y);
+    //new Date().getDate
+    console.log(pickup);
+    
+  }
+
 }

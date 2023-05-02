@@ -4,30 +4,20 @@
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
   <div class="ion-content-scroll-host ion-padding">
+
     <ion-list>
-      <ion-item button lines="full" [routerLink]="['/chat-log']">
-        <ion-avatar slot="start">
-          <img alt="member" src="assets/member-2.png">
-        </ion-avatar>
-        <ion-label><h2>Pokémon Yellow</h2><p>Helo, this is Fiona</p><ion-badge>6</ion-badge></ion-label>
-        <small>09:00AM</small>
-      </ion-item>
 
-      <ion-item button lines="full">
-        <ion-avatar slot="start">
-          <img alt="member" src="assets/member-2.png">
-        </ion-avatar>
-        <ion-label><h2>Pokémon Yellow</h2><p>Helo, this is Fiona</p><ion-badge>6</ion-badge></ion-label>
-        <small>09:00AM</small>
-      </ion-item>
-
-      <ion-item button lines="full">
-        <ion-avatar slot="start">
-          <img alt="member" src="assets/member-2.png">
-        </ion-avatar>
-        <ion-label><h2>Pokémon Yellow</h2><p>Helo, this is Fiona</p><ion-badge>6</ion-badge></ion-label>
-        <small>09:00AM</small>
-      </ion-item>
+      <ng-container *ngFor="let chat of chats">
+        <ion-item button lines="full" [routerLink]="['/chat-log']">
+          <ion-avatar slot="start">
+            <ion-img [src]="chat.image"></ion-img>
+          </ion-avatar>
+          <ion-label><h2>{{chat.name}}</h2><p>{{chat.message}}</p><ion-badge>{{chat.notify}}</ion-badge></ion-label>
+          <small>{{chat.time}}</small>
+        </ion-item>
+      </ng-container>
+    
     </ion-list>
   </div>
 </ion-content>
+

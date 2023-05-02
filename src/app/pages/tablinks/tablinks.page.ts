@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tablinks.page.scss'],
 })
 export class TablinksPage implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
   }
-
+   
 }
