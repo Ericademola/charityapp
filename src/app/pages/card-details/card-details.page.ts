@@ -7,14 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardDetailsPage implements OnInit {
 
-
-  // cardHolderName: string;
-
-  // cardNumber: number;
-
-  // expirationDate: any;
-
-  // cvv: number;
+  getDetail:any;
 
   constructor() { }
 
@@ -22,7 +15,9 @@ export class CardDetailsPage implements OnInit {
   }
 
   cardDetails(card:any) {
-    console.log(card.value);
+
+    this.getDetail = card.value
+    console.log(this.getDetail);
     
   }
 

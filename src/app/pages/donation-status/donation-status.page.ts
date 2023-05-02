@@ -10,6 +10,9 @@ export class DonationStatusPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
+    console.log('hi');
+    
   }
 
 }

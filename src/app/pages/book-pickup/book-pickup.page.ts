@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookPickupPage implements OnInit {
 
+  getBooking:any;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   handleBooking(booking:any) {
-    console.log(booking);
+
+    this.getBooking = booking.value
+    console.log(this.getBooking);
     
   }
 
