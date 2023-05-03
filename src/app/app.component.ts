@@ -6,17 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit{
-  
-  //@Input() home:string  = '';
-
-  lo = '';
 
   constructor() { }
 
-  ngOnInit() {
-    
-    console.log(this.lo);
-    
+  ngOnInit() {    
   }
 
 }

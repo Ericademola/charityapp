@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+
 
 @Component({
   selector: 'app-choose-service',
@@ -9,7 +11,7 @@ export class ChooseServicePage implements OnInit {
 
   pickDelivery:any = {}
 
-  constructor() { }
+  constructor(private donationsService: DonationsService) { };
 
   ngOnInit() {
   }
@@ -17,13 +19,19 @@ export class ChooseServicePage implements OnInit {
   public chooseDropoff() {
 
     this.pickDelivery.delivery = 'Dropoff';
-    console.log(this.pickDelivery);
+
+    this.donationsService.setDelivery(this.pickDelivery);
+
+    console.log(this.donationsService);
     
   }
 
   public choosePickoff() {
     this.pickDelivery.delivery = 'Pickup';
-    console.log(this.pickDelivery);
+
+    this.donationsService.setDelivery(this.pickDelivery);
+
+    console.log(this.donationsService);
     
   }
 

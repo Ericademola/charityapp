@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+
 
 @Component({
   selector: 'app-donation-status',
@@ -7,11 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonationStatusPage implements OnInit {
 
-  constructor() { }
+  getting:any
+
+  constructor(private donationsService: DonationsService) { };
 
   ngOnInit() {
     
-    console.log('hi');
+    this.getting = this.donationsService;
+
+    console.log(this.getting);
     
   }
 

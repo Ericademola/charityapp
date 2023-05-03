@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+
 
 @Component({
   selector: 'app-book-pickup',
@@ -7,17 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookPickupPage implements OnInit {
 
-  getBooking:any;
+  booking:any;
 
-  constructor() { }
+  constructor(private donationsService: DonationsService) { };
 
   ngOnInit() {
   }
 
   handleBooking(booking:any) {
 
-    this.getBooking = booking.value
-    console.log(this.getBooking);
+    this.booking = booking.value
+    console.log(this.booking);
+
+    this.donationsService.setBooking(this.booking);
+        
+    console.log(this.donationsService);
     
   }
 

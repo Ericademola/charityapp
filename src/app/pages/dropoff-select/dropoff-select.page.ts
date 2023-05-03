@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+
 
 @Component({
   selector: 'app-dropoff-select',
@@ -16,7 +18,7 @@ export class DropoffSelectPage implements OnInit {
 
   gift:any = {}
 
-  constructor() { }
+  constructor(private donationsService: DonationsService) { };
 
   ngOnInit() {
   }
@@ -48,7 +50,11 @@ export class DropoffSelectPage implements OnInit {
     
     this.gift.clothes = getClothes;    
     this.gift.photo = selected.value.uploadPhoto;
-    this.gift.usuage = selected.value.useKind;        
+    this.gift.usuage = selected.value.useKind;  
+    
+    this.donationsService.setGift(this.gift);
+        
+    console.log(this.donationsService);
     
   }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+
 
 @Component({
   selector: 'app-card-details',
@@ -7,17 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardDetailsPage implements OnInit {
 
-  getDetail:any;
+  Card_Detail:any;
 
-  constructor() { }
+  constructor(private donationsService: DonationsService) { };
 
   ngOnInit() {
   }
 
   cardDetails(card:any) {
 
-    this.getDetail = card.value
-    console.log(this.getDetail);
+    this.Card_Detail = card.value
+
+    this.donationsService.setCard(this.Card_Detail);
+        
+    console.log(this.donationsService);
     
   }
 

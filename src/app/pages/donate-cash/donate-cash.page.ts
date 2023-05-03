@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
 
 @Component({
   selector: 'app-donate-cash',
@@ -7,16 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonateCashPage implements OnInit {
 
-  //cashDonation.valid
+  cashPayment:any = {};
 
-  constructor() { }
+  constructor(private donationsService: DonationsService) { };
 
   ngOnInit() {
   }
 
   public donateCash(cashDonation:any) {
-    console.log(cashDonation);
-    return cashDonation;
+    
+    this.cashPayment = cashDonation.value
+
+    this.donationsService.setPayment(this.cashPayment);
+        
+    console.log(this.donationsService);
+
   }
 
 }

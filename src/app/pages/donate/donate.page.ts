@@ -21,7 +21,7 @@ export class DonatePage implements OnInit {
     this.pickDonate.donate = 'Clothes';
     console.log(this.pickDonate);
 
-    //this.donationsService.setDonations(this.donate);
+    this.donationsService.setDonate(this.pickDonate);
 
     console.log(this.donationsService);
     
@@ -32,20 +32,10 @@ export class DonatePage implements OnInit {
     this.pickDonate.donate = 'Cash';
     console.log(this.pickDonate);
 
-    //this.donationsService.setDonations(this.donate);
+    this.donationsService.setDonate(this.pickDonate);
 
     console.log(this.donationsService);
 
   }
 
 }
-// handleDonation(community: Community) {
-
-//   this.getHome.home = community.home;
-
-//   this.donationsService.setDonations(this.getHome);
-//   console.log(this.getHome);
-  
-//   console.log(this.donationsService);
-  
-// }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+
 
 @Component({
   selector: 'app-schedule-dropoff',
@@ -9,15 +11,17 @@ export class ScheduleDropoffPage implements OnInit {
 
   pickedDate:string = '';
 
-  constructor() { }
+  constructor(private donationsService: DonationsService) { };
 
   ngOnInit() {
   }
 
   handleDropoff(date:any) {
-    this.pickedDate = date.value
-    console.log(this.pickedDate);
-    return date.value
+    this.pickedDate = date.value;
+
+    this.donationsService.setSchedule(this.pickedDate);
+        
+    console.log(this.donationsService);
 
   }
 
