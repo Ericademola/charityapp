@@ -20,18 +20,22 @@ export class ChooseServicePage implements OnInit {
 
     this.pickDelivery.delivery = 'Dropoff';
 
-    this.donationsService.setDelivery(this.pickDelivery);
+    const userGift = this.donationsService.getDonate();
 
-    console.log(this.donationsService);
+    const giftAdd = Object.assign(userGift, this.pickDelivery);
+
+    this.donationsService.setDelivery(giftAdd);
     
   }
 
   public choosePickoff() {
     this.pickDelivery.delivery = 'Pickup';
 
-    this.donationsService.setDelivery(this.pickDelivery);
+    const userGift = this.donationsService.getDonate();
 
-    console.log(this.donationsService);
+    const giftAdd = Object.assign(userGift, this.pickDelivery);
+
+    this.donationsService.setDelivery(giftAdd);
     
   }
 

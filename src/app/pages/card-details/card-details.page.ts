@@ -17,11 +17,11 @@ export class CardDetailsPage implements OnInit {
   }
 
   cardDetails(card:any) {
-
+/*
     this.Card_Detail = card.value
 
     this.donationsService.setCard(this.Card_Detail);
-        
+      */  
     console.log(this.donationsService);
     
   }

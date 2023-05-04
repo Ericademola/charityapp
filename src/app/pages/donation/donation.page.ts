@@ -42,30 +42,6 @@ export class DonationPage implements OnInit {
 
     this.donationsService.setHome(this.getHome);
         
-    console.log(this.donationsService);
-
-    console.log(this.getHome);
-
-    console.log(this.donationsService.getHome);
-    
-    
-
-    //let a = {}
-   let y = {
-              phome: "Amazing Grace",
-              image: "assets/orphanage3.png",
-            }
-
-    let z = {
-              home: "Grace Home",
-              oimage: "assets/orphanage2.png",
-            }
-
-    let a = Object.assign(y, z);
-    console.log(a);
-            
-
-    
   }
 
 }

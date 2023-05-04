@@ -88,10 +88,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/schedule-dropoff/schedule-dropoff.module').then(m => m.ScheduleDropoffPageModule)
   },
   {
-    path: 'schedule-pickup',
-    loadChildren: () => import('./pages/schedule-pickup/schedule-pickup.module').then(m => m.SchedulePickupPageModule)
-  },
-  {
     path: 'donate-cash',
     loadChildren: () => import('./pages/donate-cash/donate-cash.module').then(m => m.DonateCashPageModule)
   },

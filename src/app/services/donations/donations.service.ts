@@ -1,116 +1,97 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class DonationsService {
 
   donations:any;
-
+  
   fixHome:any;
   fixDonate:any;
   fixDelivery:any;
   fixSchedule:any;
   fixGift:any;
-  fixCard:any;
   fixBooking:any;
   fixPayment:any;
 
+  fixCard:any;
+  
 
   constructor() { }
-
-
+  //09070780040
+  
   //getting home object
   setHome(obj:any) {
-    this.fixHome = Object.assign({}, obj)
+   this.fixHome = obj
   }
 
-  getHome(obj:any) {
+  getHome() {
     return this.fixHome;
   }
 
-  //getting donate object
+  //getting home, donate object,
   setDonate(obj:any) {
-    this.fixDonate = Object.assign({}, obj)
+    this.fixDonate = obj
+  }
+  
+  getDonate() {  
+    return this.fixDonate;
   }
 
-  getDonate() {
-    //return this.fixDonate;
-  }
-
-  //getting delivery object
+  //getting home, donate, delivery object,
   setDelivery(obj:any) {
-    this.fixDelivery = Object.assign({}, obj)
+    this.fixDelivery = obj
   }
 
   getDelivery() {
-    //return this.fixDelivery;
+    return this.fixDelivery;
   }
 
-  //getting schedule
+  //getting home, donate, delivery, Schedule object,
   setSchedule(obj:any) {
-    this.fixSchedule = Object.assign({}, obj)
+    this.fixSchedule = obj
   }
 
   getSchedule() {
-    //return this.fixSchedule;
+    return this.fixSchedule;
   }
 
-
-  //getting gift
+  //getting home, donate, delivery, Schedule, gift object,
   setGift(obj:any) {
-    this.fixGift = Object.assign({}, obj)
+    this.fixGift = obj
   }
 
   getGift() {
-    //return this.fixGift;
+    return this.fixGift;
   }
 
-  //getting card
-  setCard(obj:any) {
-    this.fixCard = Object.assign({}, obj)
-  }
-
-  getCard() {
-    //return this.fixCard;
-  }
-
-  //getting book
+  //getting home, donate, delivery, Schedule, gift, booking object,
   setBooking(obj:any) {
-    this.fixBooking = Object.assign({}, obj)
+    this.fixBooking = obj
   }
 
   getBooking() {
-    //return this.fixBook;
+    return this.fixBooking;
   }
 
-  //getting payment
+  //getting home, donate, delivery, Schedule, Payment object,
   setPayment(obj:any) {
-    this.fixPayment = Object.assign({}, obj)
+    this.fixPayment = obj
   }
-  
+
   getPayment() {
-    //return this.fixPayment;
+    return this.fixPayment;
   }
 
+  //getting home, donate, delivery, Schedule, card object,
+  // setCard(obj:any) {
+  //   this.fixCard = obj
+  // }
 
-  //getting donations
- // setDonation(obj:any) {
-   // this.donations = Object.assign(obj
-      // this.fixHome, 
-      // this.fixDonate, 
-      // this.fixDelivery, 
-      // this.fixSchedule, 
-      // this.fixGift, 
-      // this.fixCard, 
-      // this.fixBooking, 
-      // this.fixPayment
-   // )
- // }
-
-  //getDonation() {
-    
-    //return this.donations;
-  //}
+  // getCard() {
+  //   return this.fixCard;
+  // }
 
 }

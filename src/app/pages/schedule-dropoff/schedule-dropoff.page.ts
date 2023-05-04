@@ -16,12 +16,14 @@ export class ScheduleDropoffPage implements OnInit {
   ngOnInit() {
   }
 
-  handleDropoff(date:any) {
+  handleSchedule(date:any) {
     this.pickedDate = date.value;
 
-    this.donationsService.setSchedule(this.pickedDate);
-        
-    console.log(this.donationsService);
+    const userGift = this.donationsService.getDelivery();
+
+    const giftAdd = Object.assign(userGift, this.pickedDate);
+
+    this.donationsService.setSchedule(giftAdd);
 
   }
 

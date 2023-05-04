@@ -19,22 +19,25 @@ export class DonatePage implements OnInit {
   chooseClothes() {
 
     this.pickDonate.donate = 'Clothes';
-    console.log(this.pickDonate);
 
-    this.donationsService.setDonate(this.pickDonate);
+    const userGift = this.donationsService.getHome();
 
-    console.log(this.donationsService);
+    const giftAdd = Object.assign(userGift, this.pickDonate);
+
+    this.donationsService.setDonate(giftAdd);
+
     
   }
 
   chooseCash() {
 
     this.pickDonate.donate = 'Cash';
-    console.log(this.pickDonate);
 
-    this.donationsService.setDonate(this.pickDonate);
+    const userGift = this.donationsService.getHome();
 
-    console.log(this.donationsService);
+    const giftAdd = Object.assign(userGift, this.pickDonate);
+
+    this.donationsService.setDonate(giftAdd);
 
   }
 

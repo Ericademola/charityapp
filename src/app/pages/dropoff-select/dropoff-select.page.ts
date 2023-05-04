@@ -10,51 +10,58 @@ import { DonationsService } from 'src/app/services/donations/donations.service';
 export class DropoffSelectPage implements OnInit {
 
   categories = [
-    {name: 'Children', value: false},
-    {name: 'Shirts', value: false},
-    {name: 'Gowns', value: false},
-    {name: 'Trousers', value: false}
+    {name: "Children's Wears", value: false, variableName: 'childern_wears'},
+    {name: 'Shirts', value: false, variableName: 'shirts'},
+    {name: 'Gowns', value: false, variableName: 'gowns'},
+    {name: 'Trousers', value: false, variableName: 'trousers'}
   ]
 
-  gift:any = {}
+  allGift:any = {}
 
   constructor(private donationsService: DonationsService) { };
 
   ngOnInit() {
   }
 
-
   handleSelected(selected:any) {
 
-    let getClothes: string[] = [];
+    const gift:any = {}
 
-    if ( selected.value.Children === true ) {
-      let select: string = this.categories[0].name;
+    const getClothes: string[] = [];
+
+    if ( selected.value.childern_wears ) {
+      const select: string = this.categories[0].name;
       getClothes.push(select);
     }
 
-    if ( selected.value.Shirts === true ) {
-      let select: string = this.categories[1].name;
+    if ( selected.value.shirts ) {
+      const select: string = this.categories[1].name;
       getClothes.push(select);
     }
 
-    if ( selected.value.Gowns === true ) {
-      let select: string = this.categories[2].name;
+    if ( selected.value.gowns ) {
+      const select: string = this.categories[2].name;
       getClothes.push(select);
     }
 
-    if ( selected.value.Trousers === true ) {
-      let select: string = this.categories[3].name;
+    if ( selected.value.trousers ) {
+      const select: string = this.categories[3].name;
       getClothes.push(select);
     }
     
-    this.gift.clothes = getClothes;    
-    this.gift.photo = selected.value.uploadPhoto;
-    this.gift.usuage = selected.value.useKind;  
-    
-    this.donationsService.setGift(this.gift);
-        
-    console.log(this.donationsService);
+    gift.clothes = getClothes;    
+    gift.photo = selected.value.uploadPhoto;
+    gift.usuage = selected.value.useKind;  
+
+    this.allGift.gift = gift
+
+    console.log(this.allGift);
+
+    const userGift = this.donationsService.getSchedule();
+
+    const giftAdd = Object.assign(userGift, this.allGift);
+
+    this.donationsService.setGift(giftAdd);
     
   }
 

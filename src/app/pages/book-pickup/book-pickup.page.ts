@@ -19,11 +19,20 @@ export class BookPickupPage implements OnInit {
   handleBooking(booking:any) {
 
     this.booking = booking.value
-    console.log(this.booking);
 
-    this.donationsService.setBooking(this.booking);
-        
+    const userGift = this.donationsService.getSchedule();
+
+    const giftAdd = Object.assign(userGift, this.booking);
+
+    this.donationsService.setBooking(giftAdd);
+
+    console.log(userGift);
+    
+    console.log(giftAdd);
+
     console.log(this.donationsService);
+        
+    //console.log(this.donationsService);
     
   }
 

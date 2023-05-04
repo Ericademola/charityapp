@@ -15,14 +15,22 @@ export class DonateCashPage implements OnInit {
   ngOnInit() {
   }
 
-  public donateCash(cashDonation:any) {
+  donateCash(cashDonation:any) {
     
-    this.cashPayment = cashDonation.value
+    this.cashPayment = cashDonation.value;
 
-    this.donationsService.setPayment(this.cashPayment);
-        
+    const userGift = this.donationsService.getDonate();
+    
+    const giftAdd = Object.assign(userGift, this.cashPayment);
+    
+    this.donationsService.setPayment(giftAdd);
+
+    console.log(userGift);
+    
+    console.log(giftAdd);
+
     console.log(this.donationsService);
-
+    
   }
 
 }
