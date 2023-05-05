@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+
 
 @Component({
   selector: 'app-overview-dropoff',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewDropoffPage implements OnInit {
 
-  constructor() { }
+  donation:any;
+  donationCash:any;
+
+  constructor(private donationsService: DonationsService) { };
 
   ngOnInit() {
+
+    setTimeout(() => {
+      this.donation = this.donationsService.getGift();
+      this.donationCash = this.donationsService.getPayment();
+    }, 1000);
+
   }
 
 }

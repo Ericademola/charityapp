@@ -27,7 +27,7 @@
         <ion-radio-group
         [allowEmptySelection]="true"
         required
-        name="PaymentOption"
+        name="paymentOption"
         class="form-control"  
         #paymentOption="ngModel" 
         ngModel>
@@ -50,7 +50,7 @@
 
       </ion-list>
 
-      <ion-button expand="block" size="large" type="submit" *ngIf="cashDonation.valid" [routerLink]="['/overview-cash']" >Next</ion-button>
+      <ion-button expand="block" size="large" type="submit" *ngIf="cashDonation.valid" [routerLink]="['/card-details']">Next</ion-button>
 
     </form>
 

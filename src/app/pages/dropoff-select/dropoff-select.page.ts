@@ -10,10 +10,10 @@ import { DonationsService } from 'src/app/services/donations/donations.service';
 export class DropoffSelectPage implements OnInit {
 
   categories = [
-    {name: "Children's Wears", value: false, variableName: 'childern_wears'},
-    {name: 'Shirts', value: false, variableName: 'shirts'},
-    {name: 'Gowns', value: false, variableName: 'gowns'},
-    {name: 'Trousers', value: false, variableName: 'trousers'}
+    {name: " Children's Wears", value: false, variableName: 'childern_wears'},
+    {name: ' Shirts', value: false, variableName: 'shirts'},
+    {name: ' Gowns', value: false, variableName: 'gowns'},
+    {name: ' Trousers', value: false, variableName: 'trousers'}
   ]
 
   allGift:any = {}

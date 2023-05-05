@@ -84,6 +84,8 @@ export class DonationStatusPage implements OnInit {
     
     
     console.log('hg');
+
+    
     
   }
 
