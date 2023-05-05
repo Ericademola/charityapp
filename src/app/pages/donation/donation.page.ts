@@ -23,10 +23,6 @@ export class DonationPage implements OnInit {
     {
       home: "Amazing Grace",
       image: "assets/orphanage3.png",
-    },
-    {
-      home: "Grace Home",
-      image: "assets/orphanage2.png",
     }
   ]
 

@@ -1,19 +1,37 @@
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
   
-  <ion-grid>
-    <ion-row  class="ion-justify-content-around">
-      <ion-col class="ion-text-center" size="1">
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div *ngIf="iconSuccess">
+    <ion-grid>
+      <ion-row  class="ion-justify-content-around">
+        <ion-col class="ion-text-center" size="1">
+          <ion-icon name="checkmark-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <ion-text>
-    <h3>Successful!</h3>
-    <p>Thanks you for your donation</p>
-  </ion-text>
+    <ion-text>
+      <h3>Successful!</h3>
+      <p>Thanks you for your donation</p>
+    </ion-text>
+  </div>
 
-  <ion-button expand="block" size="large" [routerLink]="['/tablinks/home-page']">Back to Homepage</ion-button>
+  <div *ngIf="iconFail">
+    <ion-grid>
+      <ion-row  class="ion-justify-content-around">
+        <ion-col class="ion-text-center" size="1">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-text>
+      <h3>Failed!</h3>
+      <p>Thanks, but the transaction failed.</p>
+      <p>Please try again.</p>
+    </ion-text>
+  </div>
+
+  <ion-button expand="block" size="large" (click)="saveDonation()" [routerLink]="['/tablinks/home-page']">Back to Homepage</ion-button>
 </ion-content>
-<!-- <ion-icon name="close-circle-outline"></ion-icon> -->
+<!-- [routerLink]="['/tablinks/home-page']" -->

@@ -55,8 +55,6 @@ export class DropoffSelectPage implements OnInit {
 
     this.allGift.gift = gift
 
-    console.log(this.allGift);
-
     const userGift = this.donationsService.getSchedule();
 
     const giftAdd = Object.assign(userGift, this.allGift);

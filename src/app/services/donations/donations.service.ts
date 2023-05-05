@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +27,7 @@ export class DonationsService {
   }
 
   getHome() {
+    if (this.fixHome === null || this.fixHome === undefined) {return}
     return this.fixHome;
   }
 
@@ -37,6 +37,7 @@ export class DonationsService {
   }
   
   getDonate() {  
+    if (this.fixDonate === null || this.fixDonate === undefined) {return}
     return this.fixDonate;
   }
 
@@ -46,6 +47,7 @@ export class DonationsService {
   }
 
   getDelivery() {
+    if (this.fixDelivery === null || this.fixDelivery === undefined) {return}
     return this.fixDelivery;
   }
 
@@ -55,6 +57,7 @@ export class DonationsService {
   }
 
   getSchedule() {
+    if (this.fixSchedule === null || this.fixSchedule === undefined) {return}
     return this.fixSchedule;
   }
 
@@ -64,6 +67,7 @@ export class DonationsService {
   }
 
   getGift() {
+    if (this.fixGift === null || this.fixGift === undefined) {return}
     return this.fixGift;
   }
 
@@ -73,6 +77,7 @@ export class DonationsService {
   }
 
   getBooking() {
+    if (this.fixBooking === null || this.fixBooking === undefined) {return}
     return this.fixBooking;
   }
 
@@ -82,16 +87,18 @@ export class DonationsService {
   }
 
   getPayment() {
+    if (this.fixPayment === null || this.fixPayment === undefined) {return}
     return this.fixPayment;
   }
 
-  //getting home, donate, delivery, Schedule, card object,
-  // setCard(obj:any) {
-  //   this.fixCard = obj
-  // }
+  //getting donations,
+  setDonations(obj:any) {
+    this.donations = obj
+  }
 
-  // getCard() {
-  //   return this.fixCard;
-  // }
+  getDonations() {
+    if (this.donations === null || this.donations === undefined) {return}
+    return this.donations;
+  }
 
 }

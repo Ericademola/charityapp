@@ -9,8 +9,12 @@ import { DonationsService } from 'src/app/services/donations/donations.service';
 })
 export class DonationStatusPage implements OnInit {
 
+  donations:any = []
+  donation:any = {}
+
   iconSuccess: boolean = false;
   iconFail: boolean = false;
+
   status:any = {};
 
   constructor(private donationsService: DonationsService) { };
@@ -19,7 +23,8 @@ export class DonationStatusPage implements OnInit {
 
     setTimeout(() => {
 
-      const statusObj:any = {}
+      const statusObj:any = {};
+
       const state = Math.trunc( Math.random() * 100 );
       
       if ( state >= 50 ) {
@@ -35,35 +40,50 @@ export class DonationStatusPage implements OnInit {
       const userGift = this.donationsService.getGift();
       const userCash = this.donationsService.getPayment();
 
+      const checkCash = Object.values(userCash);
+      console.log(checkCash);
+      
+
       console.log(userGift);
       console.log(userCash);
 
-      const valutes = Object.values(userGift);
-      console.log(valutes);
+      const checkGift = Object.values(userGift);
 
-      const values = Object.values(userCash);
-      console.log(values);
-      
+      if (checkGift.includes('Clothes')) {
 
-      
+        const giftAdd = Object.assign(userGift, this.status);
+        this.donationsService.setDonations(giftAdd);
+        
+        console.log(giftAdd);
+    
+        console.log(this.donationsService);
 
-      //const giftAdd = Object.assign(userGift, this.status);
-      //const cashAdd = Object.assign(userCash, this.status);
+      } 
 
-  /*
-      this.donationsService.setGift(giftAdd);
-      this.donationsService.setPayment(cashAdd);
+      if (checkCash.includes('Cash')) {
 
-  
-      console.log(userGift);
-      console.log(userCash);
-      
-      
-      console.log(giftAdd);
-  
-      console.log(this.donationsService);
-      */
+        const cashAdd = Object.assign(userCash, this.status);
+        this.donationsService.setDonations(cashAdd);
+
+        console.log(cashAdd);        
+            
+        console.log(this.donationsService);
+      } 
+
     }, 2000);
+    
+  }
+
+
+  saveDonation() {
+    const donation = this.donationsService.getDonations;
+    
+    this.donations.push(this.donation);
+    console.log(this.donation);
+    console.log(this.donations);
+    
+    
+    console.log('hg');
     
   }
 

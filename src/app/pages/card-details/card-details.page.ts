@@ -9,7 +9,7 @@ import { DonationsService } from 'src/app/services/donations/donations.service';
 })
 export class CardDetailsPage implements OnInit {
 
-  Card_Detail:any;
+  Card_Detail:any = {};
 
   constructor(private donationsService: DonationsService) { };
 
@@ -17,12 +17,26 @@ export class CardDetailsPage implements OnInit {
   }
 
   cardDetails(card:any) {
-/*
+
     this.Card_Detail = card.value
 
-    this.donationsService.setCard(this.Card_Detail);
-      */  
-    console.log(this.donationsService);
+    console.log(this.Card_Detail);
+    
+    /*
+    let memberInfo = signUp.value
+      console.log(memberInfo);
+      this.members.push(memberInfo)
+      console.log(this.members);
+      let json = JSON.stringify(this.members);
+      localStorage.setItem('members', json);
+      console.log('signed up'); 
+
+        let go = [3, 'gff', 3]
+      let jlson = JSON.stringify(go);
+      localStorage.setItem('members', jlson);
+      console.log('signed up'); 
+*/ 
+    //console.log(this.donationsService);
     
   }
 

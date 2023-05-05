@@ -17,7 +17,7 @@ export class DonateCashPage implements OnInit {
 
   donateCash(cashDonation:any) {
     
-    this.cashPayment = cashDonation.value;
+    this.cashPayment.payment = cashDonation.value;
 
     const userGift = this.donationsService.getDonate();
     
@@ -27,6 +27,9 @@ export class DonateCashPage implements OnInit {
 
     console.log(userGift);
     
+    console.log(this.cashPayment);
+    
+
     console.log(giftAdd);
 
     console.log(this.donationsService);

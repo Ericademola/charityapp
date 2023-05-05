@@ -26,6 +26,9 @@ export class LoginInPage implements OnInit {
     
     let json:any = localStorage.getItem('members');
     let members = JSON.parse(json);
+
+    //const currentUser = members.find(user => members.username === login.value.username)
+
     console.log(members);
 
     this.memberUsername = members.map((member:any) => member.username).includes(login.value.username);
