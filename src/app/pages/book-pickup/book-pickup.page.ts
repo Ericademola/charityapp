@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-book-pickup',
@@ -7,13 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookPickupPage implements OnInit {
 
-  constructor() { }
+  booking:any;
+
+  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
 
   ngOnInit() {
   }
 
+  navBack() {
+    this.navCtrl.back();
+  }
+
   handleBooking(booking:any) {
-    console.log(booking);
+
+    this.booking = booking.value
+
+    const userGift = this.donationsService.getDelivery();
+
+    const giftAdd = Object.assign(userGift, this.booking);
+
+    this.donationsService.setBooking(giftAdd);
     
   }
 

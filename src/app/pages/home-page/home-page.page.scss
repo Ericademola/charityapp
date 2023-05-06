@@ -1,7 +1,17 @@
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-end: 1em;
+  --padding-bottom: .8em;
+}
+
+ion-title {
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
+
 ion-img {
   width: 100%;
   margin: auto;
-
 }
 
 h6 {

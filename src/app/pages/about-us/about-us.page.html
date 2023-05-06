@@ -1,5 +1,16 @@
 <!-- HEADER -->
-<app-header></app-header>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-title>About Us</ion-title>  
+
+    <ion-buttons slot="end" [routerLink]="['/user-profile']">
+      <ion-avatar>
+        <img alt="member" src="../../../assets/member-1.png">
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
@@ -9,7 +20,6 @@
       <ion-text><h3>Hope orphanage</h3></ion-text>
       <p><ion-text>Empowering homeless kids</ion-text></p>
     </div>
-    <ion-text><h5>About Us</h5></ion-text>
     <small><ion-text>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</ion-text></small>
     <ion-button expand="block" size="large" [routerLink]="['/chat-log']">Message Now</ion-button>
   </div>

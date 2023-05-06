@@ -9,6 +9,8 @@ import {ValidatorService} from "../../services/validator-service/validator.servi
 })
 export class SignUpPage implements OnInit {
   
+  memberInfo:any = {};
+
   members = new Array()
 
   signupForm = {
@@ -39,9 +41,9 @@ export class SignUpPage implements OnInit {
       //this.navigatorService.handleNavigation('/login-in');
       
       
-      let memberInfo = signUp.value
-      console.log(memberInfo);
-      this.members.push(memberInfo)
+      this.memberInfo = signUp.value
+      console.log(this.memberInfo);
+      this.members.push(this.memberInfo)
       console.log(this.members);
       let json = JSON.stringify(this.members);
       localStorage.setItem('members', json);

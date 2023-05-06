@@ -72,24 +72,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/overview-dropoff/overview-dropoff.module').then( m => m.OverviewDropoffPageModule)
   },
   {
-    path: 'overview-pickup',
-    loadChildren: () => import('./pages/overview-pickup/overview-pickup.module').then( m => m.OverviewPickupPageModule)
-  },
-  {
-    path: 'select-dropoff',
-    loadChildren: () => import('./pages/select-dropoff/select-dropoff.module').then(m => m.SelectDropoffPageModule)
-  },
-  {
    path: 'overview-cash',
     loadChildren: () => import('./pages/overview-cash/overview-cash.module').then(m => m.OverviewCashPageModule)
   },
   {
     path: 'schedule-dropoff',
     loadChildren: () => import('./pages/schedule-dropoff/schedule-dropoff.module').then(m => m.ScheduleDropoffPageModule)
-  },
-  {
-    path: 'schedule-pickup',
-    loadChildren: () => import('./pages/schedule-pickup/schedule-pickup.module').then(m => m.SchedulePickupPageModule)
   },
   {
     path: 'donate-cash',

@@ -1,5 +1,15 @@
 <!-- HEADER -->
-<app-header></app-header>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Donate Cash</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
@@ -27,7 +37,7 @@
         <ion-radio-group
         [allowEmptySelection]="true"
         required
-        name="Payment Option"
+        name="paymentOption"
         class="form-control"  
         #paymentOption="ngModel" 
         ngModel>
@@ -50,7 +60,7 @@
 
       </ion-list>
 
-      <ion-button expand="block" size="large" type="submit" *ngIf="cashDonation.valid" [routerLink]="['/overview-cash']" >Next</ion-button>
+      <ion-button expand="block" size="large" type="submit" *ngIf="cashDonation.valid" [routerLink]="['/card-details']">Next</ion-button>
 
     </form>
 

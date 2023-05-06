@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-overview-dropoff',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewDropoffPage implements OnInit {
 
-  constructor() { }
+  donationClothes:any;
+
+  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
 
   ngOnInit() {
+
+    setTimeout(() => {
+      this.donationClothes = this.donationsService.getGift();
+    }, 1000);
+
+  }
+
+  navBack() {
+    this.navCtrl.back();
   }
 
 }

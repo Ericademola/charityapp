@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DonationsService } from 'src/app/services/donations/donations.service';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-donate-cash',
@@ -7,16 +10,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DonateCashPage implements OnInit {
 
-  //cashDonation.valid
+  cashPayment:any = {};
 
-  constructor() { }
+  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
 
   ngOnInit() {
   }
 
-  public donateCash(cashDonation:any) {
-    console.log(cashDonation);
-    return cashDonation;
+  navBack() {
+    this.navCtrl.back();
+  }
+
+  donateCash(cashDonation:any) {
+    
+    this.cashPayment.payment = cashDonation.value;
+
+    const userGift = this.donationsService.getDonate();
+    
+    const giftAdd = Object.assign(userGift, this.cashPayment);
+    
+    this.donationsService.setPayment(giftAdd);
+
+    console.log(userGift);
+    
+    console.log(this.cashPayment);
+    
+
+    console.log(giftAdd);
+
+    console.log(this.donationsService);
+    
   }
 
 }

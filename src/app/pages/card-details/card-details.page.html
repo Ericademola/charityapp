@@ -1,5 +1,15 @@
 <!-- HEADER -->
-<app-header></app-header>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Card Details</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
 
 <!-- BODY CONTENT -->
 <ion-content class="ion-padding">
@@ -78,7 +88,7 @@
 
     </ion-grid>
 
-    <ion-button expand="block" size="large" type="submit" *ngIf="card.valid" [routerLink]="['/donation-status']">Next</ion-button>
+    <ion-button expand="block" size="large" type="submit" [disabled]="!card.valid" [routerLink]="['/overview-cash']">Next</ion-button>
   
   </form>
 </ion-content>
