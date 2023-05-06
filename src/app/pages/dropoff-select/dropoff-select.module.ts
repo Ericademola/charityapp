@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import { HeaderModule } from 'src/app/shared/header/header.module';
 import { DropoffSelectPageRoutingModule } from './dropoff-select-routing.module';
 
 import { DropoffSelectPage } from './dropoff-select.page';
@@ -13,7 +12,6 @@ import { DropoffSelectPage } from './dropoff-select.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HeaderModule,
     DropoffSelectPageRoutingModule
   ],
   declarations: [DropoffSelectPage]

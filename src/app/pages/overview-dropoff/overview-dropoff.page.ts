@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DonationsService } from 'src/app/services/donations/donations.service';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -9,18 +10,20 @@ import { DonationsService } from 'src/app/services/donations/donations.service';
 })
 export class OverviewDropoffPage implements OnInit {
 
-  donation:any;
-  donationCash:any;
+  donationClothes:any;
 
-  constructor(private donationsService: DonationsService) { };
+  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
 
   ngOnInit() {
 
     setTimeout(() => {
-      this.donation = this.donationsService.getGift();
-      this.donationCash = this.donationsService.getPayment();
+      this.donationClothes = this.donationsService.getGift();
     }, 1000);
 
+  }
+
+  navBack() {
+    this.navCtrl.back();
   }
 
 }

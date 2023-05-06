@@ -1,5 +1,15 @@
 <!-- HEADER -->
-<app-header></app-header>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Schedule Date & Time</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
 
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
@@ -18,7 +28,7 @@
         <span slot="title">Select a Reservation Date & Time</span>
       </ion-datetime>
   
-      <ion-button expand="block" size="large" type="submit" [routerLink]="['/dropoff-select']">Next</ion-button>
+      <ion-button expand="block" size="large" type="submit" *ngIf="date.dirty" [routerLink]="['/dropoff-select']">Next</ion-button>
     </form>
   </div>
 </ion-content>

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import { HeaderModule } from 'src/app/shared/header/header.module';
 import { DonationPageRoutingModule } from './donation-routing.module';
 
 import { DonationPage } from './donation.page';
@@ -13,7 +12,6 @@ import { DonationPage } from './donation.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HeaderModule,
     DonationPageRoutingModule
   ],
   declarations: [DonationPage]

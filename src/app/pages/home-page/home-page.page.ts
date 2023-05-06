@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.page.html',
@@ -7,17 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePagePage implements OnInit {
 
+  time:string = ''
+
   name:string = ''
 
   constructor() { }
 
   ngOnInit() {
-    let json:any = localStorage.getItem('members');
-    let members = JSON.parse(json);
-    console.log(members);
+    const json:any = localStorage.getItem('members');
+    const members = JSON.parse(json);
 
-    let firstName = members.map((member:any) => member.firstName).pop()
+    const firstName = members.map((member:any) => member.firstName).pop();
     this.name = firstName.at(0).toUpperCase() + firstName.slice(1);
+
+    let getTime = new Date().getHours();
+    
+    if ( getTime <= 11 ) {
+      this.time = 'Morning';
+    } else if ( getTime <= 15 ) {
+      this.time = 'Afternoon';
+    } else {
+      this.time = 'Evening';
+    }
+    
   }
 
 }

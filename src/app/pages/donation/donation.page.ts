@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Community } from '../../interfaces/communities';
 import { DonationsService } from 'src/app/services/donations/donations.service';
-
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-donation',
@@ -28,9 +28,13 @@ export class DonationPage implements OnInit {
 
   getHome:any = {}
 
-  constructor(private donationsService: DonationsService) { };
+  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
 
   ngOnInit(): void {};
+
+  navBack() {
+    this.navCtrl.back();
+  }
 
   handleDonation(community: Community) {
 

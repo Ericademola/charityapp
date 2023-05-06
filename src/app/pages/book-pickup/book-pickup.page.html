@@ -2,13 +2,12 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
 
-    <ion-title>Book Pickup</ion-title> 
-
-    <ion-buttons slot="end">
-      <ion-avatar>
-        <img alt="member" src="../../../assets/member-1.png">
-      </ion-avatar>
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
     </ion-buttons>
+
+    <ion-title>Book Pickup</ion-title>  
+
   </ion-toolbar>
 </ion-header> 
 
@@ -64,6 +63,6 @@
       </ion-input>
     </div>
 
-    <ion-button expand="block" size="large" type="submit" [disabled]="!booking.valid" [routerLink]="['/pickup-select']">Next</ion-button>
+    <ion-button expand="block" size="large" type="submit" [disabled]="!booking.valid" [routerLink]="['/schedule-dropoff']">Next</ion-button>
   </form>
 </ion-content>

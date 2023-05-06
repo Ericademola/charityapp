@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DonationsService } from 'src/app/services/donations/donations.service';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -11,9 +12,13 @@ export class ChooseServicePage implements OnInit {
 
   pickDelivery:any = {}
 
-  constructor(private donationsService: DonationsService) { };
+  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
 
   ngOnInit() {
+  }
+
+  navBack() {
+    this.navCtrl.back();
   }
 
   public chooseDropoff() {

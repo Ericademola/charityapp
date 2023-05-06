@@ -1,5 +1,16 @@
 <!-- HEADER -->
-<app-header></app-header>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-title>Notifications</ion-title>  
+
+    <ion-buttons slot="end" [routerLink]="['/user-profile']">
+      <ion-avatar>
+        <img alt="member" src="../../../assets/member-1.png">
+      </ion-avatar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">

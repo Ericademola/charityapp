@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DonationsService } from 'src/app/services/donations/donations.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-donate',
@@ -10,10 +11,14 @@ export class DonatePage implements OnInit {
 
   pickDonate:any = {}
 
-  constructor(private donationsService: DonationsService) { };
+  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
 
   ngOnInit(){
     
+  }
+
+  navBack() {
+    this.navCtrl.back();
   }
 
   chooseClothes() {
