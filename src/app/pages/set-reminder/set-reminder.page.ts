@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-set-reminder',
@@ -7,14 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SetReminderPage implements OnInit {
 
-  constructor() { }
+  communities = [
+    {
+      home: "Rising Star",
+    },
+    {
+      home: "Grace Home",
+    },
+    {
+      home: "Amazing Grace",
+    }
+  ]
+
+  savings:any = [];
+  getSaving:any = {};
+
+  constructor(private navCtrl: NavController) { };
 
   ngOnInit() {
   }
 
+  navBack() {
+  this.navCtrl.back();
+  }
+
   setReminder(reminder:any) {
-    console.log(reminder);
-    
+
+    this.getSaving = reminder.value;
+    this.savings.push(this.getSaving);
+
   }
 
 }

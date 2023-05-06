@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { log } from 'console';
-import { stringify } from 'querystring';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chatlog } from './../../interfaces/chat-log'
-
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-chat-log',
@@ -10,6 +8,8 @@ import { Chatlog } from './../../interfaces/chat-log'
   styleUrls: ['./chat-log.page.scss'],
 })
 export class ChatLogPage implements OnInit {
+
+  //@ViewChild(IonContent) content:any = IonContent
 
   chats: Chatlog[] = []
 
@@ -38,6 +38,7 @@ export class ChatLogPage implements OnInit {
 
     }, 1000);
 
+    //this.content.scrollToBottom()
   }
 
 }
