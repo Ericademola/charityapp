@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigatorService } from "../../services/navigator-service/navigator.service";
+
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,14 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordPage implements OnInit {
 
-  constructor() { }
+  memberUsername:boolean = true;
+  passwordReset:boolean = true;
+
+  constructor(private navigatorService: NavigatorService) { }
 
   ngOnInit() {
   }
 
   handleReset(reset:any) {
 
-    if ( reset.value.password === reset.value.resetPassword )
+    let json:any = localStorage.getItem('members');
+    let members = JSON.parse(json);
+    
+    this.memberUsername = members.map((member:any) => member.username).includes(reset.value.username);
+
+    if ( reset.value.password === reset.value.resetPassword ) {
+      this.navigatorService.handleNavigation('/tablinks');
+    } else {this.passwordReset = false}
+
     console.log(reset.value);
     
   }
