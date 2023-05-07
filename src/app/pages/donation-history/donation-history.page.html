@@ -1,36 +1,37 @@
 <!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Donation Overview</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
 
 
+<!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
+
+  <!-- <ng-container *ngIf="donationClothes"></ng-container> -->
 
   <ng-container *ngFor="let history of histories">
 
     <div class="first">
       <div class="a">
-        <h5>{{ history.name }}</h5>
-        <small>{{ history.donation }}</small>
+        <h5>{{ history.home }}</h5>
+        <small>{{ history.donate }}</small>
       </div>
       <div class="b">
-        <h5>{{ history.date }}</h5>
+        <h5>{{ history.date | date :'d MMM, y' }}</h5>
         <small>{{ history.status }}</small>
-      </div>
-    </div>
-
-
-
-    <div class="second">
-      <div class="a">
-        <h5>Hope Home</h5>
-        <small>Cash donation.</small>
-      </div>
-      <div class="b">
-        <h5>4 June, 2022</h5>
-        <small>successful</small>
       </div>
     </div>
 
   </ng-container>
 
-  <ion-button size="large">View All</ion-button>
+  <ion-button size="large" *ngIf="viewBtn" (click)="viewAll()">View All</ion-button>
 
 </ion-content>

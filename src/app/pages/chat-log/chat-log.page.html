@@ -1,5 +1,21 @@
 <!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
 
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Admin</ion-title>  
+
+    <ion-buttons slot="end">
+      <ion-avatar>
+        <img alt="member" src="assets/member-2.png">
+      </ion-avatar>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
 
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
@@ -10,7 +26,6 @@
         <p [ngClass]="{sender: chat.sent}">{{chat.sent}}</p>
         <p [ngClass]="{receiver: chat.received}">{{chat.received}}</p> 
       </ng-container>
-      <!-- chat messages -->
     </div>
 
   </div>

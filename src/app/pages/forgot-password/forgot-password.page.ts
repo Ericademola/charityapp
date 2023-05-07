@@ -12,4 +12,11 @@ export class ForgotPasswordPage implements OnInit {
   ngOnInit() {
   }
 
+  handleReset(reset:any) {
+
+    if ( reset.value.password === reset.value.resetPassword )
+    console.log(reset.value);
+    
+  }
+
 }

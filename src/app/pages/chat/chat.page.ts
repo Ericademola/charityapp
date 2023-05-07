@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chat } from './../../interfaces/chat';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-chat',
@@ -32,9 +33,13 @@ export class ChatPage implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { };
 
   ngOnInit() {
+  }
+
+  navBack() {
+    this.navCtrl.back();
   }
 
 }

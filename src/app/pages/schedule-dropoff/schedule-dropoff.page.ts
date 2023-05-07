@@ -25,22 +25,20 @@ export class ScheduleDropoffPage implements OnInit {
     this.pickedDate = date.value;
 
     const userGift = this.donationsService.getDelivery();
-    const userGiftBooking = this.donationsService.getBooking();
+    const userBooking = this.donationsService.getBooking();
 
-    const checkGift = Object.values(userGift);
-    if ( Object.values(userGiftBooking) === undefined || null) {return}
-    const checkUserBooking = Object.values(userGiftBooking);
-
-
-    if (checkGift.includes('Dropoff')) {
-
-      const giftAdd = Object.assign(userGift, this.pickedDate);
-      this.donationsService.setSchedule(giftAdd);
+    if ( userGift === undefined || null ) {return}
+    else {
+      const cashAdd = Object.assign(userGift, this.pickedDate);
+      console.log(cashAdd);        
+      this.donationsService.setSchedule(cashAdd);
     }
-    
-    if (checkUserBooking.includes('Pickup')) {
-      const giftAddBooking = Object.assign(userGiftBooking, this.pickedDate);
-      this.donationsService.setSchedule(giftAddBooking);    
+
+    if ( userBooking === undefined || null ) {return}
+    else {
+      const giftAdd = Object.assign(userBooking, this.pickedDate);
+      console.log(giftAdd);
+      this.donationsService.setSchedule(giftAdd);
     }
 
   }
