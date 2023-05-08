@@ -24,11 +24,16 @@ export class ForgotPasswordPage implements OnInit {
     
     this.memberUsername = members.map((member:any) => member.username).includes(reset.value.username);
 
-    if ( reset.value.password === reset.value.resetPassword ) {
+    if ( (reset.value.password === reset.value.resetPassword) && this.memberUsername) {
       this.navigatorService.handleNavigation('/tablinks');
     } else {this.passwordReset = false}
 
     console.log(reset.value);
+
+    let g = [4, 7, 9, 3]
+    console.log(g);
+    let h = g.slice(0, 2)
+    console.log(h);
     
   }
 
