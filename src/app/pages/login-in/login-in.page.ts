@@ -8,8 +8,10 @@ import { NavigatorService } from "../../services/navigator-service/navigator.ser
 })
 export class LoginInPage implements OnInit {
 
-  memberUsername:boolean = true
-  memberPassword:boolean = true
+  memberUsername:boolean = true;
+  memberPassword:boolean = true;
+
+  currentMember:any;
 
   loginForm = {
     username: '',
@@ -27,19 +29,18 @@ export class LoginInPage implements OnInit {
     let json:any = localStorage.getItem('members');
     let members = JSON.parse(json);
 
-    //const currentUser = members.find(user => members.username === login.value.username)
-
     console.log(members);
 
     this.memberUsername = members.map((member:any) => member.username).includes(login.value.username);
-    this.memberPassword = members.map((member:any) => member.password).includes(login.value.password);
 
-    console.log(this.memberUsername);
-    console.log(this.memberPassword);
+    if (  members.map((member:any) => member.username).includes(login.value.username) ) {
+      this.currentMember = members.find((member: { username: any; }) => member.username === login.value.username);
 
-    if ( this.memberUsername && this.memberPassword ) {
-      this.navigatorService.handleNavigation('/tablinks');
-    }
+      if ( (this.currentMember.username === login.value.username) && (this.currentMember.password === login.value.password) ) {
+        this.navigatorService.handleNavigation('/tablinks')
+      }
+
+    } else {return}
     
   }
 

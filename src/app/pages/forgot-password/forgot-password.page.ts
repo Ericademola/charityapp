@@ -11,6 +11,7 @@ export class ForgotPasswordPage implements OnInit {
 
   memberUsername:boolean = true;
   passwordReset:boolean = true;
+  currentMember:any;
 
   constructor(private navigatorService: NavigatorService) { }
 
@@ -24,17 +25,24 @@ export class ForgotPasswordPage implements OnInit {
     
     this.memberUsername = members.map((member:any) => member.username).includes(reset.value.username);
 
-    if ( (reset.value.password === reset.value.resetPassword) && this.memberUsername) {
-      this.navigatorService.handleNavigation('/tablinks');
-    } else {this.passwordReset = false}
+    if ( (reset.value.password !== reset.value.resetPassword) ) {
+      this.passwordReset = false;
+    }
 
-    console.log(reset.value);
+    if (  members.map((member:any) => member.username).includes(reset.value.username) ) {
+      this.currentMember = members.find((member: { username: any; }) => member.username === reset.value.username);
+      let indexOfCurrentMember = members.indexOf(this.currentMember);
+      //console.log(indexOfCurrentMember);
+      this.currentMember.password = reset.value.password;
+      members.splice(0, 1, this.currentMember);
+      let json = JSON.stringify(members);
+      localStorage.setItem('members', json);     
+    } else {return}
 
-    let g = [4, 7, 9, 3]
-    console.log(g);
-    let h = g.slice(0, 2)
-    console.log(h);
-    
+    if ( (this.currentMember.username === reset.value.username) && (reset.value.password === reset.value.resetPassword) ) {
+      this.navigatorService.handleNavigation('/tablinks')
+    }
+      
   }
 
 }
