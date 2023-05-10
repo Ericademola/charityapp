@@ -20,8 +20,9 @@ export class ForgotPasswordPage implements OnInit {
 
   handleReset(reset:any) {
 
-    let json:any = localStorage.getItem('members');
-    let members = JSON.parse(json);
+    const json:any = localStorage.getItem('members');
+    const members = JSON.parse(json);
+    let indexOfCurrentMember:number;
     
     this.memberUsername = members.map((member:any) => member.username).includes(reset.value.username);
 
@@ -31,17 +32,17 @@ export class ForgotPasswordPage implements OnInit {
 
     if (  members.map((member:any) => member.username).includes(reset.value.username) ) {
       this.currentMember = members.find((member: { username: any; }) => member.username === reset.value.username);
-      let indexOfCurrentMember = members.indexOf(this.currentMember);
-      //console.log(indexOfCurrentMember);
-      this.currentMember.password = reset.value.password;
-      members.splice(0, 1, this.currentMember);
-      let json = JSON.stringify(members);
-      localStorage.setItem('members', json);     
+      indexOfCurrentMember = members.indexOf(this.currentMember);
+      //console.log(indexOfCurrentMember);     
     } else {return}
 
     if ( (this.currentMember.username === reset.value.username) && (reset.value.password === reset.value.resetPassword) ) {
+      this.currentMember.password = reset.value.password;
+      members.splice(indexOfCurrentMember, 1, this.currentMember);
+      let json = JSON.stringify(members);
+      localStorage.setItem('members', json);
       this.navigatorService.handleNavigation('/tablinks')
-    }
+    } else {return}
       
   }
 

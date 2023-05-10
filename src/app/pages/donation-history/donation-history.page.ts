@@ -51,13 +51,14 @@ export class DonationHistoryPage implements OnInit {
   constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
 
   ngOnInit() {
-    console.log('hi');
+
     setTimeout(() => {
-      console.log('hi');
+
       const userGift = this.donationsService.getDonation();
+      
       if ( userGift === undefined || null ) {return}
       this.histories.unshift(userGift);
-      console.log('hi');
+
       this.partlyHistories = this.histories.slice(0, 2);
       console.log(this.histories);
       console.log(this.partlyHistories);
@@ -70,7 +71,6 @@ export class DonationHistoryPage implements OnInit {
     
     }, 1000);
 
-    console.log('hi');
   }
   
   navBack() {

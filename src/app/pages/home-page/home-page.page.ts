@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrentUserService } from 'src/app/services/current-user-service/current-user.service';
 
 
 @Component({
@@ -8,18 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePagePage implements OnInit {
 
-  time:string = ''
+  time:string = '';
 
-  name:string = ''
+  name:string = '';
 
-  constructor() { }
+  constructor( private currentUserService: CurrentUserService ) { }
 
   ngOnInit() {
-    const json:any = localStorage.getItem('members');
-    const members = JSON.parse(json);
 
-    const firstName = members.map((member:any) => member.firstName).pop();
-    this.name = firstName.at(0).toUpperCase() + firstName.slice(1);
+    const currentUser = this.currentUserService.getCurrentUser();
+    const firstname = currentUser.firstname;
+    this.name = firstname.at(0).toUpperCase() + firstname.slice(1);
 
     let getTime = new Date().getHours();
     

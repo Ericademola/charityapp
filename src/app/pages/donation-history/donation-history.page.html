@@ -20,7 +20,7 @@
 
   <ng-container *ngIf="viewPartly"> 
 
-    <ng-container *ngFor="let partlyHistory of partlyHistories">
+    <ng-container *ngFor="let partlyHistory of partlyHistories let e = even; let o = odd">
 
       <div class="first">
         <div class="a">
@@ -40,7 +40,8 @@
   
   <ng-container *ngIf="viewEverything">
 
-    <ng-container *ngFor="let history of histories">
+    <ng-container 
+    *ngFor="let history of histories let e = even; let o = odd">
 
       <div class="first">
         <div class="a">

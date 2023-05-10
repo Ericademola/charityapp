@@ -1,6 +1,6 @@
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <form #signUp="ngForm" (ngSubmit)="handleSignUp(signUp)">
+  <form [formGroup]="signUp" (ngSubmit)="handleSignUp()" #form="ngForm">
 
     <ion-avatar>
       <ion-icon name="camera-sharp" size="large"></ion-icon>
@@ -19,24 +19,18 @@
       <ion-item>
         <ion-label position="floating">First name</ion-label>
         <ion-input 
-          required
-          minlength="2" 
           type="text" 
-          name="firstName" 
           placeholder="First name" 
-          class="form-control"  
-          #firstName="ngModel" 
-          ngModel>
+          formControlName="firstname">
         </ion-input>
 
-        <div 
-          *ngIf="firstName.touched && 
-          firstName.invalid" class="error-massage">
-            <div 
-              *ngIf="firstName.errors && 
-              firstName.errors['minlength']">
-              Sorry, name is too short
-            </div>
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('firstname').hasError('required') && (signUp.get('firstname').touched && signUp.get('firstname').invalid)">
+            <small>Field can not be empty</small>
+          </ng-container>
+          <ng-container *ngIf="signUp.get('firstname').hasError('minlength') && (signUp.get('firstname').touched || signUp.get('firstname').dirty)">
+            <small>Field  require more characters</small>
+          </ng-container>  
         </div>
 
         <ion-icon name="ellipse"></ion-icon>
@@ -45,14 +39,16 @@
       <ion-item>
         <ion-label position="floating">Last name</ion-label>
         <ion-input 
-          minlength="2"
           type="text" 
-          name="lastName" 
           placeholder="Last name" 
-          class="form-control"  
-          #lastName="ngModel"  
-          ngModel>
+          formControlName="lastname">
         </ion-input>
+
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('lastname').hasError('minlength') && (signUp.get('lastname').touched || signUp.get('lastname').dirty)">
+            <small>Field  require more characters</small>
+          </ng-container>  
+        </div>
 
       </ion-item>
 
@@ -60,47 +56,42 @@
         <ion-label position="floating">Email address</ion-label>
         <ion-input 
           type="text" 
-          name="email" 
           placeholder="email" 
-          class="form-control"  
-          #email="ngModel" 
-          ngModel>
+          formControlName="email">
         </ion-input>
+
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('email').hasError('email') && (signUp.get('email').touched || signUp.get('email').dirty)">
+            <small>It dose not seem like a valid email</small>
+          </ng-container>  
+        </div>
+  
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Phone number</ion-label>
         <ion-input 
-          type="text" 
-          name="email" 
-          placeholder="email" 
-          class="form-control"  
-          #phoneNumber="ngModel"
-          ngModel>
+          type="tel" 
+          placeholder="Phone number" 
+          formControlName="phoneNumber"> 
         </ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">username</ion-label>
-        <ion-input 
-          required
-          minlength="4" 
+        <ion-input  
           type="text" 
-          name="username" 
-          placeholder="First name" 
-          class="form-control"  
-          #username="ngModel" 
-          ngModel>
+          placeholder="Username" 
+          formControlName="username">
         </ion-input>
 
-        <div 
-          *ngIf="username.touched && 
-          username.invalid" class="error-massage">
-          <div 
-            *ngIf="username.errors && 
-            username.errors['minlength']">
-            Sorry, name is too short
-          </div>
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('username').hasError('required') && (signUp.get('username').touched || signUp.get('username').dirty)">
+            <small>Field can not be empty</small>
+          </ng-container>
+          <ng-container *ngIf="signUp.get('username').hasError('minlength') && (signUp.get('username').touched || signUp.get('username').dirty)">
+            <small>Field  require more characters</small>
+          </ng-container>  
         </div>
 
         <ion-icon name="ellipse"></ion-icon>
@@ -108,40 +99,30 @@
 
       <ion-item>
         <ion-label position="floating">password</ion-label>
-        <ion-input 
-          required
-          minlength="4" 
-          maxlength="10"
-          type="text" 
-          name="password" 
+        <ion-input
+          type="password" 
           placeholder="Password" 
-          class="form-control"  
-          #password="ngModel" 
-          ngModel>
+          formControlName="password">
         </ion-input>
 
-        <div 
-          *ngIf="password.touched && 
-          password.invalid" class="error-massage">
-            <div 
-              *ngIf="password.errors && 
-              password.errors['minlength']">
-              Sorry, name is too short
-            </div>
-            <div 
-              *ngIf="password.errors && 
-              password.errors['maxlength']">
-              Sorry, name is too long
-            </div>
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('password').hasError('required') && (signUp.get('password').touched || signUp.get('password').dirty)">
+            <small>Field can not be empty</small>
+          </ng-container>
+          <ng-container *ngIf="signUp.get('password').hasError('minlength') && (signUp.get('password').touched || signUp.get('password').dirty)">
+            <small>Field  require more characters</small>
+          </ng-container> 
+          <ng-container *ngIf="signUp.get('password').hasError('maxlength') && (signUp.get('password').touched || signUp.get('password').dirty)">
+            <small>Field  require 10 characters at most</small>
+          </ng-container>  
         </div>
 
         <ion-icon name="ellipse"></ion-icon>
-        <small>password must be atleast 4 characters</small>
       </ion-item>
 
     </ion-list>
 
-    <ion-button expand="block" size="large" type="submit" [disabled]="!signUp.valid" [routerLink]="['/login-in']">Sign up</ion-button>
+    <ion-button expand="block" size="large" [disabled]="!signUp.valid" type="submit">Sign up</ion-button>
 
   </form>
 
@@ -149,3 +130,5 @@
 </ion-content>
 
 <!-- [(ngModel)]="signupForm.password" [ngModelOptions]="{standalone: true}" -->
+
+<!-- [routerLink]="['/login-in']" -->
