@@ -21,7 +21,7 @@ export class ChooseServicePage implements OnInit {
     this.navCtrl.back();
   }
 
-  public chooseDropoff() {
+  chooseDropoff() {
 
     this.pickDelivery.delivery = 'Dropoff';
 
@@ -33,7 +33,7 @@ export class ChooseServicePage implements OnInit {
     
   }
 
-  public choosePickoff() {
+  choosePickoff() {
     this.pickDelivery.delivery = 'Pickup';
 
     const userGift = this.donationsService.getDonate();

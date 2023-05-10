@@ -9,9 +9,6 @@ import { DonationsService } from 'src/app/services/donations/donations.service';
 })
 export class DonationStatusPage implements OnInit {
 
-  donations:any = []
-  donation:any = {}
-
   iconSuccess: boolean = false;
   iconFail: boolean = false;
 
@@ -40,52 +37,21 @@ export class DonationStatusPage implements OnInit {
       const userGift = this.donationsService.getGift();
       const userCash = this.donationsService.getPayment();
 
-      const checkCash = Object.values(userCash);
-      console.log(checkCash);
-      
-
-      console.log(userGift);
-      console.log(userCash);
-
-      const checkGift = Object.values(userGift);
-
-      if (checkGift.includes('Clothes')) {
-
-        const giftAdd = Object.assign(userGift, this.status);
-        this.donationsService.setDonations(giftAdd);
-        
-        console.log(giftAdd);
-    
-        console.log(this.donationsService);
-
-      } 
-
-      if (checkCash.includes('Cash')) {
-
-        const cashAdd = Object.assign(userCash, this.status);
-        this.donationsService.setDonations(cashAdd);
-
+      if ( userGift === undefined || null ) {return}
+      else {
+        const cashAdd = Object.assign(userGift, this.status);
         console.log(cashAdd);        
-            
-        console.log(this.donationsService);
-      } 
+        this.donationsService.setDonation(cashAdd);
+      }
+
+      if ( userCash === undefined || null ) {return}
+      else {
+        const giftAdd = Object.assign(userCash, this.status);
+        console.log(giftAdd);
+        this.donationsService.setDonation(giftAdd);
+      }
 
     }, 2000);
-    
-  }
-
-
-  saveDonation() {
-    const donation = this.donationsService.getDonations;
-    
-    this.donations.push(this.donation);
-    console.log(this.donation);
-    console.log(this.donations);
-    
-    
-    console.log('hg');
-
-    
     
   }
 

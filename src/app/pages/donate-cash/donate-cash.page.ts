@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DonationsService } from 'src/app/services/donations/donations.service';
 import { NavController } from '@ionic/angular';
+import { NavigatorService } from 'src/app/services/navigator-service/navigator.service';
+import { CurrentUserService } from './../../services/current-user-service/current-user.service';
 
 
 @Component({
@@ -12,7 +14,12 @@ export class DonateCashPage implements OnInit {
 
   cashPayment:any = {};
 
-  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
+  constructor(
+    private donationsService: DonationsService, 
+    private navCtrl: NavController,
+    private navigatorService: NavigatorService,
+    private currentUserService: CurrentUserService
+  ) { };
 
   ngOnInit() {
   }
@@ -31,14 +38,15 @@ export class DonateCashPage implements OnInit {
     
     this.donationsService.setPayment(giftAdd);
 
-    console.log(userGift);
-    
-    console.log(this.cashPayment);
+    const currentUser = this.currentUserService.getCurrentUser();
+    console.log(currentUser);
     
 
-    console.log(giftAdd);
-
-    console.log(this.donationsService);
+    if (  Object.keys(currentUser).includes(currentUser.cardDetail) ) {
+      this.navigatorService.handleNavigation('/overview-cash');
+    } else {
+      this.navigatorService.handleNavigation('/card-details');
+    }
     
   }
 

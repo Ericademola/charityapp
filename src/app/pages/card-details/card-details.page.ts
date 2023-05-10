@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DonationsService } from 'src/app/services/donations/donations.service';
+import { CurrentUserService } from './../../services/current-user-service/current-user.service';
+import { NavigatorService } from './../../services/navigator-service/navigator.service';
 import { NavController } from '@ionic/angular';
 
 
@@ -10,9 +11,13 @@ import { NavController } from '@ionic/angular';
 })
 export class CardDetailsPage implements OnInit {
 
-  Card_Detail:any = {};
+  currentMember:any;
 
-  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
+  constructor(
+    private navCtrl: NavController,
+    private currentUserService: CurrentUserService,
+    private navigatorService: NavigatorService
+  ) { };
 
   ngOnInit() {
   }
@@ -23,25 +28,23 @@ export class CardDetailsPage implements OnInit {
 
   cardDetails(card:any) {
 
-    this.Card_Detail = card.value
+    const currentUser = this.currentUserService.getCurrentUser();
+    currentUser.cardDetail = card.value;
 
-    console.log(this.Card_Detail);
-    
-    /*
-    let memberInfo = signUp.value
-      console.log(memberInfo);
-      this.members.push(memberInfo)
-      console.log(this.members);
-      let json = JSON.stringify(this.members);
-      localStorage.setItem('members', json);
-      console.log('signed up'); 
+    const getJson = localStorage.getItem('members');
+    const members = JSON.parse(getJson);
+    let indexOfCurrentMember:number;
 
-        let go = [3, 'gff', 3]
-      let jlson = JSON.stringify(go);
-      localStorage.setItem('members', jlson);
-      console.log('signed up'); 
-*/ 
-    //console.log(this.donationsService);
+
+    if (  members.map((member:any) => member.username).includes(currentUser.username) ) {
+      this.currentMember = members.find((member: { username: any; }) => member.username === currentUser.username);
+      indexOfCurrentMember = members.indexOf(this.currentMember);
+      //console.log(indexOfCurrentMember);     
+      members.splice(indexOfCurrentMember, 1, currentUser);      
+      const setJson = JSON.stringify(members);
+      localStorage.setItem('members', setJson);
+      this.navigatorService.handleNavigation('/overview-cash')
+    } else {return}
     
   }
 

@@ -1,6 +1,6 @@
 export interface History {
-  name: string | null;
-  donation: string | null;
+  home: string | null;
+  donate: string | null;
   date: any | null;
   status: string | null;
 }

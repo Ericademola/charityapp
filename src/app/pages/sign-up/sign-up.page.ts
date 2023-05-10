@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ValidatorService} from "../../services/validator-service/validator.service";
-//import { NavigatorService } from "../../services/navigator-service/navigator.service";
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NavigatorService } from "../../services/navigator-service/navigator.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -8,48 +8,35 @@ import {ValidatorService} from "../../services/validator-service/validator.servi
   styleUrls: ['./sign-up.page.scss'],
 })
 export class SignUpPage implements OnInit {
+
+  signUp: FormGroup = new FormGroup({
+    //ImageDP: '',
+    firstname: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+    lastname: new FormControl(null, [Validators.minLength(2)]),
+    email: new FormControl(null, [Validators.email]),
+    phoneNumber: new FormControl(null),
+    username: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(4), Validators.maxLength(10)]),  
+  });
   
   memberInfo:any = {};
 
   members = new Array()
 
-  signupForm = {
-    //ImageDP: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    username: '',
-    password: '',  
-  };
-
-  constructor(private validatorService: ValidatorService) { }
+  constructor(private navigatorService: NavigatorService) { }
 
   ngOnInit() {
-
-  }
-  
-  public validated () {
-    console.log(this.validatorService.validateSignup(this.signupForm));
-    
-    return this.validatorService.validateSignup(this.signupForm);
+   
   }
 
-  public handleSignUp(signUp:any) {
-   //if(this.validatorService.validateSignup(this.signupForm)) {
-      // proceed
-      //this.navigatorService.handleNavigation('/login-in');
+  handleSignUp() {
       
-      
-      this.memberInfo = signUp.value
-      console.log(this.memberInfo);
-      this.members.push(this.memberInfo)
-      console.log(this.members);
-      let json = JSON.stringify(this.members);
-      localStorage.setItem('members', json);
-      console.log('signed up');  
-      
-    //}
+    this.memberInfo = this.signUp.value;
+    this.members.push(this.memberInfo);
+    let json = JSON.stringify(this.members);
+    localStorage.setItem('members', json);
+    this.navigatorService.handleNavigation('/login-in');
+
   }
  
 }

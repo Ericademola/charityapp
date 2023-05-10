@@ -21,13 +21,16 @@
           ngModel>
         </ion-input>
 
-        <div 
-          *ngIf="username.touched && 
-          username.invalid" class="error-massage">
-          Please input Username
-        </div>
-        <div *ngIf="!memberUsername" class="error-massage">
-          Wrong Username.
+        <div class="error-massage">
+          <p
+            *ngIf="username.touched && 
+            username.invalid">
+            Please input Username
+          </p>
+          <p 
+            *ngIf="!memberUsername">
+            Wrong Username.
+          </p>
         </div>
 
       </ion-item>

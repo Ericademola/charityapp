@@ -15,7 +15,7 @@ export class OverviewCashPage implements OnInit {
   constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
 
   navBack() {
-    this.navCtrl.back();
+  this.navCtrl.back();
   }
 
   ngOnInit() {

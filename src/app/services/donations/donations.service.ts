@@ -92,11 +92,11 @@ export class DonationsService {
   }
 
   //getting donations,
-  setDonations(obj:any) {
+  setDonation(obj:any) {
     this.donations = obj
   }
 
-  getDonations() {
+  getDonation() {
     if (this.donations === null || this.donations === undefined) {return}
     return this.donations;
   }

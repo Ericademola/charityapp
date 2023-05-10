@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chatlog } from './../../interfaces/chat-log'
 import { IonContent } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-chat-log',
@@ -15,11 +17,15 @@ export class ChatLogPage implements OnInit {
 
   sent: string | null= '';
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { };
 
   ngOnInit() {
   }
 
+  navBack() {
+    this.navCtrl.back();
+  }
+  
   public chatLog(chat:any) {
     let message = chat.value.sent
     if (message === '') {return};
