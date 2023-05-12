@@ -1,0 +1,55 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Donation Overview</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- BODY CONTENT -->
+<ion-content class="ion-padding">
+  <div class="ion-content-scroll-host ion-padding">
+    <div class="main">
+
+      <ng-container *ngIf="donationCash">
+
+        <ion-grid>
+          <ion-row>
+            <ion-col><small style="font-weight: bold;">Name of Charity:</small></ion-col>
+            <ion-col size="auto"></ion-col>
+            <ion-col><small>{{donationCash.home}}</small></ion-col>
+          </ion-row>
+          <div class="line"></div>
+          <ion-row>
+            <ion-col><small style="font-weight: bold;">Amount Donated:</small></ion-col>
+            <ion-col size="auto"></ion-col>
+            <ion-col><small>{{donationCash.payment.amount | currency: '₦'}}</small></ion-col>
+          </ion-row>
+          <div class="line"></div>
+          <ion-row>
+            <ion-col><small style="font-weight: bold;">Payment Option:</small></ion-col>
+            <ion-col size="auto"></ion-col>
+            <ion-col><small>{{donationCash.payment.paymentOption}}</small></ion-col>
+          </ion-row>
+        </ion-grid>
+  
+      </ng-container>
+  
+      <div class="bttn">
+        <ion-grid>
+          <ion-row class="ion-justify-content-center">
+            <ion-col class="ion-text-center" size="3">
+              <ion-button size="default" [routerLink]="['/donation-status']">Proceed</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,36 @@
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-start: .5em;
+  --padding-end: 1em;
+  --padding-bottom: .8em;
+}
+
+ion-title {
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
+
+ion-grid {
+  --ion-grid-columns: 3;
+}
+
+ion-button {
+  width: 90px;
+  height: 90px;
+  --border-radius: 170px;
+  --background: #ffffff;
+  color:  #FF328B;
+  box-shadow: 10px -10px  rgba(129, 127, 127, 0.6);
+  -moz-box-shadow: 10px -10px  rgba(129, 127, 127, 0.6);
+  -webkit-box-shadow: 2px 5px  rgba(129, 127, 127, 0.3);
+  -o-box-shadow: 10px -10px  rgba(129, 127, 127, 0.4);
+  border-radius: 100px;
+}
+
+ion-icon {
+  font-size: 64px;
+}
+
+h4 {
+  text-align: center;
+}

@@ -1,30 +1,134 @@
+<!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <ion-img src="assets/Rectangle 88.png" alt="logo"></ion-img>
-  <ion-text color="dark">
-    <h1>
-      Create an account
-    </h1>
-  </ion-text>
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Full name</ion-label>
-      <ion-input type="text" placeholder="Full name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Email address</ion-label>
-      <ion-input type="email" placeholder="Email address"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">username</ion-label>
-      <ion-input type="text" placeholder="Enter username"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">password</ion-label>
-      <ion-input type="password" placeholder="Enter password"></ion-input>
-    </ion-item>
-  </ion-list>
-  <div>
-    <ion-button expand="block" size="large">Sign up</ion-button>
-  </div>
-  <P><i>Have an account? <span>Log In here</span></i></P>
+  <form [formGroup]="signUp" (ngSubmit)="handleSignUp()" #form="ngForm">
+
+    <ion-avatar>
+      <ion-icon name="camera-sharp" size="large"></ion-icon>
+      <ion-input type="image"></ion-input>
+    </ion-avatar>
+
+    <ion-text color="dark">
+      <h2>
+        Create an account
+      </h2>
+    </ion-text>
+    <!-- {{ signupForm | json }} -->
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="floating">First name</ion-label>
+        <ion-input 
+          type="text" 
+          placeholder="First name" 
+          formControlName="firstname">
+        </ion-input>
+
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('firstname').hasError('required') && (signUp.get('firstname').touched && signUp.get('firstname').invalid)">
+            <small>Field can not be empty</small>
+          </ng-container>
+          <ng-container *ngIf="signUp.get('firstname').hasError('minlength') && (signUp.get('firstname').touched || signUp.get('firstname').dirty)">
+            <small>Field  require more characters</small>
+          </ng-container>  
+        </div>
+
+        <ion-icon name="ellipse"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Last name</ion-label>
+        <ion-input 
+          type="text" 
+          placeholder="Last name" 
+          formControlName="lastname">
+        </ion-input>
+
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('lastname').hasError('minlength') && (signUp.get('lastname').touched || signUp.get('lastname').dirty)">
+            <small>Field  require more characters</small>
+          </ng-container>  
+        </div>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email address</ion-label>
+        <ion-input 
+          type="text" 
+          placeholder="email" 
+          formControlName="email">
+        </ion-input>
+
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('email').hasError('email') && (signUp.get('email').touched || signUp.get('email').dirty)">
+            <small>It dose not seem like a valid email</small>
+          </ng-container>  
+        </div>
+  
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Phone number</ion-label>
+        <ion-input 
+          type="tel" 
+          placeholder="Phone number" 
+          formControlName="phoneNumber"> 
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">username</ion-label>
+        <ion-input  
+          type="text" 
+          placeholder="Username" 
+          formControlName="username">
+        </ion-input>
+
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('username').hasError('required') && (signUp.get('username').touched || signUp.get('username').dirty)">
+            <small>Field can not be empty</small>
+          </ng-container>
+          <ng-container *ngIf="signUp.get('username').hasError('minlength') && (signUp.get('username').touched || signUp.get('username').dirty)">
+            <small>Field  require more characters</small>
+          </ng-container>  
+        </div>
+
+        <ion-icon name="ellipse"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">password</ion-label>
+        <ion-input
+          type="password" 
+          placeholder="Password" 
+          formControlName="password">
+        </ion-input>
+
+        <div class="error-massage">
+          <ng-container *ngIf="signUp.get('password').hasError('required') && (signUp.get('password').touched || signUp.get('password').dirty)">
+            <small>Field can not be empty</small>
+          </ng-container>
+          <ng-container *ngIf="signUp.get('password').hasError('minlength') && (signUp.get('password').touched || signUp.get('password').dirty)">
+            <small>Field  require more characters</small>
+          </ng-container> 
+          <ng-container *ngIf="signUp.get('password').hasError('maxlength') && (signUp.get('password').touched || signUp.get('password').dirty)">
+            <small>Field  require 10 characters at most</small>
+          </ng-container>  
+        </div>
+
+        <ion-icon name="ellipse"></ion-icon>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button expand="block" size="large" [disabled]="!signUp.valid" type="submit">Sign up</ion-button>
+
+  </form>
+
+  <p><i>Have an account? <a [routerLink]="['/login-in']" >Log In here</a></i></p>
 </ion-content>
+
+<!-- [(ngModel)]="signupForm.password" [ngModelOptions]="{standalone: true}" -->
+
+<!-- [routerLink]="['/login-in']" -->

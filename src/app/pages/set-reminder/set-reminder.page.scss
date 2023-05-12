@@ -1,0 +1,74 @@
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-start: .5em;
+  --padding-end: 1em;
+  --padding-bottom: .8em;
+}
+
+ion-title {
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
+
+ion-datetime {
+  border-radius: 1em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+ion-radio {
+  width: 30px;
+  height: 30px;
+}
+
+.setted-reminder {
+  min-height: 8em;
+  background-color: #E5E5E5;
+  border-radius: .5em;
+}
+
+ion-radio::part(container) {
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+ion-radio::part(mark) {
+  background: none;
+  transition: none;
+  transform: none;
+  border-radius: 0;
+}
+
+ion-radio.radio-checked::part(container) {
+  background: #f14590;
+  border-color: transparent;
+}
+
+ion-radio.radio-checked::part(mark) {
+  width: 6px;
+  height: 10px;
+
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-color: #fff;
+
+  transform: rotate(45deg);
+}
+
+h5 {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: .2em;
+  font-weight: bold;
+}
+
+p {
+  color: #999999;
+  text-align: right;
+  line-height: .5em;
+  padding-right: 1em;
+}
+
+ion-button {
+  --background: #ED1E78;
+  margin-top: .8em;
+}

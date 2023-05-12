@@ -1,0 +1,34 @@
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-start: .5em;
+  --padding-end: 1em;
+  --padding-bottom: .8em;
+}
+
+ion-title {
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
+
+.ion-content-scroll-host {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+ion-avatar {
+  height: 60px;
+  width: 60px;
+}
+
+ion-badge {
+  --background: #FF328B;
+}
+
+small {
+  color: #cecbcb;
+}

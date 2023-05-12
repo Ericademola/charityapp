@@ -1,31 +1,33 @@
-<ion-header>
+<!-- HEADER -->
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button default-href="#"></ion-back-button>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
     </ion-buttons>
-    <ion-title>Back</ion-title>
-    <ion-buttons slot="end">
-      <ion-back-button default-href="#"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Back</ion-title>
+
+    <ion-title>Make Donations</ion-title>  
+
   </ion-toolbar>
 </ion-header>
 
-<!-- main content showing list of orphanage -->
+<!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <div>
-    <ion-img src="assets/orphanage1.png"></ion-img>
-    <ion-text>orphanage1</ion-text>
+  <div class="ion-content-scroll-host ion-padding">
+
+    <ng-container *ngFor="let community of communities">
+      <div>
+        <ion-img [src]="community.image"></ion-img>
+        <ion-text>{{ community.home }}</ion-text>
+      </div>
+      <ion-button 
+        expand="block" 
+        size="large" 
+        [routerLink]="['/donate']" 
+        (click)="handleDonation(community)">
+        Donate
+      </ion-button>
+    </ng-container>
+
   </div>
-  <ion-button expand="block" size="large" >Donate</ion-button>
-  <div>
-    <ion-img src="assets/orphanage2.png"></ion-img>
-    <ion-text>orphanage2</ion-text>
-  </div>
-  <ion-button expand="block" size="large" >Donate</ion-button>
-  <div>
-    <ion-img src="assets/orphanage3.png"></ion-img>
-    <ion-text>orphanage3</ion-text>
-  </div>
-  <ion-button expand="block" size="large" >Donate</ion-button>
 </ion-content>

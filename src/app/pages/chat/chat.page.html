@@ -1,0 +1,34 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+    
+    <ion-title>Chats</ion-title> 
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- MAIN CONTENT -->
+
+<ion-content class="ion-padding">
+  <div class="ion-content-scroll-host ion-padding">
+
+    <ion-list>
+
+      <ng-container *ngFor="let chat of chats">
+        <ion-item button lines="full" [routerLink]="['/chat-log']">
+          <ion-avatar slot="start">
+            <ion-img [src]="chat.image"></ion-img>
+          </ion-avatar>
+          <ion-label><h2>{{chat.name}}</h2><p>{{chat.message}}</p><ion-badge>{{chat.notify}}</ion-badge></ion-label>
+          <small>{{chat.time}}</small>
+        </ion-item>
+      </ng-container>
+    
+    </ion-list>
+  </div>
+</ion-content>
+

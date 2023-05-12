@@ -1,0 +1,41 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Choose Service</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- BODY CONTENT -->
+<ion-content class="ion-padding">
+  <div class="ion-content-scroll-host ion-padding">
+    <ion-toolbar [routerLink]="['/schedule-dropoff']" (click)="chooseDropoff()">
+      <ion-buttons slot="start">
+        <ion-icon name="business-outline" size="large"></ion-icon>
+      </ion-buttons>
+
+      <ion-title>Drop off</ion-title>
+
+      <ion-buttons slot="end">
+        <ion-icon name="arrow-forward-outline" size="large" color="dark"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+
+    <ion-toolbar [routerLink]="['/book-pickup']" (click)="choosePickoff()">
+      <ion-buttons slot="start">
+        <ion-icon name="car-outline" size="large"></ion-icon>
+      </ion-buttons>
+
+      <ion-title>Book Pick up</ion-title>
+
+      <ion-buttons slot="end">
+        <ion-icon name="arrow-forward-outline" size="large" color="dark"></ion-icon>
+      </ion-buttons>
+    </ion-toolbar>
+  </div>
+</ion-content>

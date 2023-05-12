@@ -1,0 +1,75 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Set Remainder</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- MAIN CONTENT -->
+<ion-content class="ion-padding">
+  <div class="ion-content-scroll-host ion-padding">
+
+    <form #reminder="ngForm" (ngSubmit)="setReminder(reminder)">
+
+      <ion-datetime
+        name="reminder"
+        class="form-control"
+        ngModel
+        #reminder="ngModel"
+
+        locale="en-US"
+        size="cover">
+        <span slot="title">Select a Reservation Date & Time</span>
+      </ion-datetime>
+    
+      <h5>Select Home</h5>
+      <div class="input">
+
+        <div class="line"></div>
+
+
+        <ion-list>
+          <ion-radio-group 
+          [allowEmptySelection]="true"
+          name = 'home'
+          class="form-control" 
+          #uploadPhoto="ngModel" 
+          ngModel>
+
+          <ng-container *ngFor="let community of communities">
+
+            <ion-item>
+              <ion-label>{{community.home}}</ion-label>
+              <ion-radio value = {{community.home}}></ion-radio>
+            </ion-item>
+            
+          </ng-container>
+
+          </ion-radio-group>
+        </ion-list>
+
+
+      </div>
+
+      <ion-button expand="block" size="large" type="submit">Save</ion-button>
+
+    </form>
+
+    <ng-container *ngFor="let saving of savings">
+
+      <div class="setted-reminder">
+        <h5>Make Donation to {{saving.home}}</h5>
+        <p>{{saving.reminder | date :'d MMM, y'}}</p>
+        <p>{{saving.reminder  | date :'shortTime'}}</p>
+      </div>
+
+    </ng-container>
+
+  </div>
+</ion-content>

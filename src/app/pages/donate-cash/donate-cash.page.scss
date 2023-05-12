@@ -1,0 +1,71 @@
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-start: .5em;
+  --padding-end: 1em;
+  --padding-bottom: .8em;
+}
+
+ion-title {
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
+
+h5 {
+  padding-top: 1.5em;
+}
+
+ion-content ion-img {
+  height: 10em;
+}
+
+.input {
+  border: solid 1px #999999;
+  border-radius: .3em;
+  padding: .5em .5em;
+}
+
+ion-item {
+  padding-bottom: 1em;
+}
+
+ion-item {
+  --color: #999999;
+}
+
+ion-radio {
+  width: 30px;
+  height: 30px;
+}
+
+ion-radio::part(container) {
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
+
+ion-radio::part(mark) {
+  background: none;
+  transition: none;
+  transform: none;
+  border-radius: 0;
+}
+
+ion-radio.radio-checked::part(container) {
+  background: #f14590;
+  border-color: transparent;
+}
+
+ion-radio.radio-checked::part(mark) {
+  width: 6px;
+  height: 10px;
+
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-color: #fff;
+
+  transform: rotate(45deg);
+}
+
+ion-button {
+  --background: #ED1E78;
+  margin-top: 1em;
+}

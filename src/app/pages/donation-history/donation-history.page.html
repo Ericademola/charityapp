@@ -1,0 +1,65 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Donation Overview</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
+
+
+<!-- MAIN CONTENT -->
+<ion-content class="ion-padding">
+
+  <!-- <ng-container *ngIf="donationClothes"></ng-container> -->
+
+
+  <ng-container *ngIf="viewPartly"> 
+
+    <ng-container *ngFor="let partlyHistory of partlyHistories let e = even; let o = odd">
+
+      <div class="first">
+        <div class="a">
+          <h5>{{ partlyHistory.home }}</h5>
+          <small>{{ partlyHistory.donate }}</small>
+        </div>
+        <div class="b">
+          <h5>{{ partlyHistory.date | date :'d MMM, y' }}</h5>
+          <small>{{ partlyHistory.status }}</small>
+        </div>
+      </div>
+
+    </ng-container>
+    
+  </ng-container>
+
+  
+  <ng-container *ngIf="viewEverything">
+
+    <ng-container 
+    *ngFor="let history of histories let e = even; let o = odd">
+
+      <div class="first">
+        <div class="a">
+          <h5>{{ history.home }}</h5>
+          <small>{{ history.donate }}</small>
+        </div>
+        <div class="b">
+          <h5>{{ history.date | date :'d MMM, y' }}</h5>
+          <small>{{ history.status }}</small>
+        </div>
+      </div>
+
+    </ng-container>
+
+  </ng-container>
+
+
+  <ion-button class="viewbtn" size="large" *ngIf="viewBtn" (click)="viewAll()">View All</ion-button>
+  <ion-button expand="block" size="large" *ngIf="homeBtn" [routerLink]="['/tablinks/home-page']">Back to Homepage</ion-button>
+
+</ion-content>

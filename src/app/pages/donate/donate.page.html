@@ -1,0 +1,43 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Donate</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- MAIN CONTENT -->
+<ion-content class="ion-padding">
+  <div class="ion-content-scroll-host ion-padding">
+
+    <ion-grid>
+      <ion-row class="ion-justify-content-around">
+        <ion-col class="ion-text-center" size="1">
+          <ion-button [routerLink]="['/choose-service']" (click)="chooseClothes()">
+            <ion-icon name="shirt-outline" ></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <h4><ion-text>Donate Clothes</ion-text></h4>
+
+    <ion-grid>
+      <ion-row  class="ion-justify-content-around">
+        <ion-col class="ion-text-center" size="1">
+          <ion-button [routerLink]="['/donate-cash']" (click)="chooseCash()">
+            <ion-icon name="cash-outline" ></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <h4><ion-text>Donate Cash</ion-text></h4>
+
+  </div>
+</ion-content>

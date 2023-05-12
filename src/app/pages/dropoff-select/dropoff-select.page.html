@@ -1,0 +1,106 @@
+<!-- HEADER -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Donate Cloths</ion-title>  
+
+  </ion-toolbar>
+</ion-header>
+
+<!-- BODY CONTENT -->
+<ion-content class="ion-padding">
+  <div class="ion-content-scroll-host ion-padding">
+    <ion-img src="assets/sharelove.png" alt="The big heart"></ion-img>
+
+    <form #selected="ngForm" (ngSubmit)="handleSelected(selected)">
+
+      <h5>Category of Cloth</h5>
+      <div class="input">
+        <h6>Select</h6>
+        <div class="line"></div>
+
+        <ion-list *ngFor="let category of categories">
+          
+          <ion-item>
+            <ion-checkbox
+            name = {{category.variableName}}
+            type="checkbox"
+            [(ngModel)]="category.value"
+            ></ion-checkbox>
+            <ion-label>{{category.name}}</ion-label>
+          </ion-item>
+
+        </ion-list>
+
+      </div>
+
+      <h5>Upload Photo</h5>
+
+      <div class="input">
+        <h6>Select</h6>
+        <div class="line"></div>
+
+        <ion-list>
+          <ion-radio-group 
+          [allowEmptySelection]="true" 
+          name="uploadPhoto"
+          class="form-control"  
+          #uploadPhoto="ngModel" 
+          ngModel>
+            
+            <ion-item>
+              <ion-label>Take a Photo</ion-label>
+              <ion-radio value="Photo"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Choose From Gallery</ion-label>
+              <ion-radio value="gallery"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+        </ion-list>
+
+      </div>
+
+      <h5>Use Type</h5>
+
+      <div class="input">
+        <h6>Select</h6>
+        <div class="line"></div>
+
+        <ion-list>
+
+          <ion-radio-group
+          [allowEmptySelection]="true"
+          required 
+          name="useKind"
+          class="form-control"  
+          #deliveryOption="ngModel" 
+          ngModel>
+
+            <ion-item>
+              <ion-label>New</ion-label>
+              <ion-radio value="New"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Fairly Used</ion-label>
+              <ion-radio value="Fairly Used"></ion-radio>
+            </ion-item>
+
+          </ion-radio-group>
+
+        </ion-list>
+      </div>
+
+      <ion-button expand="block" size="large" type="submit" [routerLink]="['/overview-dropoff']">Donate</ion-button>
+
+    </form>
+
+  </div>
+</ion-content>
