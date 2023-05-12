@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentUserService } from 'src/app/services/current-user-service/current-user.service';
 
-
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.page.html',
