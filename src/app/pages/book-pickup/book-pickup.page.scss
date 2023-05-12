@@ -1,0 +1,30 @@
+ion-toolbar {
+  --padding-top: .8em;
+  --padding-start: .5em;
+  --padding-end: 1em;
+  --padding-bottom: .8em;
+}
+
+ion-title {
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
+
+div {
+  background-color: #e5e5e5;
+  padding: .5em 1em;
+}
+
+h5 {
+  font-weight: bold;
+  padding-top: 1em;
+}
+
+i {
+  font-weight: lighter;
+}
+
+ion-button {
+  --background: #ED1E78;
+  margin-top: 2.5em;
+}

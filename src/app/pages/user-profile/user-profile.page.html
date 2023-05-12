@@ -1,9 +1,54 @@
-<ion-header>
+<!-- Header -->
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>user-profile</ion-title>
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>Profile</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-icon name="pencil-sharp" color="primary" size="large"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<!-- Main Content -->
+<ion-content class="ion-padding">
+  <div class="ion-content-scroll-host ion-padding">
+    <ion-list>
+      <ion-item lines="full">
+        <ion-thumbnail slot="start">
+          <img alt="member" src="assets/member-1.png">
+        </ion-thumbnail>
+        <ion-label><h1>Fiona Pokémon Yellow</h1><p>Life is made beautiful by charity</p></ion-label>
+        <ion-icon name="happy-sharp"></ion-icon>
+      </ion-item>
+      <ion-item button lines="inset">
+        <ion-icon name="star-sharp" color="warning" size="large"></ion-icon>
+        <ion-label><h4>Starred Notification</h4></ion-label>
+      </ion-item>
+      <ion-item button lines="inset">
+        <ion-icon name="heart-sharp" color="danger"></ion-icon>
+        <ion-label><h4>Suggest An Orphanage</h4></ion-label>
+      </ion-item>
+      <ion-item button lines="inset">
+        <ion-icon name="key-sharp" color="tertiary"></ion-icon>
+        <ion-label><h4>Account</h4></ion-label>
+      </ion-item>
+      <ion-item button lines="inset">
+        <ion-icon name="lock-closed-sharp" color="medium"></ion-icon>
+        <ion-label><h4>Privacy</h4></ion-label>
+      </ion-item>
+      <ion-item button lines="inset">
+        <ion-icon name="share-social-sharp" color="success"></ion-icon>
+        <ion-label><h4>Social Media Share</h4></ion-label>
+      </ion-item>
+      <ion-item button lines="inset">
+        <ion-icon name="chatbubbles-sharp" color="secondary"></ion-icon>
+        <ion-label><h4>chat with Admin</h4></ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>

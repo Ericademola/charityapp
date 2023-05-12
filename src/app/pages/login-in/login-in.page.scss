@@ -1,5 +1,15 @@
-div {
-  padding-top: 40px;
+.ion-content-scroll-host {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+ion-button {
+  margin-top: 40px;
 }
 
 ion-button {
@@ -17,6 +27,18 @@ ion-input {
   --padding-top: 50px;
 }
 
-span {
+a {
   color: #ED1E78;
+  text-decoration: none;
+}
+
+ion-icon {
+  color: #ED1E78;
+  padding: .5em;
+  font-size: 14px;
+}
+
+.error-massage {
+  color: red;
+  margin-left: 15px;
 }

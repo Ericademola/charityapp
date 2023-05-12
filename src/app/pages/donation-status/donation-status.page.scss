@@ -1,0 +1,29 @@
+ion-content {
+  --padding-top: 10em;
+}
+
+ion-grid {
+  --ion-grid-columns: 3;
+}
+
+ion-icon {
+  font-size: 9em;
+  color: rgb(6, 168, 6);
+  align-items: center;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  font-weight: bolder;
+}
+
+p {
+  text-align: center;
+  padding-top: 1em;
+}
+
+ion-button {
+  --background: #ED1E78;
+  margin-top: 8em;
+}

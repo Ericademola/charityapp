@@ -1,46 +1,43 @@
+<!-- HEADER -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button default-href="#"></ion-back-button>
+
+    <ion-buttons slot="start" >
+      <ion-icon name="chevron-back-outline" slot="icon-only" color="primary" (click)="navBack()"></ion-icon>
     </ion-buttons>
-    <ion-title>Donate</ion-title>
-    <ion-buttons slot="end">
-      <ion-thumbnail>
-        <img alt="member" src="assets/member-1.png">
-      </ion-thumbnail>
-    </ion-buttons>
+
+    <ion-title>Donate</ion-title>  
+
   </ion-toolbar>
 </ion-header>
 
+<!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
-  <div class="bttn">
-    <ion-button>
-      <ion-icon name="shirt-outline" ></ion-icon>
-    </ion-button>
-  </div>
-  <h4><ion-text>Donate Clothes</ion-text></h4>
-  <div class="bttn">
-    <ion-button>
-      <ion-icon name="shirt-outline" ></ion-icon>
-    </ion-button>
-  </div>
-  <h4><ion-text>Donate Cash</ion-text></h4>
-</ion-content>
+  <div class="ion-content-scroll-host ion-padding">
 
-<ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <ion-grid >
-      <ion-row>
-        <ion-col size="1" offset="1.5">
-          <ion-icon name="home-outline" size="large"></ion-icon>
-        </ion-col>
-        <ion-col size="1" offset="3">
-          <ion-icon name="people-outline" size="large"></ion-icon>
-        </ion-col>
-        <ion-col size="1" offset="3">
-          <ion-icon name="notifications-outline" size="large"></ion-icon>
+    <ion-grid>
+      <ion-row class="ion-justify-content-around">
+        <ion-col class="ion-text-center" size="1">
+          <ion-button [routerLink]="['/choose-service']" (click)="chooseClothes()">
+            <ion-icon name="shirt-outline" ></ion-icon>
+          </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-toolbar>
-</ion-footer>
+
+    <h4><ion-text>Donate Clothes</ion-text></h4>
+
+    <ion-grid>
+      <ion-row  class="ion-justify-content-around">
+        <ion-col class="ion-text-center" size="1">
+          <ion-button [routerLink]="['/donate-cash']" (click)="chooseCash()">
+            <ion-icon name="cash-outline" ></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <h4><ion-text>Donate Cash</ion-text></h4>
+
+  </div>
+</ion-content>

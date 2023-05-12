@@ -1,20 +1,69 @@
 <ion-content class="ion-padding">
   <ion-img src="assets/Rectangle 88.png" alt="logo"></ion-img>
+
   <ion-text color="dark">
     <h1>
       Login
     </h1>
   </ion-text>
-  <ion-list>
-    <ion-item>
-      <ion-input type="text" placeholder="username or email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-input type="password" placeholder="Enter password"></ion-input>
-    </ion-item>
-  </ion-list>
-  <div>
-    <ion-button expand="block" size="large" [routerLink]="['/home-page']">Login</ion-button>
-  </div>
-  <P><i>Forgot password? <span>Reset here</span></i></P>
+
+  <form #login="ngForm" (ngSubmit)="handleLogin(login)">
+    <ion-list>
+      <ion-item>
+        <ion-input 
+          required
+          minlength="4" 
+          type="text" 
+          name="username" 
+          placeholder="username" 
+          class="form-control"  
+          #username="ngModel" 
+          ngModel>
+        </ion-input>
+
+        <div class="error-massage">
+          <p
+            *ngIf="username.touched && 
+            username.invalid">
+            Please input Username
+          </p>
+          <p 
+            *ngIf="!memberUsername">
+            Wrong Username.
+          </p>
+        </div>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-input         
+          required
+          minlength="4" 
+          maxlength="10"
+          type="password" 
+          name="password" 
+          placeholder="Password" 
+          class="form-control"  
+          #password="ngModel" 
+          ngModel>
+        </ion-input>
+        <ion-icon name="eye-off-outline" slot="end" size="small"></ion-icon>
+      
+        <div 
+          *ngIf="password.touched && 
+          password.invalid" class="error-massage">
+          Please input password.
+        </div>
+        <div *ngIf="!memberPassword" class="error-massage">
+          Wrong Password.
+        </div>
+
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button expand="block" size="large" type="submit">Login</ion-button>
+  </form>
+
+  <p><i>Forgot password? <a [routerLink]="['/forgot-password']">Reset password</a></i></p>
 </ion-content>

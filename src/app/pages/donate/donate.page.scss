@@ -5,8 +5,13 @@ ion-toolbar {
   --padding-bottom: .8em;
 }
 
-.bttn {
-  padding: 5em 0em 0em 9em;
+ion-title {
+  font-weight: lighter;
+  font-size: 1.8rem;
+}
+
+ion-grid {
+  --ion-grid-columns: 3;
 }
 
 ion-button {
@@ -14,7 +19,7 @@ ion-button {
   height: 90px;
   --border-radius: 170px;
   --background: #ffffff;
-  color:  #ED1E78;
+  color:  #FF328B;
   box-shadow: 10px -10px  rgba(129, 127, 127, 0.6);
   -moz-box-shadow: 10px -10px  rgba(129, 127, 127, 0.6);
   -webkit-box-shadow: 2px 5px  rgba(129, 127, 127, 0.3);
@@ -22,7 +27,7 @@ ion-button {
   border-radius: 100px;
 }
 
-.bttn ion-icon {
+ion-icon {
   font-size: 64px;
 }
 
