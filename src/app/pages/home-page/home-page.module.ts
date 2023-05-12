@@ -18,4 +18,3 @@ import { HomePagePage } from './home-page.page';
   declarations: [HomePagePage]
 })
 export class HomePagePageModule {}
-
