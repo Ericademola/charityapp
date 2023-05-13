@@ -18,6 +18,44 @@ export class ForgotPasswordPage implements OnInit {
   ngOnInit() {
   }
 
+  showPassword() {
+    const eye = document.getElementById('eye');
+    const eyeLogo = document.getElementById('eye_logo');
+
+    if ( eye.getAttribute('type') === 'password' ) {
+      eye.removeAttribute('type');
+      eye.setAttribute('type', 'text');
+      eyeLogo.removeAttribute('name');
+      eyeLogo.setAttribute('name', "eye-outline");
+    } else {
+      eye.removeAttribute('type');
+      eye.setAttribute('type', 'password');
+      eyeLogo.removeAttribute('name');
+      eyeLogo.setAttribute('name', "eye-off-outline");
+    }
+    
+  }
+
+
+  showConPassword() {
+    const conEye = document.getElementById('conEye');
+    const conEyeLogo = document.getElementById('conEye_logo');
+
+    if ( conEye.getAttribute('type') === 'password' ) {
+      conEye.removeAttribute('type');
+      conEye.setAttribute('type', 'text');
+      conEyeLogo.removeAttribute('name');
+      conEyeLogo.setAttribute('name', "eye-outline");
+    } else {
+      conEye.removeAttribute('type');
+      conEye.setAttribute('type', 'password');
+      conEyeLogo.removeAttribute('name');
+      conEyeLogo.setAttribute('name', "eye-off-outline");
+    }
+    
+  }
+
+
   handleReset(reset:any) {
 
     const json:any = localStorage.getItem('members');
@@ -45,5 +83,4 @@ export class ForgotPasswordPage implements OnInit {
     } else {return}
       
   }
-
 }

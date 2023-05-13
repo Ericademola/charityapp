@@ -45,9 +45,10 @@
           placeholder="Password" 
           class="form-control"  
           #password="ngModel" 
-          ngModel>
+          ngModel
+          id="eye">
         </ion-input>
-        <ion-icon name="eye-off-outline" slot="end" size="small"></ion-icon>
+        <ion-icon id="eye_logo" name="eye-off-outline" slot="end" size="small" (click)="showPassword()"></ion-icon>
       
         <div 
           *ngIf="password.touched && 
