@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigatorService } from "../../services/navigator-service/navigator.service";
 import { CurrentUserService } from './../../services/current-user-service/current-user.service';
+import { type } from 'os';
 
 
 @Component({
@@ -23,6 +24,24 @@ export class LoginInPage implements OnInit {
   constructor(private navigatorService: NavigatorService, private currentUserService: CurrentUserService) { }
 
   ngOnInit() {
+  }
+
+  showPassword() {
+    const eye = document.getElementById('eye');
+    const eyeLogo = document.getElementById('eye_logo');
+
+    if ( eye.getAttribute('type') === 'password' ) {
+      eye.removeAttribute('type');
+      eye.setAttribute('type', 'text');
+      eyeLogo.removeAttribute('name');
+      eyeLogo.setAttribute('name', "eye-outline");
+    } else {
+      eye.removeAttribute('type');
+      eye.setAttribute('type', 'password');
+      eyeLogo.removeAttribute('name');
+      eyeLogo.setAttribute('name', "eye-off-outline");
+    }
+    
   }
 
   //get data back from storage
