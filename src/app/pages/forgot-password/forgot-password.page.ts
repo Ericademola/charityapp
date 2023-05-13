@@ -83,5 +83,4 @@ export class ForgotPasswordPage implements OnInit {
     } else {return}
       
   }
-
 }
