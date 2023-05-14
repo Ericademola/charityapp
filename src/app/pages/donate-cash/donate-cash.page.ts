@@ -31,18 +31,15 @@ export class DonateCashPage implements OnInit {
   donateCash(cashDonation:any) {
     
     this.cashPayment.payment = cashDonation.value;
-
+    this.cashPayment.date = new Date();
+    
     const userGift = this.donationsService.getDonate();
-    
     const giftAdd = Object.assign(userGift, this.cashPayment);
-    
     this.donationsService.setPayment(giftAdd);
 
     const currentUser = this.currentUserService.getCurrentUser();
-    console.log(currentUser);
     
-
-    if (  Object.keys(currentUser).includes(currentUser.cardDetail) ) {
+    if (  Object.keys(currentUser).includes('cardDetail') ) {
       this.navigatorService.handleNavigation('/overview-cash');
     } else {
       this.navigatorService.handleNavigation('/card-details');
