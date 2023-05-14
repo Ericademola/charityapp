@@ -30,14 +30,14 @@ export class ScheduleDropoffPage implements OnInit {
     if ( userGift === undefined || null ) {return}
     else {
       const cashAdd = Object.assign(userGift, this.pickedDate);
-      console.log(cashAdd);        
+      //console.log(cashAdd);        
       this.donationsService.setSchedule(cashAdd);
     }
 
     if ( userBooking === undefined || null ) {return}
     else {
       const giftAdd = Object.assign(userBooking, this.pickedDate);
-      console.log(giftAdd);
+      //console.log(giftAdd);
       this.donationsService.setSchedule(giftAdd);
     }
 

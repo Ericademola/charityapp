@@ -24,6 +24,6 @@ export class OverviewCashPage implements OnInit {
       this.donationCash = this.donationsService.getPayment();
     }, 1000);
 
-  }
+  } 
 
 }

@@ -40,14 +40,14 @@ export class DonationStatusPage implements OnInit {
       if ( userGift === undefined || null ) {return}
       else {
         const cashAdd = Object.assign(userGift, this.status);
-        console.log(cashAdd);        
+        //console.log(cashAdd);        
         this.donationsService.setDonation(cashAdd);
       }
 
       if ( userCash === undefined || null ) {return}
       else {
         const giftAdd = Object.assign(userCash, this.status);
-        console.log(giftAdd);
+        //console.log(giftAdd);
         this.donationsService.setDonation(giftAdd);
       }
 

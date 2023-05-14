@@ -15,9 +15,7 @@ export class DonationsService {
   fixBooking:any;
   fixPayment:any;
 
-  fixCard:any;
   
-
   constructor() { }
   //09070780040
   
