@@ -32,6 +32,8 @@ export class SignUpPage implements OnInit {
   handleSignUp() {
       
     this.memberInfo = this.signUp.value;
+    this.memberInfo.reminders = [];
+    this.memberInfo.donations = [];    
     this.members.push(this.memberInfo);
     let json = JSON.stringify(this.members);
     localStorage.setItem('members', json);

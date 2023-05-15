@@ -50,14 +50,15 @@ export class LoginInPage implements OnInit {
     let json:any = localStorage.getItem('members');
     let members = JSON.parse(json);
 
-    console.log(members);
-
     this.memberUsername = members.map((member:any) => member.username).includes(login.value.username);
 
     if (  members.map((member:any) => member.username).includes(login.value.username) ) {
       this.currentMember = members.find((member: { username: any; }) => member.username === login.value.username);
       this.currentUserService.setCurrentUser(this.currentMember);
     } else {return}
+
+    this.memberPassword = this.currentMember.password === login.value.password
+
 
     if ( (this.currentMember.username === login.value.username) && (this.currentMember.password === login.value.password) ) {
       this.navigatorService.handleNavigation('/tablinks')

@@ -50,13 +50,15 @@
         </ion-input>
         <ion-icon id="eye_logo" name="eye-off-outline" slot="end" size="small" (click)="showPassword()"></ion-icon>
       
-        <div 
-          *ngIf="password.touched && 
-          password.invalid" class="error-massage">
-          Please input password.
-        </div>
-        <div *ngIf="!memberPassword" class="error-massage">
-          Wrong Password.
+        <div class="error-massage">
+          <p 
+            *ngIf="password.touched &&
+            password.invalid">
+            Please input password.
+          </p>
+          <p *ngIf="!memberPassword">
+            Wrong Password.
+          </p>
         </div>
 
       </ion-item>
