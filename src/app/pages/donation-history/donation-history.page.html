@@ -15,9 +15,6 @@
 <!-- MAIN CONTENT -->
 <ion-content class="ion-padding">
 
-  <!-- <ng-container *ngIf="donationClothes"></ng-container> -->
-
-
   <ng-container *ngIf="viewPartly"> 
 
     <ng-container *ngFor="let partlyHistory of partlyHistories let e = even; let o = odd">
@@ -58,8 +55,6 @@
 
   </ng-container>
 
-
   <ion-button class="viewbtn" size="large" *ngIf="viewBtn" (click)="viewAll()">View All</ion-button>
-  <ion-button expand="block" size="large" *ngIf="homeBtn" [routerLink]="['/tablinks/home-page']">Back to Homepage</ion-button>
 
 </ion-content>

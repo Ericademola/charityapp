@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { History } from 'src/app/interfaces/history';
-import { DonationsService } from 'src/app/services/donations/donations.service';
+import { CurrentUserService } from './../../services/current-user-service/current-user.service';
 import { NavController } from '@ionic/angular';
 
 
@@ -11,34 +11,34 @@ import { NavController } from '@ionic/angular';
 })
 export class DonationHistoryPage implements OnInit {
   
-  //histories:any = []
+  histories:History[] = []
   
-  histories: History[] = [
-    {
-      home: "Hope Home",
-      donate: "Cash donation",
-      date: "5 June 2022",
-      status: "successful",
-    },
-    {
-      home: "Grace Home",
-      donate: "Cash donation",
-      date: "24 June 2022",
-      status: "successful",
-    },
-    {
-      home: "waw Home",
-      donate: "clothes donation",
-      date: "19 June 2022",
-      status: "successful",
-    },
-    {
-      home: "Angel Home",
-      donate: "Clothes donation",
-      date: "30 June 2022",
-      status: "successful",
-    }
-  ]
+  // histories: History[] = [
+  //   {
+  //     home: "Hope Home",
+  //     donate: "Cash donation",
+  //     date: "5 June 2022",
+  //     status: "successful",
+  //   },
+  //   {
+  //     home: "Grace Home",
+  //     donate: "Cash donation",
+  //     date: "24 June 2022",
+  //     status: "successful",
+  //   },
+  //   {
+  //     home: "waw Home",
+  //     donate: "clothes donation",
+  //     date: "19 June 2022",
+  //     status: "successful",
+  //   },
+  //   {
+  //     home: "Angel Home",
+  //     donate: "Clothes donation",
+  //     date: "30 June 2022",
+  //     status: "successful",
+  //   }
+  // ]
 
   partlyHistories:any = [];
 
@@ -46,18 +46,19 @@ export class DonationHistoryPage implements OnInit {
   viewEverything:boolean = false;
 
   viewBtn:boolean = true;
-  homeBtn:boolean = false;
 
-  constructor(private donationsService: DonationsService, private navCtrl: NavController) { };
+  constructor(
+    private navCtrl: NavController,
+    private currentUserService: CurrentUserService
+  ) { };
 
   ngOnInit() {
 
     setTimeout(() => {
 
-      const userGift = this.donationsService.getDonation();
-      
-      if ( userGift === undefined || null ) {return}
-      this.histories.unshift(userGift);
+      const currentUser = this.currentUserService.getCurrentUser();
+
+      this.histories = currentUser.donations;
 
       this.partlyHistories = this.histories.slice(0, 2);
       console.log(this.histories);
@@ -66,8 +67,7 @@ export class DonationHistoryPage implements OnInit {
         this.viewBtn = true;
       }
       
-      console.log('hi');
-              
+      console.log('hi');     
     
     }, 1000);
 
@@ -81,7 +81,6 @@ export class DonationHistoryPage implements OnInit {
     this.viewPartly = false;
     this.viewEverything = true;
     this.viewBtn = false;
-    this.homeBtn = true;
   }
 
 }

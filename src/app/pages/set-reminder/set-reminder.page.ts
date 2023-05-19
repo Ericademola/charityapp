@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-
+import { CurrentUserService } from 'src/app/services/current-user-service/current-user.service';
 
 @Component({
   selector: 'app-set-reminder',
@@ -21,12 +21,19 @@ export class SetReminderPage implements OnInit {
     }
   ]
 
-  savings:any = [];
-  getSaving:any = {};
+  savings:any; 
 
-  constructor(private navCtrl: NavController) { };
+  date:string | null= '';
+
+  home:string | null= '';
+
+  constructor(private navCtrl: NavController, private currentUserService: CurrentUserService) { };
 
   ngOnInit() {
+
+    const currentUser = this.currentUserService.getCurrentUser();
+    this.savings = currentUser.reminders;
+    
   }
 
   navBack() {
@@ -35,8 +42,43 @@ export class SetReminderPage implements OnInit {
 
   setReminder(reminder:any) {
 
-    this.getSaving = reminder.value;
-    this.savings.push(this.getSaving);
+    const getSaving = reminder.value;
+    if ( (reminder.value.date && reminder.value.home) === '') {return}
+    const currentUser = this.currentUserService.getCurrentUser();
+    const getJson = localStorage.getItem('members');
+    const members = JSON.parse(getJson);
+    let indexOfCurrentMember:number;
+
+    currentUser.reminders.push(getSaving);
+    currentUser.reminders.sort((a:any, b:any) => { 
+      
+      let d1 = new Date(a.date);
+      let d2 = new Date(b.date);
+     
+      if (d1.getMonth() > d2.getMonth()) {
+        return 1;
+      } else if (d1.getMonth() < d2.getMonth()) {
+        return -1;
+      } else if (d1.getDate() > d2.getDate()) {
+        return 1;
+      } else if (d1.getDate() < d2.getDate()) {
+        return -1;
+      } else { return d1.getHours() - d2.getHours()} 
+
+    })  
+
+    if (  members.map((member:any) => member.username).includes(currentUser.username) ) {
+      const currentMember = members.find((member: { username: any; }) => member.username === currentUser.username);
+      indexOfCurrentMember = members.indexOf(currentMember);
+      //console.log(indexOfCurrentMember);     
+      members.splice(indexOfCurrentMember, 1, currentUser);      
+      const setJson = JSON.stringify(members);
+      localStorage.setItem('members', setJson);
+    } else {return}
+
+    this.date = '';
+
+    this.home = '';
 
   }
 
