@@ -9,6 +9,12 @@ import { NavigatorService } from "../../services/navigator-service/navigator.ser
 })
 export class ForgotPasswordPage implements OnInit {
 
+  inputType:string = "password";
+  eyeLogo:string = "eye-off-outline";
+
+  confInputType:string = "password";
+  conEyeLogo:string = "eye-off-outline";
+
   memberUsername:boolean = true;
   passwordReset:boolean = true;
   currentMember:any;
@@ -19,38 +25,26 @@ export class ForgotPasswordPage implements OnInit {
   }
 
   showPassword() {
-    const eye = document.getElementById('eye');
-    const eyeLogo = document.getElementById('eye_logo');
 
-    if ( eye.getAttribute('type') === 'password' ) {
-      eye.removeAttribute('type');
-      eye.setAttribute('type', 'text');
-      eyeLogo.removeAttribute('name');
-      eyeLogo.setAttribute('name', "eye-outline");
+    if ( this.inputType === 'password' ) {
+      this.inputType = 'text';
+      this.eyeLogo = "eye-outline";
     } else {
-      eye.removeAttribute('type');
-      eye.setAttribute('type', 'password');
-      eyeLogo.removeAttribute('name');
-      eyeLogo.setAttribute('name', "eye-off-outline");
+      this.inputType = 'password';
+      this.eyeLogo = "eye-off-outline";
     }
     
   }
 
 
   showConPassword() {
-    const conEye = document.getElementById('conEye');
-    const conEyeLogo = document.getElementById('conEye_logo');
 
-    if ( conEye.getAttribute('type') === 'password' ) {
-      conEye.removeAttribute('type');
-      conEye.setAttribute('type', 'text');
-      conEyeLogo.removeAttribute('name');
-      conEyeLogo.setAttribute('name', "eye-outline");
+    if ( this.confInputType === 'password' ) {
+      this.confInputType = 'text';
+      this.conEyeLogo = "eye-outline";
     } else {
-      conEye.removeAttribute('type');
-      conEye.setAttribute('type', 'password');
-      conEyeLogo.removeAttribute('name');
-      conEyeLogo.setAttribute('name', "eye-off-outline");
+      this.confInputType = 'password';
+      this.conEyeLogo = "eye-off-outline";
     }
     
   }
