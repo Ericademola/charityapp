@@ -17,7 +17,6 @@ export class DonationsService {
 
   
   constructor() { }
-  //09070780040
   
   //getting home object
   setHome(obj:any) {

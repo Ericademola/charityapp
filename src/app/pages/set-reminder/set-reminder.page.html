@@ -21,12 +21,12 @@
         name="date"
         class="form-control"
         ngModel
-        #reminder="ngModel"
-
+        [(ngModel)]="date"
         locale="en-US"
         size="cover">
         <span slot="title">Select a Reservation Date & Time</span>
       </ion-datetime>
+
     
       <h5>Select Home</h5>
       <div class="input">
@@ -39,7 +39,7 @@
           [allowEmptySelection]="true"
           name = 'home'
           class="form-control" 
-          #uploadPhoto="ngModel" 
+          [(ngModel)]="home"
           ngModel>
 
           <ng-container *ngFor="let community of communities">

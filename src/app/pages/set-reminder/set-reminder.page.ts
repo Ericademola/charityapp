@@ -21,13 +21,16 @@ export class SetReminderPage implements OnInit {
     }
   ]
 
-  savings:any;
-  //getSaving:any = {};
+  savings:any; 
+
+  date:string | null= '';
+
+  home:string | null= '';
 
   constructor(private navCtrl: NavController, private currentUserService: CurrentUserService) { };
 
   ngOnInit() {
-    
+
     const currentUser = this.currentUserService.getCurrentUser();
     this.savings = currentUser.reminders;
     
@@ -40,6 +43,7 @@ export class SetReminderPage implements OnInit {
   setReminder(reminder:any) {
 
     const getSaving = reminder.value;
+    if ( (reminder.value.date && reminder.value.home) === '') {return}
     const currentUser = this.currentUserService.getCurrentUser();
     const getJson = localStorage.getItem('members');
     const members = JSON.parse(getJson);
@@ -71,6 +75,10 @@ export class SetReminderPage implements OnInit {
       const setJson = JSON.stringify(members);
       localStorage.setItem('members', setJson);
     } else {return}
+
+    this.date = '';
+
+    this.home = '';
 
   }
 
