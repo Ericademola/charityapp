@@ -18,15 +18,15 @@
     <form #reminder="ngForm" (ngSubmit)="setReminder(reminder)">
 
       <ion-datetime
-        name="reminder"
+        name="date"
         class="form-control"
         ngModel
-        #reminder="ngModel"
-
+        [(ngModel)]="date"
         locale="en-US"
         size="cover">
         <span slot="title">Select a Reservation Date & Time</span>
       </ion-datetime>
+
     
       <h5>Select Home</h5>
       <div class="input">
@@ -39,7 +39,7 @@
           [allowEmptySelection]="true"
           name = 'home'
           class="form-control" 
-          #uploadPhoto="ngModel" 
+          [(ngModel)]="home"
           ngModel>
 
           <ng-container *ngFor="let community of communities">
@@ -65,8 +65,8 @@
 
       <div class="setted-reminder">
         <h5>Make Donation to {{saving.home}}</h5>
-        <p>{{saving.reminder | date :'d MMM, y'}}</p>
-        <p>{{saving.reminder  | date :'shortTime'}}</p>
+        <p>{{saving.date | date :'d MMM, y'}}</p>
+        <p>{{saving.date  | date :'shortTime'}}</p>
       </div>
 
     </ng-container>
